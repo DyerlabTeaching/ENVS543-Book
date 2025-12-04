@@ -10,5 +10,29 @@
   },
   "references.qmd": {
     "references.html": "4263f3bb"
+  },
+  "narrative_markdown.qmd": {
+    "narrative_markdown.html": "98d14414"
+  },
+  "narrative_datatypes.qmd": {
+    "narrative_datatypes.html": "aa7e876a"
+  },
+  "narrative_containers.qmd": {
+    "narrative_containers.html": "a74c9c6f"
+  },
+  "narrative_tidyverse.qmd": {
+    "narrative_tidyverse.html": "04d1956f"
+  },
+  "narrative_classic.qmd": {
+    "narrative_classic.html": "b5f5cced"
+  },
+  "narrative_ggplot.qmd": {
+    "narrative_ggplot.html": "8f43ada2"
+  },
+  "narrative_points.qmd": {
+    "narrative_points.html": "a8eb8a05"
+  },
+  "narrative_rasters.qmd": {
+    "narrative_rasters.html": "28fcf89c"
   }
 }

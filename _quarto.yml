@@ -8,6 +8,14 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - narrative_markdown.qmd
+    - narrative_datatypes.qmd
+    - narrative_containers.qmd
+    - narrative_tidyverse.qmd
+    - narrative_classic.qmd
+    - narrative_ggplot.qmd
+    - narrative_points.qmd
+    - narrative_rasters.qmd
     - summary.qmd
     - references.qmd
 
