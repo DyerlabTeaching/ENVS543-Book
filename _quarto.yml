@@ -8,7 +8,6 @@ book:
   date: "12/4/2025"
   chapters:
     - index.qmd
-    - intro.qmd
     - part: "part1.qmd"
       chapters:
         - narrative_markdown.qmd
@@ -33,6 +32,8 @@ book:
 
 format:
   html:
+    self-contained: true
+    self-contained-math: true
     theme:
       - cosmo
       - brand
