@@ -2,13 +2,12 @@
 title: "Data Visualization"
 ---
 
-```{r setup, include=FALSE, echo=FALSE }
-## https://www.r-graph-gallery.com
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide"></iframe>
 ```
 
-![Journalist Jonathan Swan being befuddled by data.](https://live.staticflickr.com/65535/50195862297_dd15b6c11a_c_d.jpg)
 
-> Data visualization is key to providing effective communication of your data.
+> Visualization gives you answers to questions you didn’t know you had.
 
 
 ## The Data

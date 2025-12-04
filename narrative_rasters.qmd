@@ -2,9 +2,11 @@
 title: "Raster Data"
 ---
 
-<center>
-![Rasters!](https://live.staticflickr.com/65535/50510757837_c3606682ac_c_d.jpg)
-</center>
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide"></iframe>
+```
+
+> Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.
 
 All raster operations in this topic are accomplished using the `raster` library.
 

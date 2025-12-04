@@ -2,14 +2,12 @@
 title: "Correlations"
 ---
 
-![](https://github.com/DyerlabTeaching/Correlation/blob/main/media/Buoy.jpeg?raw=true)
-
-```{r setup, include=FALSE}
-library( tidyverse )
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Correlation/slides.html#/title-slide"></iframe>
 ```
 
 
-> Correlation is a test to see if two variables change in a coordinate fashion.  However, this does not imply they are functionally linked or causal in nature.
+> Correlation is a test to see if two variables change in a coordinate fashion. However, this does not imply they are functionally linked or causal in nature.
 
 
 Consider the following data consisting of the the decade from 1999 - 2009 and recording the number of movies each year by the American Actor, and cultural treasure, Mr. Nicolas Cage (source IMDB).
@@ -28,6 +26,7 @@ df
 If we look at these data by year, it does not look like there is much of a trend (at least temporally).  We've talked about the `tidyr::pivot_longer` approach to take data like this and manipulate it.  There is another way to do this using the `reshape2` library uwing the function `melt()`. I recommend you go take a look at that to see how this works as well.  Both are valid ways.
 
 ```{r}
+library( tidyverse )
 library( reshape2 )
 df |>
   melt( id = "Year" ) 

@@ -3,8 +3,9 @@ title: "Point Data"
 format: html
 ---
 
-![Photo from <a href="https://unsplash.com/s/photos/map-flags?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://github.com/DyerlabTeaching/Spatial-Points/raw/main/media/ru-recovery-ministries-zXM5Yl7MX5k-unsplash.jpg)
-
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide"></iframe>
+```
 
 > Everything is related to everything else, but near things are more related to each other.  Tobler's First Law of Geography[^1]
 

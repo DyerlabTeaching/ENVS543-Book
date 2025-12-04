@@ -2,7 +2,13 @@
 title: "Regression"
 ---
 
-![](media/models.png)
+
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Regression/slides.html#/title-slide"></iframe>
+```
+
+
+
 
 ```{r setup, include=FALSE}
 library( knitr )
@@ -13,6 +19,12 @@ theme_set( theme_minimal( base_size = 16) )
 
 
 > The overall goal of any model is to provide a low-level description of patterns within the data.
+
+
+
+
+
+
 
 If we think of all the variation in a data set, we can partition it into the following components:
 

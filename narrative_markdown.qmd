@@ -2,9 +2,14 @@
 title: "Markdown"
 ---
 
-![](media/Markdown-mark.svg)
+
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Markdown/slides.html#/title-slide"></iframe>
+```
 
 > Markdown & Notebooks provide interactive documents for more effective data communication
+
+
 
 ## Impetus
 

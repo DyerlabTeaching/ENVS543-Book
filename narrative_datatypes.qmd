@@ -2,9 +2,11 @@
 title: "Data Types"
 ---
 
-![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/8OyKWQgBsKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/markus-spiske-8OyKWQgBsKQ-unsplash.jpg)
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/title-slide"></iframe>
+```
 
-
+> When we work with an analysis language, we need to be very precise about how we represent the data we collect.  R is a general analysis language and has a wide range of native data types and can easily be expanded using the package system.  
 
 ## Missing Data
 

@@ -3,7 +3,10 @@ title: "Analysis of Variance"
 format: html
 ---
 
-![Photo by <a href="https://unsplash.com/@tolga__?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tolga Ulkan</a> on <a href="https://unsplash.com/s/photos/different-means?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/tolga-ulkan-9k36QqhA0cU-unsplash.jpg)
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Analysis-of-Variance/slides.html#/title-slide"></iframe>
+```
+
 
 > If your data are taken from discrete groups (e.g., treatments), then we are generally testing the equality of each group mean.  
 
@@ -13,7 +16,8 @@ library( ggplot2 )
 theme_set( theme_bw(base_size = 14) )
 ```
 
-> Here we explore methods applicable to testing hypotheses about specific parameters, as equal to a specified value (a $t$-test), equal between two samples (paired $t$-tests), and equal among more than two groups (analysis of variance).  
+Here we explore methods applicable to testing hypotheses about specific parameters, as equal to a specified value (a $t$-test), equal between two samples (paired $t$-tests), and equal among more than two groups (analysis of variance).  
+
 In this and the next section, we will examine how to tell the difference between measures of central tendency.  This is applied to a single set of data, pairs of data sets, and a data set with many different groups. As we increase the complexity of these hypotheses, we will move through a series of statistical tests, starting with a one-sample $t$-test, a paired $t$-test, and then to the general analysis of variance (ANVOA) approaches.  All of these methods evaluate the equality of mean values.
 
 ## One Sample Hypotheses

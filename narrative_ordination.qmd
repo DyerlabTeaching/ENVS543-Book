@@ -2,9 +2,15 @@
 title: "Ordination"
 ---
 
-![Photo by <a href="https://unsplash.com/@mvogulov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Max Petrunin</a> on <a href="https://unsplash.com/photos/abstract-blue-lines-and-dots-on-black-background-KKx5r-w1dPo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/max-petrunin-KKx5r-w1dPo-unsplash.jpg)
+
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Ordination/slides.html#/title-slide"></iframe>
+```
+
+
 
 > Ordination is a technique to take high-dimensional data and to represent it in a lower dimensional context.  
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set( echo = TRUE, 
@@ -17,7 +23,7 @@ library( tidyverse )
 theme_set( theme_bw( base_size = 18) )
 ```
 
-> Ordination is a collective term for multivariate techniques which summarize a multidimensional dataset in such a way that when it is projected onto a low dimensional space, any intrinsic pattern the data may possess becomes apparent upon visual inspection[^1].
+Ordination is a collective term for multivariate techniques which summarize a multidimensional dataset in such a way that when it is projected onto a low dimensional space, any intrinsic pattern the data may possess becomes apparent upon visual inspection[^1].
 
 One of the largest challenges in data analysis is the ability to understand and gain inferences from it!  This is especially compounded when we have many different kinds of data describing our individual observations.  For example, at a particular vernal pool, we may have measured pool size, pool depth, elevation, rainfall, temperature, canopy cover, pH, aquatic vegitation, species1 density, species2 density, etc.  To describe all of these variables we could either plot all combinations of them *or* be a bit clever and use some ordination approaches.
 

@@ -3,7 +3,10 @@ title: "Factor Data"
 format: html
 ---
 
-![Photo by Paolo Bendandi on <a href="https://unsplash.com">Unsplash</a>](media/paolo-bendandi-VVe3zOZM88E-unsplash.jpg)
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Factors/slides.html#/title-slide"></iframe>
+```
+
 
 > Factors allow us to represent a type of data that exclusive and categorical.  These data may, or may not, be ordered and in most cases, we can think of these kinds of data to represent things like, treatment levels, sampling locations, etc.
 

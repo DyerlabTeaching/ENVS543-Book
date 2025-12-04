@@ -2,9 +2,12 @@
 title: "Vector Data"
 ---
 
-![](media/shapefile_definition_chatGPT3.png)
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Shapefiles/slides.html#/title-slide"></iframe>
+```
 
 > Connecting points creates more complicated data types—vector data—that represent lines and polygons.
+
 
 In this topic, we will focus on lines and polygons.  These are represented as `sf` objects, we can leverage a large amount of `st_*` functions to perform manipulations, and we can visualize them using either built-in routines or via `ggplot` (as expected).
 

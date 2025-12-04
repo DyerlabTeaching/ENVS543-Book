@@ -2,9 +2,19 @@
 title: "Joins"
 ---
 
-![Image by Mel Poole on <a href="https://unsplash.com">Unsplash</a>](media/mel-poole-TocLTCixeAw-unsplash.jpg)
+
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide"></iframe>
+```
+
+
 
 > Effectively storing data often requires the use of several data frames to reduce redundancy.  In this short chapter, we will cover how to join data from multiple sources.
+
+
+
+
+
 
 Rarely do we work on only one `data.frame`, particularly when we start working with complex data and data contained within relational databases.  In these cases, data are factored into several tables (akin to `data.frame` objects) with entries that connect the information from one table to another.   Consider the following example tables
 

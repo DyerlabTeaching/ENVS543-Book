@@ -2,7 +2,16 @@
 title: "`ggplot2` Graphics"
 ---
 
+
+```{=html}
+<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide"></iframe>
+```
+
+
+
 > The `ggplot2` library is a gramattical approach to data display.
+
+
 
 In base `R`, the graphics are generally produced by adding a lot of optional arguments to a single function such as `plot()` or `barplot()` or `boxplot()`.  We can get some kinds of overlays using `text()` or `points()` or `lines()` but there is not a cohesive framework for setting this up.  For even moderately complex graphical display, these approaches become unwieldy when we have to cram all that information into extra optional arguments.  
 
