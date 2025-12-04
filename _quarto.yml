@@ -32,8 +32,7 @@ book:
 
 format:
   html:
-    self-contained: true
-    self-contained-math: true
+    output-dir: docs
     theme:
       - cosmo
       - brand
