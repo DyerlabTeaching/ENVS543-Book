@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Factor Data – ENVS543-Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./narrative_joins.html" rel="next">
+<link href="./narrative_tidyverse.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./narrative_factors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ENVS543-Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_containers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Containers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_factors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_joins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_classic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_rasters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_aov.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ordination.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#factors" id="toc-factors" class="nav-link active" data-scroll-target="#factors"><span class="header-section-number">6.1</span> Factors</a>
+  <ul class="collapse">
+  <li><a href="#exclusivity-of-factor-levels" id="toc-exclusivity-of-factor-levels" class="nav-link" data-scroll-target="#exclusivity-of-factor-levels"><span class="header-section-number">6.1.1</span> Exclusivity of Factor Levels</a></li>
+  </ul></li>
+  <li><a href="#the-forcats-library" id="toc-the-forcats-library" class="nav-link" data-scroll-target="#the-forcats-library"><span class="header-section-number">6.2</span> The <code>forcats</code> Library</a></li>
+  <li><a href="#using-factors" id="toc-using-factors" class="nav-link" data-scroll-target="#using-factors"><span class="header-section-number">6.3</span> Using Factors</a>
+  <ul class="collapse">
+  <li><a href="#by-the-by" id="toc-by-the-by" class="nav-link" data-scroll-target="#by-the-by"><span class="header-section-number">6.3.1</span> By the by</a></li>
+  </ul></li>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">6.4</span> Missing Data</a>
+  <ul class="collapse">
+  <li><a href="#indications-of-missing-data" id="toc-indications-of-missing-data" class="nav-link" data-scroll-target="#indications-of-missing-data"><span class="header-section-number">6.4.1</span> Indications of Missing Data</a></li>
+  <li><a href="#working-with-missing-data" id="toc-working-with-missing-data" class="nav-link" data-scroll-target="#working-with-missing-data"><span class="header-section-number">6.4.2</span> Working with Missing Data</a></li>
+  </ul></li>
+  <li><a href="#fancy-tables" id="toc-fancy-tables" class="nav-link" data-scroll-target="#fancy-tables"><span class="header-section-number">6.5</span> Fancy Tables</a>
+  <ul class="collapse">
+  <li><a href="#table-themes" id="toc-table-themes" class="nav-link" data-scroll-target="#table-themes"><span class="header-section-number">6.5.1</span> Table Themes</a></li>
+  <li><a href="#table-sizes-and-positions" id="toc-table-sizes-and-positions" class="nav-link" data-scroll-target="#table-sizes-and-positions"><span class="header-section-number">6.5.2</span> Table Sizes and Positions</a></li>
+  <li><a href="#heading-judo" id="toc-heading-judo" class="nav-link" data-scroll-target="#heading-judo"><span class="header-section-number">6.5.3</span> Heading Judo</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/paolo-bendandi-VVe3zOZM88E-unsplash.jpg" class="img-fluid figure-img"></p>
+<figcaption>Photo by Paolo Bendandi on <a href="https://unsplash.com">Unsplash</a></figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Factors allow us to represent a type of data that exclusive and categorical. These data may, or may not, be ordered and in most cases, we can think of these kinds of data to represent things like, treatment levels, sampling locations, etc.</p>
+</blockquote>
+<section id="factors" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="factors"><span class="header-section-number">6.1</span> Factors</h2>
+<p>I’m going to start with some days of the week because they are <em>exclusive</em> (e.g., you cannot be in both Monday and Wednesday at the same time). Factors are initially created from string objects, though you could use <code>numeric</code> data but that would be <em>stupid</em> because you should use things that are descriptive and strings are much better than that.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>weekdays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Monday"</span>,<span class="st">"Tuesday"</span>,<span class="st">"Wednesday"</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Thursday"</span>,<span class="st">"Friday"</span>,<span class="st">"Saturday"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Sunday"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( weekdays )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>I’m going to take these days and random sample them to create a vector of 40 elements. This is something we do all the time and there is a <code>sample()</code> function that allows us to draw random samples either with or without replacement (e.g., can you select the same value more than once).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">sample</span>( weekdays, <span class="at">size=</span><span class="dv">40</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Sunday"    "Friday"    "Tuesday"   "Friday"    "Friday"    "Saturday" 
+ [7] "Friday"    "Friday"    "Monday"    "Tuesday"   "Monday"    "Saturday" 
+[13] "Saturday"  "Monday"    "Monday"    "Wednesday" "Friday"    "Wednesday"
+[19] "Tuesday"   "Friday"    "Saturday"  "Sunday"    "Friday"    "Sunday"   
+[25] "Wednesday" "Sunday"    "Monday"    "Wednesday" "Thursday"  "Sunday"   
+[31] "Friday"    "Tuesday"   "Friday"    "Friday"    "Wednesday" "Monday"   
+[37] "Monday"    "Tuesday"   "Tuesday"   "Tuesday"  </code></pre>
+</div>
+</div>
+<p>These data are still</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>To turn them into a factor, we use…. <code>factor()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="fu">factor</span>( data )</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.factor</span>( days )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( days )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+<p>Now when we look at the data, it looks a lot like it did before <em>except for the last line</em> which shows you the unique levels for elements in the vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>days</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Sunday    Friday    Tuesday   Friday    Friday    Saturday  Friday   
+ [8] Friday    Monday    Tuesday   Monday    Saturday  Saturday  Monday   
+[15] Monday    Wednesday Friday    Wednesday Tuesday   Friday    Saturday 
+[22] Sunday    Friday    Sunday    Wednesday Sunday    Monday    Wednesday
+[29] Thursday  Sunday    Friday    Tuesday   Friday    Friday    Wednesday
+[36] Monday    Monday    Tuesday   Tuesday   Tuesday  
+Levels: Friday Monday Saturday Sunday Thursday Tuesday Wednesday</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( days )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Friday    Monday  Saturday    Sunday  Thursday   Tuesday Wednesday 
+       11         7         4         5         1         7         5 </code></pre>
+</div>
+</div>
+<p>We can put them into data frames and they know how to summarize themselves properly by counting the number of occurances of each level.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>, <span class="at">Weekdays =</span> days )</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       ID             Weekdays 
+ Min.   : 1.00   Friday   :11  
+ 1st Qu.:10.75   Monday   : 7  
+ Median :20.50   Saturday : 4  
+ Mean   :20.50   Sunday   : 5  
+ 3rd Qu.:30.25   Thursday : 1  
+ Max.   :40.00   Tuesday  : 7  
+                 Wednesday: 5  </code></pre>
+</div>
+</div>
+<p>And we can directly access the unique levels</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>( days )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Friday"    "Monday"    "Saturday"  "Sunday"    "Thursday"  "Tuesday"  
+[7] "Wednesday"</code></pre>
+</div>
+</div>
+<p>So factors can be categorical (e.g., one is just different than the next) and compared via <code>==</code> and <code>!=</code> values. Or they can be ordinal such that <code>&gt;</code> and <code>&lt;</code> make sense.</p>
+<p>By default, a <code>factor</code> is not ordered.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.ordered</span>( days )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>days[<span class="dv">1</span>] <span class="sc">&lt;</span> days[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in Ops.factor(days[1], days[2]): '&lt;' not meaningful for factors</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">factor</span>( days, <span class="at">ordered=</span><span class="cn">TRUE</span> )</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>data </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Sunday    Friday    Tuesday   Friday    Friday    Saturday  Friday   
+ [8] Friday    Monday    Tuesday   Monday    Saturday  Saturday  Monday   
+[15] Monday    Wednesday Friday    Wednesday Tuesday   Friday    Saturday 
+[22] Sunday    Friday    Sunday    Wednesday Sunday    Monday    Wednesday
+[29] Thursday  Sunday    Friday    Tuesday   Friday    Friday    Wednesday
+[36] Monday    Monday    Tuesday   Tuesday   Tuesday  
+7 Levels: Friday &lt; Monday &lt; Saturday &lt; Sunday &lt; Thursday &lt; ... &lt; Wednesday</code></pre>
+</div>
+</div>
+<p>So that if we go and try to order them, the only way they can be sorted is alphabetically.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Friday    Friday    Friday    Friday    Friday    Friday    Friday   
+ [8] Friday    Friday    Friday    Friday    Monday    Monday    Monday   
+[15] Monday    Monday    Monday    Monday    Saturday  Saturday  Saturday 
+[22] Saturday  Sunday    Sunday    Sunday    Sunday    Sunday    Thursday 
+[29] Tuesday   Tuesday   Tuesday   Tuesday   Tuesday   Tuesday   Tuesday  
+[36] Wednesday Wednesday Wednesday Wednesday Wednesday
+7 Levels: Friday &lt; Monday &lt; Saturday &lt; Sunday &lt; Thursday &lt; ... &lt; Wednesday</code></pre>
+</div>
+</div>
+<p>However, this does not make sense. Who in their right mind would like to have <code>Friday</code> followed immediately by <code>Monday</code>? That is just not right!</p>
+<p>To establish an ordinal variable with a specified sequence of values that are <em>not alphabetical</em> we need to pass along the levels themselves.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">factor</span>( days, <span class="at">ordered=</span><span class="cn">TRUE</span>, <span class="at">levels =</span> weekdays )</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Sunday    Friday    Tuesday   Friday    Friday    Saturday  Friday   
+ [8] Friday    Monday    Tuesday   Monday    Saturday  Saturday  Monday   
+[15] Monday    Wednesday Friday    Wednesday Tuesday   Friday    Saturday 
+[22] Sunday    Friday    Sunday    Wednesday Sunday    Monday    Wednesday
+[29] Thursday  Sunday    Friday    Tuesday   Friday    Friday    Wednesday
+[36] Monday    Monday    Tuesday   Tuesday   Tuesday  
+7 Levels: Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; Friday &lt; ... &lt; Sunday</code></pre>
+</div>
+</div>
+<p>Now they’ll sort properly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Monday    Monday    Monday    Monday    Monday    Monday    Monday   
+ [8] Tuesday   Tuesday   Tuesday   Tuesday   Tuesday   Tuesday   Tuesday  
+[15] Wednesday Wednesday Wednesday Wednesday Wednesday Thursday  Friday   
+[22] Friday    Friday    Friday    Friday    Friday    Friday    Friday   
+[29] Friday    Friday    Friday    Saturday  Saturday  Saturday  Saturday 
+[36] Sunday    Sunday    Sunday    Sunday    Sunday   
+7 Levels: Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; Friday &lt; ... &lt; Sunday</code></pre>
+</div>
+</div>
+<section id="exclusivity-of-factor-levels" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="exclusivity-of-factor-levels"><span class="header-section-number">6.1.1</span> Exclusivity of Factor Levels</h3>
+<p>Once you establish a factor, you cannot set the values to anyting that is outside of the pre-defined levels. If you do, it will just put in missing data <code>NA</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>days[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"Bob"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in `[&lt;-.factor`(`*tmp*`, 3, value = "Bob"): invalid factor level, NA
+generated</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>days</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Sunday    Friday    &lt;NA&gt;      Friday    Friday    Saturday  Friday   
+ [8] Friday    Monday    Tuesday   Monday    Saturday  Saturday  Monday   
+[15] Monday    Wednesday Friday    Wednesday Tuesday   Friday    Saturday 
+[22] Sunday    Friday    Sunday    Wednesday Sunday    Monday    Wednesday
+[29] Thursday  Sunday    Friday    Tuesday   Friday    Friday    Wednesday
+[36] Monday    Monday    Tuesday   Tuesday   Tuesday  
+Levels: Friday Monday Saturday Sunday Thursday Tuesday Wednesday</code></pre>
+</div>
+</div>
+<p>That being said, we can have more levels in the factor than observed in the data. Here is an example of just grabbing the work days from the week but making the levels equal to all the potential weekdays.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>workdays <span class="ot">&lt;-</span> <span class="fu">sample</span>( weekdays[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], <span class="at">size=</span><span class="dv">40</span>, <span class="at">replace =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>workdays <span class="ot">&lt;-</span> <span class="fu">factor</span>( workdays, <span class="at">ordered=</span><span class="cn">TRUE</span>, <span class="at">levels =</span> weekdays )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And when we summarize it, we see that while it is possible that days may be named <code>Saturday</code> and <code>Sunday</code>, they are not recoreded in the data we have for workdays.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( workdays )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Monday   Tuesday Wednesday  Thursday    Friday  Saturday    Sunday 
+        9         7         7         8         9         0         0 </code></pre>
+</div>
+</div>
+<p>We can drop the levels that have no representation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>workdays <span class="ot">&lt;-</span> <span class="fu">droplevels</span>( workdays ) </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( workdays )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Monday   Tuesday Wednesday  Thursday    Friday 
+        9         7         7         8         9 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="the-forcats-library" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-forcats-library"><span class="header-section-number">6.2</span> The <code>forcats</code> Library</h2>
+<p>The <code>forcats</code> library has a bunch of helper functions for working with factors. This is a relatively small library in <code>tidyverse</code> but a powerful one. I would recommend looking at the <a href="">cheatsheet</a> for it to get a more broad understanding of what functions in this library can do.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( forcats )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Just like <code>stringr</code> had the <code>str_</code> prefix, all the functions here have the <code>fct_</code> prefix. Here are some examples.</p>
+<p><em>Counting how many of each factor</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  f             n
+  &lt;ord&gt;     &lt;int&gt;
+1 Monday        7
+2 Tuesday       7
+3 Wednesday     5
+4 Thursday      1
+5 Friday       11
+6 Saturday      4
+7 Sunday        5</code></pre>
+</div>
+</div>
+<p><em>Lumping Rare Factors</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>lumped <span class="ot">&lt;-</span> <span class="fu">fct_lump_min</span>( data, <span class="at">min =</span> <span class="dv">5</span> )</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>( lumped )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  f             n
+  &lt;ord&gt;     &lt;int&gt;
+1 Monday        7
+2 Tuesday       7
+3 Wednesday     5
+4 Friday       11
+5 Sunday        5
+6 Other         5</code></pre>
+</div>
+</div>
+<p><em>Reordering Factor Levels by Frequency</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">fct_infreq</span>( data )</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>( freq )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Friday"    "Monday"    "Tuesday"   "Wednesday" "Sunday"    "Saturday" 
+[7] "Thursday" </code></pre>
+</div>
+</div>
+<p><em>Reordering by Order of Appearance</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>ordered <span class="ot">&lt;-</span> <span class="fu">fct_inorder</span>( data )</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>( ordered )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sunday"    "Friday"    "Tuesday"   "Saturday"  "Monday"    "Wednesday"
+[7] "Thursday" </code></pre>
+</div>
+</div>
+<p><em>Reordering Specific Levels</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>newWeek <span class="ot">&lt;-</span> <span class="fu">fct_relevel</span>( data, <span class="st">"Sunday"</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>( newWeek )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sunday"    "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+[7] "Saturday" </code></pre>
+</div>
+</div>
+<p><em>Dropping Unobserved Levels</em> - just like <code>droplevels()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dropped <span class="ot">&lt;-</span> <span class="fu">fct_drop</span>( workdays )</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( dropped )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Monday   Tuesday Wednesday  Thursday    Friday 
+        9         7         7         8         9 </code></pre>
+</div>
+</div>
+</section>
+<section id="using-factors" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="using-factors"><span class="header-section-number">6.3</span> Using Factors</h2>
+<p>It is common to use factors as an organizing princple in our data. For example, let’s say we went out and sampled three different species of plants and measured characteristics of their flower size. The <code>iris</code> data set from R.A. Fisher is a classid data set that is include in <code>R</code> and it looks like this (the functions <code>head()</code> and <code>tail()</code> show the top or bottom parts of a data frame).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p>By default it is a <code>data.frame</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( iris )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+<section id="by-the-by" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="by-the-by"><span class="header-section-number">6.3.1</span> By the by</h3>
+<p>One helpful function in base <code>R</code> is the <code>by()</code> function. It has the following form.</p>
+<pre><code>by( data, index, function)</code></pre>
+<p>The <code>data</code> is the raw data you are using, the <code>index</code> is a vector that we are using to differentiate among the species (the factor), and the function is what function we want to use.</p>
+<p>So for example, if I were interesed in the mean length of the Sepal for each species, I could write.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>meanSepalLength <span class="ot">&lt;-</span> <span class="fu">by</span>( iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Species, mean )</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( meanSepalLength )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "by"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>meanSepalLength</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>iris$Species: setosa
+[1] 5.006
+------------------------------------------------------------ 
+iris$Species: versicolor
+[1] 5.936
+------------------------------------------------------------ 
+iris$Species: virginica
+[1] 6.588</code></pre>
+</div>
+</div>
+<p>I could also do the same thing with the variance in sepal length.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>( iris[,<span class="dv">2</span>], iris[,<span class="dv">5</span>], var ) <span class="ot">-&gt;</span> varSepalLength</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>varSepalLength </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>iris[, 5]: setosa
+[1] 0.1436898
+------------------------------------------------------------ 
+iris[, 5]: versicolor
+[1] 0.09846939
+------------------------------------------------------------ 
+iris[, 5]: virginica
+[1] 0.1040041</code></pre>
+</div>
+</div>
+<p>Using these kinds of functions we can create a summary data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( tidyverse )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ ggplot2   4.0.0     ✔ stringr   1.6.0
+✔ lubridate 1.9.4     ✔ tibble    3.3.0
+✔ purrr     1.2.0     ✔ tidyr     1.3.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>( <span class="at">Species =</span> <span class="fu">levels</span>( iris<span class="sc">$</span>Species), </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">Average =</span> meanSepalLength,</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">Variance =</span> varSepalLength</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  Species    Average  Variance  
+  &lt;chr&gt;      &lt;by[1d]&gt; &lt;by[1d]&gt;  
+1 setosa     5.006    0.14368980
+2 versicolor 5.936    0.09846939
+3 virginica  6.588    0.10400408</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="missing-data" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">6.4</span> Missing Data</h2>
+<p>Missing data is a .red[fact of life] and <code>R</code> is very opinionated about how it handles missing values. In general, missing data is encoded as <code>NA</code> and is a valid entry for any data type (character, numeric, logical, factor, etc.). Where this becomes tricky is when we are doing operations on data that has missing values. <code>R</code> could take two routes:</p>
+<ol type="1">
+<li>It could ignore the data and give you the answer directly as if the data were not missing, or<br>
+</li>
+<li>It could let you know that there is missing data and make you do something about it.</li>
+</ol>
+<p>Fortunately, <code>R</code> took the second route.</p>
+<p>An example from the iris data, I’m going to add some missing data to it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>missingIris <span class="ot">&lt;-</span> iris[, <span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>missingIris<span class="sc">$</span>Petal.Width[ <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">12</span>) ] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( missingIris )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Petal.Width          Species  
+ Min.   :0.100   setosa    :50  
+ 1st Qu.:0.300   versicolor:50  
+ Median :1.300   virginica :50  
+ Mean   :1.218                  
+ 3rd Qu.:1.800                  
+ Max.   :2.500                  
+ NA's   :3                      </code></pre>
+</div>
+</div>
+<p>Notice how the missing data is denoted in the summary.</p>
+<section id="indications-of-missing-data" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="indications-of-missing-data"><span class="header-section-number">6.4.1</span> Indications of Missing Data</h3>
+<p>When we perform a mathematical or statistical operation on data that has missing elements <code>R</code> will <strong>always</strong> return NA as the result.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>( missingIris<span class="sc">$</span>Petal.Width )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>This warns you that .red[at least one] of the observations in the data is missing.</p>
+<p>Same output for using <code>by()</code>, it will put <code>NA</code> into each level that has at least one missing value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>( missingIris<span class="sc">$</span>Petal.Width, missingIris<span class="sc">$</span>Species, mean )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>missingIris$Species: setosa
+[1] NA
+------------------------------------------------------------ 
+missingIris$Species: versicolor
+[1] 1.326
+------------------------------------------------------------ 
+missingIris$Species: virginica
+[1] 2.026</code></pre>
+</div>
+</div>
+</section>
+<section id="working-with-missing-data" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="working-with-missing-data"><span class="header-section-number">6.4.2</span> Working with Missing Data</h3>
+<p>To acknowledge that there are missing data and you still want the values, you need to tell the function you are using that data is missing and you are OK with that using the optional argument <code>na.rm=TRUE</code> (<code>na</code> = missing data &amp; <code>rm</code> is <em>remove</em>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>( missingIris<span class="sc">$</span>Petal.Width, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.218367</code></pre>
+</div>
+</div>
+<p>To pass this to the <code>by()</code> function, we add the optional argument <code>na.rm=TRUE</code> and <code>by()</code> passes it along to the <code>mean</code> function as “…”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>( missingIris<span class="sc">$</span>Petal.Width, missingIris<span class="sc">$</span>Species, mean, <span class="at">na.rm=</span><span class="cn">TRUE</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>missingIris$Species: setosa
+[1] 0.2446809
+------------------------------------------------------------ 
+missingIris$Species: versicolor
+[1] 1.326
+------------------------------------------------------------ 
+missingIris$Species: virginica
+[1] 2.026</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="fancy-tables" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="fancy-tables"><span class="header-section-number">6.5</span> Fancy Tables</h2>
+<p>Making data frames like that above is a <em>classic</em> maneuver in <code>R</code> and I’m going to use this to introduce the use of the <code>knitr</code> library to show you how to take a set of data and turn it into a table for your manuscript.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( knitr )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can make a table as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>( df )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Average</th>
+<th style="text-align: right;">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>We can even add a caption to it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>irisTable <span class="ot">&lt;-</span> <span class="fu">kable</span>( df, <span class="at">caption =</span> <span class="st">"The mean and variance in measured sepal length (in cm) for three species of Iris."</span>)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>irisTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Average</th>
+<th style="text-align: right;">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In addition to this basic library, there is an <code>kableExtra</code> one that allows us to get even more fancy. You must go check out <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">this</a> webpage (which is an RMarkdown page by the way) to see all the other ways you can fancy up your tables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( kableExtra )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'kableExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    group_rows</code></pre>
+</div>
+</div>
+<section id="table-themes" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="table-themes"><span class="header-section-number">6.5.1</span> Table Themes</h3>
+<p>Here are some examples Themes</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>( irisTable )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-paper caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_classic</span>( irisTable )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_classic_2</span>( irisTable )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic-2 caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_minimal</span>( irisTable )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-minimal caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_material</span>( irisTable,<span class="at">lightable_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-material lightable-striped lightable-hover caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_material_dark</span>( irisTable )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-material-dark caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="table-sizes-and-positions" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="table-sizes-and-positions"><span class="header-section-number">6.5.2</span> Table Sizes and Positions</h3>
+<p>We can be specific about the size and location of the whole table.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>(irisTable, <span class="at">full_width =</span> <span class="cn">FALSE</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-paper caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="heading-judo" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="heading-judo"><span class="header-section-number">6.5.3</span> Heading Judo</h3>
+<p>We can do some really cool stuff on row and column headings. Here is an example where I add another row above the data columns for output.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>classic <span class="ot">&lt;-</span> <span class="fu">kable_paper</span>( irisTable )</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">add_header_above</span>( classic, <span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Sepal Length (cm)"</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-paper caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>The mean and variance in measured sepal length (in cm) for three species of Iris.</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+Sepal Length (cm)
+</div></th>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">0.14368980</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">0.09846939</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">0.10400408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./narrative_tidyverse.html" class="pagination-link" aria-label="Tidyverse">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./narrative_joins.html" class="pagination-link" aria-label="Joins">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

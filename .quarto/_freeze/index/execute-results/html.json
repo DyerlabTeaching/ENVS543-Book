@@ -1,8 +1,8 @@
 {
-  "hash": "f89d2cae73031aafc1d0dc4ae48f295e",
+  "hash": "6368c4f7ed504f563ea10b263f1422a4",
   "result": {
     "engine": "knitr",
-    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n",
+    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book created from lecture materials in ENVS543: Environmental Data Literacy.\n\nDownload the [GitHub repository](https://github.com/DyerlabTeaching/ENVS543-Book) as a Zip file or create a new RStudio project by cloning the whole project (e.g., `File -> New Project -> Version Control -> Git`). \n\nThe following code runs each time you render the project.  It will check to see if you have all the required libraries.  It then installs missing ones and then loads them into memory (so we do not get those stupid package startup messages).\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsource(\"package_loader.R\")\n\nlibraries <- extract_libraries_from_markdown()\nneed_to_install <- check_missing_packages( libraries )\ninstall_missing_packages( need_to_install )\nfor( pkg in libraries ) { \n  suppressPackageStartupMessages( library(pkg, character.only = TRUE) )\n}\nggplot2::theme_set( theme_minimal( base_size=16) )\n```\n:::\n\n\n\n\n\n\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

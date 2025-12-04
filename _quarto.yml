@@ -1,8 +1,9 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "ENVS-Book"
+  title: "ENVS543-Book"
   author: "Rodney Dyer"
   date: "12/4/2025"
   chapters:
@@ -12,12 +13,16 @@ book:
     - narrative_datatypes.qmd
     - narrative_containers.qmd
     - narrative_tidyverse.qmd
+    - narrative_factors.qmd
+    - narrative_joins.qmd
     - narrative_classic.qmd
     - narrative_ggplot.qmd
     - narrative_points.qmd
     - narrative_rasters.qmd
-    - summary.qmd
-    - references.qmd
+    - narrative_correlation.qmd
+    - narrative_regression.qmd
+    - narrative_aov.qmd
+    - narrative_ordination.qmd
 
 bibliography: references.bib
 

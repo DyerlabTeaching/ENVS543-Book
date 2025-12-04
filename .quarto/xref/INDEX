@@ -34,5 +34,23 @@
   },
   "narrative_rasters.qmd": {
     "narrative_rasters.html": "28fcf89c"
+  },
+  "narrative_factors.qmd": {
+    "narrative_factors.html": "6ff54b83"
+  },
+  "narrative_joins.qmd": {
+    "narrative_joins.html": "1a517189"
+  },
+  "narrative_correlation.qmd": {
+    "narrative_correlation.html": "39c0ccf4"
+  },
+  "narrative_regression.qmd": {
+    "narrative_regression.html": "a09537f1"
+  },
+  "narrative_aov.qmd": {
+    "narrative_aov.html": "93cb28bf"
+  },
+  "narrative_ordination.qmd": {
+    "narrative_ordination.html": "a87ab60e"
   }
 }

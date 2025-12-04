@@ -219,6 +219,4 @@ Here are some strategies that I use when building up these manipulation workflow
 3. You can pipe into a lot of different functions.  In fact, any function that takes a data frame can be the recipient of a pipe.  While developing a workflow, I will often pipe into things like `head()`, `summary()`, or `View()` to take a look at what is coming out of my workflow to make sure it resembles what I think it should look like.
 
 
-## Questions
 
-If you have any questions for me specifically on this topic, please post as an Issue in your repository, otherwise consider posting to the discussion board on [Canvas](https://canvas.vcu.edu).

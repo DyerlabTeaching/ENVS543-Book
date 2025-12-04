@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Analysis of Variance – ENVS543-Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./narrative_ordination.html" rel="next">
+<link href="./narrative_regression.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./narrative_aov.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ENVS543-Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_containers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Containers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_joins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_classic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_rasters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_aov.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ordination.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#one-sample-hypotheses" id="toc-one-sample-hypotheses" class="nav-link active" data-scroll-target="#one-sample-hypotheses"><span class="header-section-number">14.1</span> One Sample Hypotheses</a>
+  <ul class="collapse">
+  <li><a href="#data-variability" id="toc-data-variability" class="nav-link" data-scroll-target="#data-variability"><span class="header-section-number">14.1.1</span> Data Variability</a></li>
+  </ul></li>
+  <li><a href="#two-sample-hypotheses" id="toc-two-sample-hypotheses" class="nav-link" data-scroll-target="#two-sample-hypotheses"><span class="header-section-number">14.2</span> Two Sample Hypotheses</a></li>
+  <li><a href="#many-sample-hypotheses" id="toc-many-sample-hypotheses" class="nav-link" data-scroll-target="#many-sample-hypotheses"><span class="header-section-number">14.3</span> Many Sample Hypotheses</a>
+  <ul class="collapse">
+  <li><a href="#post-hoc-tests" id="toc-post-hoc-tests" class="nav-link" data-scroll-target="#post-hoc-tests"><span class="header-section-number">14.3.1</span> Post-Hoc Tests</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/tolga-ulkan-9k36QqhA0cU-unsplash.jpg" class="img-fluid figure-img"></p>
+<figcaption>Photo by <a href="https://unsplash.com/@tolga__?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tolga Ulkan</a> on <a href="https://unsplash.com/s/photos/different-means?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>If your data are taken from discrete groups (e.g., treatments), then we are generally testing the equality of each group mean.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Here we explore methods applicable to testing hypotheses about specific parameters, as equal to a specified value (a <span class="math inline">\(t\)</span>-test), equal between two samples (paired <span class="math inline">\(t\)</span>-tests), and equal among more than two groups (analysis of variance).<br>
+In this and the next section, we will examine how to tell the difference between measures of central tendency. This is applied to a single set of data, pairs of data sets, and a data set with many different groups. As we increase the complexity of these hypotheses, we will move through a series of statistical tests, starting with a one-sample <span class="math inline">\(t\)</span>-test, a paired <span class="math inline">\(t\)</span>-test, and then to the general analysis of variance (ANVOA) approaches. All of these methods evaluate the equality of mean values.</p>
+</blockquote>
+<section id="one-sample-hypotheses" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="one-sample-hypotheses"><span class="header-section-number">14.1</span> One Sample Hypotheses</h2>
+<p>At the most basic level, we can take a set of data and test to see if the mean of those values are equated to some particular value, <span class="math inline">\(H_O: \mu = x\)</span> (or <span class="math inline">\(H_O: \mu = 0\)</span> in some cases). The idea here is to determine, by specifying a value for the null hypothesis, what we expect the mean value to be equal to. Going back to our idea of hypothesis testing, the null hypothesis is the thing we are trying to disprove (with some level of statistical confidence) and in doing so we need to define a test statistic that we have an idea about its behavior. In this case, we will define Student’s <span class="math inline">\(t\)</span>-test statistic as:</p>
+<p><span class="math inline">\(t =\frac{\bar{x}-\mu}{s_{\bar{x}}}\)</span></p>
+<p>where <span class="math inline">\(\bar{x}\)</span> is the observed mean of the data, <span class="math inline">\(\mu\)</span> is the mean value specified under the null hypothesis, and <span class="math inline">\(s_{\bar{x}}\)</span> is the standard deviation of the data. The value of the <span class="math inline">\(t\)</span>-statistic can be defined based upon the sample size (e.g., the degrees of freedom, <span class="math inline">\(df\)</span>). Here is what the probability density function looks like for <span class="math inline">\(df = (1,3,\infty)\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( ggplot2 )</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">by=</span><span class="fl">0.02</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">t=</span><span class="fu">c</span>(x,x,x),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">f=</span><span class="fu">c</span>(<span class="fu">dt</span>(x,<span class="at">df=</span><span class="dv">1</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">dt</span>(x,<span class="at">df=</span><span class="dv">3</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">dt</span>(x,<span class="at">df=</span><span class="cn">Inf</span>)),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">df=</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"1"</span>,<span class="st">"3"</span>,<span class="st">"Inf"</span>),<span class="at">each=</span><span class="fu">length</span>(x)))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( d, <span class="fu">aes</span>(<span class="at">x=</span>t,<span class="at">y=</span>f,<span class="at">color=</span>df)) <span class="sc">+</span> <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When <span class="math inline">\(df=\infty\)</span> then <span class="math inline">\(PDF(t) = Normal\)</span>. As such, we do not need to make corrections to understand the area under the curve, we can just use the normal probability density function. In fact, when <span class="math inline">\(df=\infty\)</span> then <span class="math inline">\(t_{\alpha,\infty} = Z_{\alpha} = \sqrt{\chi^2_{\alpha,df=1}}\)</span>! The take home message here is that all your statistics become much easier when <span class="math inline">\(N=\infty\)</span>, so go collect some more data!</p>
+<p>For <span class="math inline">\(df &lt; \infty\)</span> (all the cases we will be dealing with), we will use the approximation defined by the <span class="math inline">\(t\)</span> distribution. If you look at the distributions above, you see that as we increase the number of samples (e.g., as <span class="math inline">\(df\)</span> increases), the distribution becomes more restricted. The actual function is defined (where <span class="math inline">\(df = v\)</span> for simplicity in nomenclature) as:</p>
+<p><span class="math inline">\(P(t|x,v)= \frac{ \Gamma\left( \frac{v+1}{2}\right)}{\sqrt{v\pi}\Gamma\left( \frac{v}{2}\right)} \left( 1 + \frac{x^2}{v}\right)^{-\frac{v+1}{2}}\)</span></p>
+<p>where <span class="math inline">\(\Gamma\)</span> is the Gamma function. Not pretty! Fortunately, we have some built-in facilities in R that can make it easy for us.</p>
+<p>For a single set of data, we can use the function above to estimate a value of the <span class="math inline">\(t\)</span> statistic. The probability distribution, defined by the degrees of freedom, identifies regions within which we may suspect the statistic to be abnormally large. In our case, though it is quite arbitrary, we can define either one or two regions of the distribution whose values would be extreme enough such that we would consider a significant deviation. For a two-tailed test, the distribution below illustrates this concept. If the estimated value of the <span class="math inline">\(t\)</span> statistic is in either of the shaded regions, we would reject the null hypothesis of <span class="math inline">\(H_O: \mu = 0\)</span> where <span class="math inline">\(\alpha=0.05\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">t=</span><span class="fu">c</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="fl">2.064</span>, <span class="at">by=</span><span class="fl">0.02</span>), <span class="sc">-</span><span class="fl">2.064</span>, <span class="sc">-</span><span class="dv">5</span>), </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">f=</span><span class="fu">c</span>( <span class="fu">dt</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="fl">2.064</span>, <span class="at">by=</span><span class="fl">0.02</span>),<span class="at">df=</span><span class="dv">1</span>), <span class="fl">0.01224269</span>, <span class="fl">0.01224269</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">t=</span><span class="fu">c</span>( <span class="fu">seq</span>(<span class="fl">2.064</span>,<span class="dv">5</span>,<span class="at">by=</span><span class="fl">0.02</span>), <span class="dv">5</span>, <span class="fl">2.064</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">f=</span><span class="fu">c</span>( <span class="fu">dt</span>( <span class="fu">seq</span>( <span class="fl">2.064</span>, <span class="dv">5</span>, <span class="at">by=</span><span class="fl">0.02</span>),<span class="at">df=</span><span class="dv">1</span>), <span class="fl">0.01224269</span>, <span class="fl">0.01224269</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">x=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="sc">-</span><span class="fl">2.5</span>), <span class="at">y=</span><span class="fl">0.02719</span>, <span class="at">label=</span><span class="st">"2.5%"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(t,f),<span class="at">data=</span>d1, <span class="at">fill=</span><span class="st">"#F8766D"</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">color=</span><span class="st">"#F8766D"</span>) <span class="sc">+</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(t,f),<span class="at">data=</span>d2, <span class="at">fill=</span><span class="st">"#F8766D"</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">color=</span><span class="st">"#F8766D"</span>) <span class="sc">+</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="fu">aes</span>(t,f),<span class="at">data=</span>d[d<span class="sc">$</span>df<span class="sc">==</span><span class="dv">1</span>,], <span class="at">color=</span><span class="st">"#F8766D"</span>) <span class="sc">+</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>( <span class="fu">aes</span>(x,y,<span class="at">label=</span>label),<span class="at">data=</span>d3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In R, we can use the <code>t.test()</code> function. I’m going to go back to the <em>Iris</em> data set and use that as it has three categories (the species) and many measurements on sepals and pedals. Here I separate the species into their own <code>data.frame</code> objects.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.se <span class="ot">&lt;-</span> iris[ iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>,] </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.ve <span class="ot">&lt;-</span> iris[ iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"versicolor"</span>,] </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df.vi <span class="ot">&lt;-</span> iris[ iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"virginica"</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Lets look at the <code>Sepal.Length</code> feature in these species and create some hypotheses about it.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( iris, <span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We could test the hypothesis, <span class="math inline">\(H_O: mean(Sepal.Length)=6\)</span> for each of the species.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit.se <span class="ot">&lt;-</span> <span class="fu">t.test</span>(df.se<span class="sc">$</span>Sepal.Length, <span class="at">mu =</span> <span class="fl">6.0</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fit.se</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  df.se$Sepal.Length
+t = -19.94, df = 49, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 6
+95 percent confidence interval:
+ 4.905824 5.106176
+sample estimates:
+mean of x 
+    5.006 </code></pre>
+</div>
+</div>
+<p>From the output, it appears that we can reject that null hypothesis (<span class="math inline">\(t =\)</span> -19.9; <span class="math inline">\(df =\)</span> 49; <span class="math inline">\(P =\)</span> 3.7e-25).</p>
+<p>For <em>I. versicolor</em>, we see that the mean does appear to be equal to 6.0 (and thus fail to reject the null hypothesis):</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( df.ve<span class="sc">$</span>Sepal.Length, <span class="at">mu=</span><span class="fl">6.0</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  df.ve$Sepal.Length
+t = -0.87674, df = 49, p-value = 0.3849
+alternative hypothesis: true mean is not equal to 6
+95 percent confidence interval:
+ 5.789306 6.082694
+sample estimates:
+mean of x 
+    5.936 </code></pre>
+</div>
+</div>
+<p>and for <em>I. virginica</em>, we find that it is significantly larger than 6.0 and again reject the null hypothesis:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( df.vi<span class="sc">$</span>Sepal.Length, <span class="at">mu=</span><span class="fl">6.0</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  df.vi$Sepal.Length
+t = 6.5386, df = 49, p-value = 3.441e-08
+alternative hypothesis: true mean is not equal to 6
+95 percent confidence interval:
+ 6.407285 6.768715
+sample estimates:
+mean of x 
+    6.588 </code></pre>
+</div>
+</div>
+<p>In all the output, we are also given an estimate of the Confidence Interval around the mean. This confidence interval is determined as:</p>
+<p><span class="math inline">\(\bar{x} - t_{\alpha, df} s_{\bar{x}} &lt; \mu &lt; \bar{x} + t_{\alpha, df} s_{\bar{x}}\)</span></p>
+<p>or the mean plus or minus standard deviation of the data times the value of the <span class="math inline">\(t\)</span>-statistic for a given level of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(df\)</span>.</p>
+<section id="data-variability" class="level3" data-number="14.1.1">
+<h3 data-number="14.1.1" class="anchored" data-anchor-id="data-variability"><span class="header-section-number">14.1.1</span> Data Variability</h3>
+<p>There are times when reporting some confidence around a parameter is important, particularly when using tabular data as output.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Iris setosa"</span>,<span class="st">"Iris versicolor"</span>,<span class="st">"Iris virginia"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Sepal.Length <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(df.se<span class="sc">$</span>Sepal.Length), <span class="fu">mean</span>(df.ve<span class="sc">$</span>Sepal.Length), <span class="fu">mean</span>( df.vi<span class="sc">$</span>Sepal.Length))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Sepal.Length.SE <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sd</span>(df.se<span class="sc">$</span>Sepal.Length), <span class="fu">sd</span>(df.ve<span class="sc">$</span>Sepal.Length), <span class="fu">sd</span>( df.vi<span class="sc">$</span>Sepal.Length))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>Sepal.Length.SEM <span class="ot">&lt;-</span> Sepal.Length.SE <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are two ways we can talk about the data and it is important for you to think about what you are trying to communicate to your readers. These alternatives include:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">paste</span>( <span class="fu">format</span>(Sepal.Length,<span class="at">digits=</span><span class="dv">2</span>), <span class="st">"+/-"</span>, <span class="fu">format</span>(Sepal.Length.SE, <span class="at">digits=</span><span class="dv">3</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">paste</span>( <span class="fu">format</span>(Sepal.Length,<span class="at">digits=</span><span class="dv">2</span>), <span class="st">"+/-"</span>, <span class="fu">format</span>(Sepal.Length.SEM, <span class="at">digits=</span><span class="dv">3</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( Species, sd, se )</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Mean +/- SD"</span>, <span class="st">"Sepal Length +/- SE"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(df,<span class="at">row.names =</span> <span class="cn">FALSE</span>,<span class="at">digits =</span> <span class="dv">3</span>,<span class="at">align =</span> <span class="st">"lcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: center;">Mean +/- SD</th>
+<th style="text-align: center;">Sepal Length +/- SE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Iris setosa</td>
+<td style="text-align: center;">5.0 +/- 0.352</td>
+<td style="text-align: center;">5.0 +/- 0.0498</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iris versicolor</td>
+<td style="text-align: center;">5.9 +/- 0.516</td>
+<td style="text-align: center;">5.9 +/- 0.0730</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iris virginia</td>
+<td style="text-align: center;">6.6 +/- 0.636</td>
+<td style="text-align: center;">6.6 +/- 0.0899</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The two columns of data tell us something different. The middle column tells us the mean and the standard deviation of the data. This tells us about the variability (and confidence) of the data itself. The last column is the Standard Error of the Mean (<span class="math inline">\(\frac{s}{\sqrt{N}}\)</span>) and gives us an idea of the confidence we have about the <em>mean</em> estimate of the data (as opposed to the variation of the data itself). These are two different statements about the data and you need to make sure you are confident about which way you want to use to communicate to your audience.</p>
+</section>
+</section>
+<section id="two-sample-hypotheses" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="two-sample-hypotheses"><span class="header-section-number">14.2</span> Two Sample Hypotheses</h2>
+<p>In addition to a single sample test, evaluating if the mean of a set of data is equal to some specified value, we can test the equality of two different samples. It may be the case that the average sepal length for <em>I. versicolor</em> is not significantly different than 6.0 whereas <em>I. virginia</em> is. However, this does not mean that the mean of both of these species are significantly different from each other. This is a two-sampled hypothesis, stating that <span class="math inline">\(H_O: \mu_X = \mu_Y\)</span>.</p>
+<p>Visually, these data look like:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> iris[ (iris<span class="sc">$</span>Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"versicolor"</span>,<span class="st">"virginica"</span>)),]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( df, <span class="fu">aes</span>(<span class="at">x=</span>Species, <span class="at">y=</span>Sepal.Length)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">notch=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>which clearly overlap in their distributions but are the mean values different? This sets up the null hypothesis:</p>
+<p><span class="math inline">\(H_O: \mu_1 - \mu_2 = 0\)</span></p>
+<p>Under this hypothesis, we can use a <em>t</em>-test like before but just rearranged as:</p>
+<p><span class="math inline">\(t = \frac{\bar{x}_1 - \bar{x}_2}{s_{\bar{x}_1-\bar{x}_2}}\)</span></p>
+<p>As before, if the difference in the numerator is small we would reject but here we need to standardize the differences in the means by a measure of the standard deviation that is based upon both sets of data. This is called a the <em>standard error of the difference in two means</em> (real catchy title, no?). This is defined as:</p>
+<p><span class="math inline">\(s_{\bar{x}_1-\bar{x}_2} = \sqrt{ \frac{s_1^2}{N_1}+\frac{s_2^2}{N}}\)</span></p>
+<p>To test this, we use the same approach as before but instead of defining <span class="math inline">\(\mu = 6.0\)</span> in the <code>t.test()</code> function, we instead give it both data sets.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( <span class="at">x=</span>df.vi<span class="sc">$</span>Sepal.Length, <span class="at">y =</span> df.ve<span class="sc">$</span>Sepal.Length )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  df.vi$Sepal.Length and df.ve$Sepal.Length
+t = 5.6292, df = 94.025, p-value = 1.866e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.4220269 0.8819731
+sample estimates:
+mean of x mean of y 
+    6.588     5.936 </code></pre>
+</div>
+</div>
+<p>Here we get a few bits of new information from the analysis. It is obvious that we would reject the null hypothesis given the magnitude of the estimated <span class="math inline">\(P\)</span>-value. The output also provides us an estimate of the mean values for each group as well as the confidence around the difference in the mean values. This confidence interval does not overlap 0.0, as it shouldn’t if we reject <span class="math inline">\(H_O: \mu_X = \mu_Y\)</span>.</p>
+</section>
+<section id="many-sample-hypotheses" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="many-sample-hypotheses"><span class="header-section-number">14.3</span> Many Sample Hypotheses</h2>
+<p>If we have more than two samples, we could do a bunch of paired <span class="math inline">\(t\)</span>-test statistics but this is not the best idea. In fact, if we do this to our data, each time testing at a confidence level of, say, <span class="math inline">\(\alpha = 0.05\)</span>, then for each time we test at <span class="math inline">\(0.05\)</span> but over all pairs, we test at an overall level of <span class="math inline">\(0.05^k\)</span> (where <span class="math inline">\(k\)</span> is the number of tests) value. We cannot do multiple tests without penalizing ourselves in terms of the level at which we consider something significant if we are going to do all these tests. You may have heard about a Bonferroni correction—this does exactly that, it allows us to modify the <span class="math inline">\(\alpha\)</span> level we use to take into consideration the number of tests we are going to use. While this may be an acceptable way to test for the equality of several means (and it may not actually be if you ask most statisticians), there is another way that is much easier.</p>
+<p>Consider the case where we have many categories (e.g., factors in R) that we are interested in determining if the mean of all are equal. The null hypothesis for this is, <span class="math inline">\(H_O: \mu_1 = \mu_2 = \ldots = \mu_k\)</span>, where there are <span class="math inline">\(k\)</span> different treatment levels. This is essentially what we’d want to do by doing a bunch of <span class="math inline">\(t\)</span>-tests but we can use another approach that we don’t have to penalize ourselves for multiple tests. Here is how it works.</p>
+<p>In the <em>Iris</em> data, we can visualize the means and variation around them by using box plots. Here is an example.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( iris, <span class="fu">aes</span>(<span class="at">x=</span>Species, <span class="at">y=</span>Sepal.Length)) <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Sepal Length"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For us to tell if there are statistical differences among the species, we need to look at both the location of the mean values as well as the variation around them. We do this by partitioning the variation in all the data into the components within each treatment (species) and among each treatment (species) using an approach derived from the sum of squared deviations (or Sums of Squares). Formally, we can estimate the sum of squares within each of the <span class="math inline">\(K\)</span> groupings as:</p>
+<p><span class="math inline">\(SS_{Within} = \sum_{i=1}^K\left( \sum_{j=1}^{N_i}(x_{ij}-\bar{x}_i)^2 \right)\)</span></p>
+<p>whose degrees of freedom are defined as:</p>
+<p><span class="math inline">\(df_{W} = \sum_{i=1}^K \left( N_i - 1 \right) = N-K\)</span></p>
+<p>These parameters represent the deviation among samples within groups and the number of independent samples within these groups. We also need to partition out the variation among groups as a similarly defined Sums of Squares:</p>
+<p><span class="math inline">\(SS_{Among} = \sum_{i=1}^K N_i\left( \bar{x}_i - \bar{x} \right)^2\)</span></p>
+<p>or the deviation among the mean of each treatment compared to the overall mean of all the data. This parameter has degrees of freedom equal to</p>
+<p><span class="math inline">\(df_{A} = K - 1\)</span></p>
+<p>These two parameters describe all the data and as such <span class="math inline">\(SS_{Total} = SS_{Within} + SS_{Among}\)</span>. Formally, we see that</p>
+<p><span class="math inline">\(SS_{Total} = \sum_{i=1}^K\sum_{j=1}^{N_i} (x_{ij} - \bar{x})^2\)</span></p>
+<p>whose degrees of freedom are</p>
+<p><span class="math inline">\(df_{T} = N - 1\)</span></p>
+<p>For each of these Sums of Squared deviations, we can standardize them using the degrees of freedom. The notion here is that with more samples, and more treatments, we will have greater <span class="math inline">\(SS\)</span> values. However, if we standardize these parameters by the <span class="math inline">\(df\)</span>, we can come up with a standardized Mean Squared values (simplified as <span class="math inline">\(MS = \frac{SS}{df}\)</span> for each level).</p>
+<p>If we look at all these values, we can create the venerable ANOVA table with Among, Within, and Total partitions of the variation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 51%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>df</th>
+<th>SS</th>
+<th>MS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Among</td>
+<td><span class="math inline">\(K-1\)</span></td>
+<td><span class="math inline">\(\sum_{i=1}^K N_i \left( \bar{x}_i - \bar{x} \right)^2\)</span></td>
+<td><span class="math inline">\(\frac{SS_A}{K-1}\)</span></td>
+</tr>
+<tr class="even">
+<td>Within</td>
+<td><span class="math inline">\(N-K\)</span></td>
+<td><span class="math inline">\(\sum_{i=1}^Kn_i\left( \sum_{j=1}^{N_i}(x_{ij}-\bar{x}_i)^2 \right)\)</span></td>
+<td><span class="math inline">\(\frac{SS_W}{N-K}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td><span class="math inline">\(N-1\)</span></td>
+<td><span class="math inline">\(\sum_{i=1}^K \sum_{j=1}^{N_i} (x_{ij} - \bar{x})^2\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>In R, we can evaluate the equality of means by partitioning our data as depicted above. Essentially, if at least one of our treatments means deviate significantly, then the <span class="math inline">\(MS_A\)</span> will be abnormally large relative to the variation within each treatment <span class="math inline">\(MS_W\)</span>. This gives us a statistic, defined by the American statistician Snedekor as:</p>
+<p><span class="math inline">\(F = \frac{MS_A}{MS_W}\)</span></p>
+<p>as an homage to Ronald Fisher (the F-statistic) has a pretty well understood distribution under a few conditions. This statistic has an expectation of:</p>
+<p><span class="math inline">\(f(x | df_A, df_W) = \frac{\sqrt{\frac{(df_Ax)^{df_A}df_W^{df_W}}{(df_Ax + df_W)^{df_W+df_A}}}}{x\mathbf{B}\left( \frac{df_A}{2}, \frac{df_W}{2} \right)}\)</span></p>
+<p>which is even more of a mess than that for the <span class="math inline">\(t\)</span>-test! Luckily, we have a bit of code to do this for us.</p>
+<p>Here is an example using the <em>Iris</em> data. Here we test the hypothesis that the Sepal Lengths are all the same (e.g., <span class="math inline">\(H_O: \mu_{se} = \mu_{ve} = \mu_{vi}\)</span>)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fit.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>( Sepal.Length <span class="sc">~</span> Species, <span class="at">data=</span>iris)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fit.aov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+   aov(formula = Sepal.Length ~ Species, data = iris)
+
+Terms:
+                 Species Residuals
+Sum of Squares  63.21213  38.95620
+Deg. of Freedom        2       147
+
+Residual standard error: 0.5147894
+Estimated effects may be unbalanced</code></pre>
+</div>
+</div>
+<p>The function called here, <code>aov()</code> is the one that does the Analysis of Variance. It returns an object that has the necessary data we need. To estimate the ANOVA table as outlined above we ask for it as:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.aov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: Sepal.Length
+           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+Species     2 63.212  31.606  119.26 &lt; 2.2e-16 ***
+Residuals 147 38.956   0.265                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>which shows that the “Species” treatment are significantly different from each other, with an <span class="math inline">\(F\)</span> statistic equal to <span class="math inline">\(F = 119.3\)</span>, which with 2 and 147 degrees of freedom is assigned a probability equal to <span class="math inline">\(2e^{-16}\)</span>, a very small value!</p>
+<section id="post-hoc-tests" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="post-hoc-tests"><span class="header-section-number">14.3.1</span> Post-Hoc Tests</h3>
+<p>What this analysis tells us is that <em>at least</em> one of the treatment means are different from the rest. What it does not tell us is which one or which subset. It could be that <em>I. setosa</em> is significantly smaller than both <em>I. versitosa</em> and <em>I. virginia</em>. It could be that <em>I. virginia</em> is significantly larger than the others, who are not different. It could also mean that they are all different. To address this, we can estimate a <em>post hoc</em> test, to evaluate the difference between treatment means within this model itself.</p>
+<p>One of the most common ways to evaluate the equality of treatment mean values is that defined by Tukey. The so-called “Honest Significant Differences” <em>post hoc</em> test is given by</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tuk <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(fit.aov)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tuk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Sepal.Length ~ Species, data = iris)
+
+$Species
+                      diff       lwr       upr p adj
+versicolor-setosa    0.930 0.6862273 1.1737727     0
+virginica-setosa     1.582 1.3382273 1.8257727     0
+virginica-versicolor 0.652 0.4082273 0.8957727     0</code></pre>
+</div>
+</div>
+<p>which breaks down the pair-wise differences in the mean of each treatment. Here we see the magnitude of the differences in mean values, the lower and upper confidence on the differences, and the probability associated with these differences. In this example, all three comparisons are highly unlikely (e.g., <span class="math inline">\(P\)</span> is very small and in this case essentially zero). As a result, we can interpret these results as suggesting that each of the three species have significantly different. If we plot these results, we see which ones are larger and which are smaller.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( tuk )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="narrative_aov_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which shows the difference between treatment mean between all pairs of treatments. Overall, we see that the <em>Iris</em> species are all significantly different.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./narrative_regression.html" class="pagination-link" aria-label="Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./narrative_ordination.html" class="pagination-link" aria-label="Ordination">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -43,3 +43,4 @@ vignettes/*.pdf
 /.quarto/
 README.html
 README_files/*
+*.rmarkdown

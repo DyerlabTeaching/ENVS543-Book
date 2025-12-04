@@ -2,7 +2,7 @@
 title: "Data Containers"
 ---
 
-![](media/teng-yuhong-qMehmIyaXvY-unsplash.jpg)
+![Image by Teng Yuhong from <a href="https://unsplash.com">Unsplash</a>](media/teng-yuhong-qMehmIyaXvY-unsplash.jpg)
 
 > Data needs to be contained within objects so that we can examine, manipulate, sort, analyze, and communicate about it. In this topic, we examine some of the more basic
 
@@ -479,6 +479,4 @@ beetles %>%
   addMarkers( ~Longitude, ~Latitude,popup = ~Stratum )
 ```
 
-## Questions
 
-If you have any questions for me specifically on this topic, please post as an Issue in your repository, otherwise consider posting to the discussion board on [Canvas](https://canvas.vcu.edu).

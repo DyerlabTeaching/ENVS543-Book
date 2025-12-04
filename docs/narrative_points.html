@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Point Data – ENVS543-Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./narrative_rasters.html" rel="next">
+<link href="./narrative_ggplot.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./narrative_points.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ENVS543-Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_containers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Containers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_joins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_classic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_points.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_rasters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_aov.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_ordination.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">10.1</span> Learning Objectives</a></li>
+  <li><a href="#ellipsoids" id="toc-ellipsoids" class="nav-link" data-scroll-target="#ellipsoids"><span class="header-section-number">10.2</span> Ellipsoids</a>
+  <ul class="collapse">
+  <li><a href="#example-data" id="toc-example-data" class="nav-link" data-scroll-target="#example-data"><span class="header-section-number">10.2.1</span> Example Data</a></li>
+  <li><a href="#azimuth-projections" id="toc-azimuth-projections" class="nav-link" data-scroll-target="#azimuth-projections"><span class="header-section-number">10.2.2</span> Azimuth Projections</a></li>
+  <li><a href="#cylindrical-projection" id="toc-cylindrical-projection" class="nav-link" data-scroll-target="#cylindrical-projection"><span class="header-section-number">10.2.3</span> Cylindrical Projection</a></li>
+  <li><a href="#conic-projections" id="toc-conic-projections" class="nav-link" data-scroll-target="#conic-projections"><span class="header-section-number">10.2.4</span> Conic Projections</a></li>
+  </ul></li>
+  <li><a href="#datum" id="toc-datum" class="nav-link" data-scroll-target="#datum"><span class="header-section-number">10.3</span> Datum</a></li>
+  <li><a href="#defining-projections" id="toc-defining-projections" class="nav-link" data-scroll-target="#defining-projections"><span class="header-section-number">11</span> Defining Projections</a></li>
+  <li><a href="#point-data" id="toc-point-data" class="nav-link" data-scroll-target="#point-data"><span class="header-section-number">12</span> Point Data</a>
+  <ul class="collapse">
+  <li><a href="#sf-objects" id="toc-sf-objects" class="nav-link" data-scroll-target="#sf-objects"><span class="header-section-number">12.1</span> <code>sf</code> Objects</a>
+  <ul class="collapse">
+  <li><a href="#reprojecting" id="toc-reprojecting" class="nav-link" data-scroll-target="#reprojecting"><span class="header-section-number">12.1.1</span> Reprojecting</a></li>
+  <li><a href="#plotting-sf-objects" id="toc-plotting-sf-objects" class="nav-link" data-scroll-target="#plotting-sf-objects"><span class="header-section-number">12.1.2</span> Plotting <code>sf</code> Objects</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#map-overlays" id="toc-map-overlays" class="nav-link" data-scroll-target="#map-overlays"><span class="header-section-number">13</span> Map Overlays</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/DyerlabTeaching/Spatial-Points/raw/main/media/ru-recovery-ministries-zXM5Yl7MX5k-unsplash.jpg" class="img-fluid figure-img"></p>
+<figcaption>Photo from <a href="https://unsplash.com/s/photos/map-flags?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Everything is related to everything else, but near things are more related to each other. Tobler’s First Law of Geography<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<p>Let’s start by loading in some of the libraries we’ll be using for this exercise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( sf )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.13.0, GDAL 3.8.5, PROJ 9.5.1; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( maps )</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( mapproj )</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( ggplot2 )</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( tidyverse )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ lubridate 1.9.4     ✔ tibble    3.3.0
+✔ purrr     1.2.0     ✔ tidyr     1.3.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+✖ purrr::map()    masks maps::map()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50504854173_2080b28f87_c_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Baja California</figcaption>
+</figure>
+</div>
+</center>
+<section id="learning-objectives" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">10.1</span> Learning Objectives</h2>
+<p>This topics is the first</p>
+<ul>
+<li><p>Describe the importance of Ellipsoids &amp; Datum in spatial data.</p></li>
+<li><p>Use both <code>sf</code> &amp; <code>ggplot</code> in visualizing point data.</p></li>
+<li><p>Be able to transform point data from one projection to another.</p></li>
+</ul>
+</section>
+<section id="ellipsoids" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="ellipsoids"><span class="header-section-number">10.2</span> Ellipsoids</h2>
+<p>Unless you are in PHYS 101, the earth is not a perfect sphere (😉). It is an irregularly shaped object that we need to be able to characterize if we are going to develop a system of placing points onto it and doing things such as measuring distance, finding watersheds, or defining boundaries.</p>
+<p>There has been a long history of ellipsoid research, all of which has been sought to increase our ability to map and move across the earth. The following table gives some historical and contemporary ellipsoids.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ellipsoid</th>
+<th style="text-align: center;">Equatorial Radius (m)</th>
+<th style="text-align: center;">Polar Radius (m)</th>
+<th>Used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maupertuis (1738)</td>
+<td style="text-align: center;">6,397,300</td>
+<td style="text-align: center;">6,363,806.283</td>
+<td>France</td>
+</tr>
+<tr class="even">
+<td>Plessis (1817)</td>
+<td style="text-align: center;">6,376,523.0</td>
+<td style="text-align: center;">6,355,862.9333</td>
+<td>France</td>
+</tr>
+<tr class="odd">
+<td>Everest (1830)</td>
+<td style="text-align: center;">6,377,299.365</td>
+<td style="text-align: center;">6,356,098.359</td>
+<td>India</td>
+</tr>
+<tr class="even">
+<td>Everest 1830 Modified (1967)</td>
+<td style="text-align: center;">6,377,304.063</td>
+<td style="text-align: center;">6,356,103.0390</td>
+<td>West Malaysia &amp; Singapore</td>
+</tr>
+<tr class="odd">
+<td>Everest 1830 (1967 Definition)</td>
+<td style="text-align: center;">6,377,298.556</td>
+<td style="text-align: center;">6,356,097.550</td>
+<td>Brunei &amp; East Malaysia</td>
+</tr>
+<tr class="even">
+<td>Airy (1830)</td>
+<td style="text-align: center;">6,377,563.396</td>
+<td style="text-align: center;">6,356,256.909</td>
+<td>Britain</td>
+</tr>
+<tr class="odd">
+<td>Bessel (1841)</td>
+<td style="text-align: center;">6,377,397.155</td>
+<td style="text-align: center;">6,356,078.963</td>
+<td>Europe, Japan</td>
+</tr>
+<tr class="even">
+<td>Clarke (1866)</td>
+<td style="text-align: center;">6,378,206.4</td>
+<td style="text-align: center;">6,356,583.8</td>
+<td>North America</td>
+</tr>
+<tr class="odd">
+<td>Clarke (1878)</td>
+<td style="text-align: center;">6,378,190</td>
+<td style="text-align: center;">6,356,456</td>
+<td>North America</td>
+</tr>
+<tr class="even">
+<td>Clarke (1880)</td>
+<td style="text-align: center;">6,378,249.145</td>
+<td style="text-align: center;">6,356,514.870</td>
+<td>France, Africa</td>
+</tr>
+<tr class="odd">
+<td>Helmert (1906)</td>
+<td style="text-align: center;">6,378,200</td>
+<td style="text-align: center;">6,356,818.17</td>
+<td>Egypt</td>
+</tr>
+<tr class="even">
+<td>Hayford (1910)</td>
+<td style="text-align: center;">6,378,388</td>
+<td style="text-align: center;">6,356,911.946</td>
+<td>USA</td>
+</tr>
+<tr class="odd">
+<td>International (1924)</td>
+<td style="text-align: center;">6,378,388</td>
+<td style="text-align: center;">6,356,911.946</td>
+<td>Europe</td>
+</tr>
+<tr class="even">
+<td>Krassovsky (1940)</td>
+<td style="text-align: center;">6,378,245</td>
+<td style="text-align: center;">6,356,863.019</td>
+<td>USSR, Russia, Romania</td>
+</tr>
+<tr class="odd">
+<td>WGS66 (1966)</td>
+<td style="text-align: center;">6,378,145</td>
+<td style="text-align: center;">6,356,759.769</td>
+<td>USA/DoD</td>
+</tr>
+<tr class="even">
+<td>Australian National (1966)</td>
+<td style="text-align: center;">6,378,160</td>
+<td style="text-align: center;">6,356,774.719</td>
+<td>Australia</td>
+</tr>
+<tr class="odd">
+<td>New International (1967)</td>
+<td style="text-align: center;">6,378,157.5</td>
+<td style="text-align: center;">6,356,772.2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>GRS-67 (1967)</td>
+<td style="text-align: center;">6,378,160</td>
+<td style="text-align: center;">6,356,774.516</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>South American (1969)</td>
+<td style="text-align: center;">6,378,160</td>
+<td style="text-align: center;">6,356,774.719</td>
+<td>South America</td>
+</tr>
+<tr class="even">
+<td>WGS-72 (1972)</td>
+<td style="text-align: center;">6,378,135</td>
+<td style="text-align: center;">6,356,750.52</td>
+<td>USA/DoD</td>
+</tr>
+<tr class="odd">
+<td>GRS-80 (1979)</td>
+<td style="text-align: center;">6,378,137</td>
+<td style="text-align: center;">6,356,752.3141</td>
+<td>Global ITRS</td>
+</tr>
+<tr class="even">
+<td>WGS-84 (1984)</td>
+<td style="text-align: center;">6,378,137</td>
+<td style="text-align: center;">6,356,752.3142</td>
+<td>Global GPS</td>
+</tr>
+<tr class="odd">
+<td>IERS (1989)</td>
+<td style="text-align: center;">6,378,136</td>
+<td style="text-align: center;">6,356,751.302</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>IERS (2003)</td>
+<td style="text-align: center;">6,378,136.6</td>
+<td style="text-align: center;">6,356,751.9</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The most common ones you will probably run across include <code>GRS80</code>/<code>NAD83</code> (derived from satellite measurements of the distance of the surface to the core of the planet ) and <code>WGS-84</code> (an ellipsoid based upon GPS).</p>
+<section id="example-data" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="example-data"><span class="header-section-number">10.2.1</span> Example Data</h3>
+<p>To examine the differences between ellipsoids, let’s load in some data first. Here are some point data that can be interpreted as polygons and represent the lower 48 states of the US.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( states )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       long      lat group order  region subregion
+1 -87.46201 30.38968     1     1 alabama      &lt;NA&gt;
+2 -87.48493 30.37249     1     2 alabama      &lt;NA&gt;
+3 -87.52503 30.37249     1     3 alabama      &lt;NA&gt;
+4 -87.53076 30.33239     1     4 alabama      &lt;NA&gt;
+5 -87.57087 30.32665     1     5 alabama      &lt;NA&gt;
+6 -87.58806 30.32665     1     6 alabama      &lt;NA&gt;</code></pre>
+</div>
+</div>
+<p>Each row is a point that is associated with a group (in this case the state) and is plot in a specific order (to make the outline of the state). There are 15,537 points required to make the plot, with the following 49 regions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>( states<span class="sc">$</span>region )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "alabama"              "arizona"              "arkansas"            
+ [4] "california"           "colorado"             "connecticut"         
+ [7] "delaware"             "district of columbia" "florida"             
+[10] "georgia"              "idaho"                "illinois"            
+[13] "indiana"              "iowa"                 "kansas"              
+[16] "kentucky"             "louisiana"            "maine"               
+[19] "maryland"             "massachusetts"        "michigan"            
+[22] "minnesota"            "mississippi"          "missouri"            
+[25] "montana"              "nebraska"             "nevada"              
+[28] "new hampshire"        "new jersey"           "new mexico"          
+[31] "new york"             "north carolina"       "north dakota"        
+[34] "ohio"                 "oklahoma"             "oregon"              
+[37] "pennsylvania"         "rhode island"         "south carolina"      
+[40] "south dakota"         "tennessee"            "texas"               
+[43] "utah"                 "vermont"              "virginia"            
+[46] "washington"           "west virginia"        "wisconsin"           
+[49] "wyoming"             </code></pre>
+</div>
+</div>
+<p>Fortunately for us, our old friend <code>ggplot</code> has a bit of magic that can do this kind of plotting for us.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( ggplot2 )</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( states, <span class="fu">aes</span>( <span class="at">x =</span> long, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> lat,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">group =</span> group ) ) <span class="sc">+</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>( <span class="at">fill =</span> <span class="st">"lightgray"</span>, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"black"</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">lwd =</span> <span class="fl">0.25</span>) <span class="sc">+</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="ot">-&gt;</span> p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="azimuth-projections" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="azimuth-projections"><span class="header-section-number">10.2.2</span> Azimuth Projections</h3>
+<p>An Azimuth Projection is one that is formed by a 2-dimensional plane that is tangential to the surface of the earth at example one point. This point may be polar (north or south pole) or oblique (e.g., over Richmond, Virginia).</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50437120363_d8e0686d38_w_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Azequidistant</figcaption>
+</figure>
+</div>
+</center>
+<p>We can apply different ellipsoids to the map <em>when we plot it</em> by adjusting the coordinate space it is plot within using the <code>coord_map()</code> modification. For a whole list of available projections, see <code>?mapproject</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_map</span>( <span class="st">"azequalarea"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cylindrical-projection" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="cylindrical-projection"><span class="header-section-number">10.2.3</span> Cylindrical Projection</h3>
+<p>A cylindrical projection is one where a cylinder is wrapped around the earth creating straight lines for all parallel away from the equator.</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50437120498_8dd67df3f1_w_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Cylindrical Projection</figcaption>
+</figure>
+</div>
+</center>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_map</span>(<span class="st">"cylindrical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conic-projections" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="conic-projections"><span class="header-section-number">10.2.4</span> Conic Projections</h3>
+<p>Conic projections are symmetric around the prime meridian and all parallels are segments of conecntric circles.</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50437120428_6da48bed81_w_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Conic Projection</figcaption>
+</figure>
+</div>
+</center>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_map</span>( <span class="st">"conic"</span>, <span class="at">lat0 =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="datum" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="datum"><span class="header-section-number">10.3</span> Datum</h2>
+<p>Once we have an ellipsoid model to work with we must define a <em>DATUM</em> type that will represent the coordiante system used. Two common DATUM types include:</p>
+<ul>
+<li><em>Longitude &amp; Latitude</em> - The East/West &amp; North/South position on the surface of the earth.
+<ul>
+<li>Prime Meridian (0° Longitude) passes thorugh the <a href="https://en.wikipedia.org/wiki/Royal_Observatory,_Greenwich">Royal Observatory</a> in Greenwich England, with positive values of longitude to the east and negative to the west.</li>
+<li>Equator (0° Latitude) and is defined as the point on the planet where both northern and southern hemisphers have equal amounts of day and night at the <a href="https://en.wikipedia.org/wiki/Equinox">equinox</a> (Sept.&nbsp;21 &amp; March 21).</li>
+<li>Richmond, Virginia: 37.533333 Latitude, -77.466667 Longitude</li>
+</ul></li>
+<li><em>Universal Trans Mercator</em> - A division of the earth into 60 zones (~6°longitude each, labeled 01 - 60) and 20 bands each of which is ~8° latitude (labeled C-X excluding I &amp; O with A &amp; B dividing up Antartica). See image <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system#/media/File:Universal_Transverse_Mercator_zones.svg">here</a>.
+<ul>
+<li>Coordinates include Zone &amp; band designation as well as coordinates in Easting and Northing (planar coordinates within the zone) measured in meters.</li>
+<li>Richmond, Virginia: 18S 282051 4156899</li>
+</ul></li>
+</ul>
+<div class="box-red">
+<table>
+<tbody><tr>
+<td>
+<font style="font-size: 350%">⚠️</font>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+You <strong>must</strong> set both the ellipsoid and datum to be <strong>EXACTLY THE SAME</strong> for all of your data before you can do any work with it. If they are not on the same lumpy bumpy planet or in the same coordinate system, you will be screwed (that is a technical term).
+</td>
+</tr>
+</tbody></table>
+</div>
+</section>
+<section id="defining-projections" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Defining Projections</h1>
+<p>Projections are a combination of the underlying elipse as well as the definition of the datum. There are literally thousands of recognized projections, each of which has to be able to be sufficiently defined such that we can convert from one recognized projection to another<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>One of the repositories for these projections can be found at <a href="https://epsg.io">epsg.io</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://epsg.io"><img src="https://live.staticflickr.com/65535/50445538736_bc1c3456e5_k_d.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>epsg.io</figcaption>
+</figure>
+</div>
+<p>The EPSG Geodetic Parameter Dataset (also known as the EPGS<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> registry) is a publc registry of datums, spatial reference systems, and earth elipsoids. Each item is assigned a specific EPSG code</p>
+<p>The precise definitions of projections come in several different formats, some of which include:</p>
+<p><tt>Well Known Text (WKT)</tt></p>
+<pre><code>GEOGCS["WGS 84",
+    DATUM["WGS_1984",
+        SPHEROID["WGS 84",6378137,298.257223563,
+            AUTHORITY["EPSG","7030"]],
+        AUTHORITY["EPSG","6326"]],
+    PRIMEM["Greenwich",0,
+        AUTHORITY["EPSG","8901"]],
+    UNIT["degree",0.0174532925199433,
+        AUTHORITY["EPSG","9122"]],
+    AUTHORITY["EPSG","4326"]]</code></pre>
+<p><tt>PROJ.4</tt></p>
+<pre><code>+proj=longlat +datum=WGS84 +no_defs </code></pre>
+<p>If you work with ESRI software, when you have a projected shapefile, one of the several files that go with that shapefile is the <code>.prj</code> file which will contain the <tt>ESRI WKT</tt> below.</p>
+<pre><code>GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]</code></pre>
+<div class="box-green">
+<table>
+<tbody><tr>
+<td>
+Always let the underlying software make any changes to projection information. There is a lot of difficult conversions that need to happen to reproject from one CRS to another.
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<font style="font-size: 350%">🌎</font>
+</td>
+</tr>
+</tbody></table>
+</div>
+</section>
+<section id="point-data" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Point Data</h1>
+<p>To start off, we will load in some data from the bark beetle, <em>Araptus attenuatus</em>, a Sonoran Desert endemic parasite that lives within the plant <em>Euphorbia lomelii</em>.</p>
+<table>
+<tbody><tr>
+<td>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50441339417_74e04216fa_w_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Araptus attenuatus</figcaption>
+</figure>
+</div>
+</td>
+<td>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://live.staticflickr.com/65535/50441175211_ba3b9df2ea_w_d.jpg" class="img-fluid figure-img"></p>
+<figcaption>Euphorbia lomelii</figcaption>
+</figure>
+</div>
+</td>
+</tr>
+</tbody></table>
+<p>As part of some work that we have done on these species, we have looked at the relationship between habitat suitability and sex ratio bias. The life history for this beetle is such that males will establish home by burrowing in the senescing tissues of the host plant. Once established, feamles are attracted via phermones.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/dyerlab/ENVS-Lectures/master/data/Araptus_Disperal_Bias.csv"</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>( url ) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>( Site, Longitude, Latitude, <span class="fu">everything</span>() ) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>( Latitude ) <span class="ot">-&gt;</span> data </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 31 Columns: 9
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Site
+dbl (8): Males, Females, Suitability, MFRatio, GenVarArapat, GenVarEuphli, L...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Site             Longitude         Latitude         Males      
+ Length:31          Min.   :-114.3   Min.   :23.29   Min.   : 9.00  
+ Class :character   1st Qu.:-113.1   1st Qu.:24.95   1st Qu.:16.00  
+ Mode  :character   Median :-112.0   Median :26.64   Median :21.00  
+                    Mean   :-112.0   Mean   :26.44   Mean   :25.68  
+                    3rd Qu.:-110.8   3rd Qu.:27.78   3rd Qu.:31.50  
+                    Max.   :-109.3   Max.   :29.33   Max.   :64.00  
+    Females       Suitability        MFRatio        GenVarArapat   
+ Min.   : 5.00   Min.   :0.0563   Min.   :0.5938   Min.   :0.0500  
+ 1st Qu.:15.50   1st Qu.:0.2732   1st Qu.:0.8778   1st Qu.:0.1392  
+ Median :21.00   Median :0.3975   Median :1.1200   Median :0.2002  
+ Mean   :23.52   Mean   :0.4276   Mean   :1.1598   Mean   :0.2006  
+ 3rd Qu.:29.00   3rd Qu.:0.5442   3rd Qu.:1.3618   3rd Qu.:0.2592  
+ Max.   :63.00   Max.   :0.9019   Max.   :2.2000   Max.   :0.3379  
+  GenVarEuphli   
+ Min.   :0.0500  
+ 1st Qu.:0.1777  
+ Median :0.2171  
+ Mean   :0.2203  
+ 3rd Qu.:0.2517  
+ Max.   :0.5122  </code></pre>
+</div>
+</div>
+<p>We can plot these points using the normal <code>ggplot</code> functions (map overlays below).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>( Longitude, Latitude ) ) <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>( <span class="fu">aes</span>(<span class="at">label=</span>Site) ) <span class="sc">+</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also plot these locations and fill in some interpretive data using the <code>leaflet</code> library to create an interactive map as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( leaflet )</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( <span class="at">Label =</span> <span class="fu">paste</span>( <span class="st">"&lt;b&gt;Site:"</span>, Site, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"&lt;/b&gt;&lt;hr&gt;</span><span class="sc">\n</span><span class="st">Females:"</span>, Females, </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"&lt;br&gt;Males: "</span>, Males,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"&lt;br&gt;Suitability:"</span>, Suitability) ) <span class="sc">|&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>( <span class="sc">~</span>Longitude, <span class="sc">~</span>Latitude, <span class="at">popup =</span> <span class="sc">~</span>Label ) <span class="sc">|&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>( <span class="st">"OpenTopoMap"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-18b6fc0408cd0ecf81f0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-18b6fc0408cd0ecf81f0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[[23.2855,24.00789,24.0195,24.13389,24.2115,24.21441,24.58843,24.87611,25.0247,25.34819,25.55757,25.60521,25.91409,26.0155,26.20876,26.63783,26.94589,27.0367,27.18232,27.2028,27.3632,27.40498,27.52944,28.03661,28.22308,28.40846,28.66056,28.72796,28.96651,29.01457,29.32541],[-110.10429,-109.85071,-110.096,-110.46236,-110.951,-110.27252,-110.74599,-110.69175,-111.675,-111.60056,-111.21563,-111.32638,-112.08062,-111.35475,-111.37833,-109.327,-112.04613,-112.986,-112.66552,-112.408,-112.964,-112.52959,-113.31609,-113.39991,-113.18263,-112.86985,-113.99141,-113.48973,-113.66787,-113.94486,-114.29353],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Site: Aqu <\/b><hr>\nFemales: 9 <br>Males:  12 <br>Suitability: 0.7217","<b>Site: 73 <\/b><hr>\nFemales: 5 <br>Males:  11 <br>Suitability: 0.1455","<b>Site: 157 <\/b><hr>\nFemales: 30 <br>Males:  26 <br>Suitability: 0.881","<b>Site: 153 <\/b><hr>\nFemales: 41 <br>Males:  35 <br>Suitability: 0.7325","<b>Site: 163 <\/b><hr>\nFemales: 21 <br>Males:  21 <br>Suitability: 0.4329","<b>Site: 48 <\/b><hr>\nFemales: 27 <br>Males:  18 <br>Suitability: 0.6195","<b>Site: 75 <\/b><hr>\nFemales: 18 <br>Males:  16 <br>Suitability: 0.8656","<b>Site: 77 <\/b><hr>\nFemales: 16 <br>Males:  19 <br>Suitability: 0.4226","<b>Site: const <\/b><hr>\nFemales: 11 <br>Males:  18 <br>Suitability: 0.1744","<b>Site: 51 <\/b><hr>\nFemales: 11 <br>Males:  9 <br>Suitability: 0.4125","<b>Site: 168 <\/b><hr>\nFemales: 25 <br>Males:  28 <br>Suitability: 0.4965","<b>Site: 64 <\/b><hr>\nFemales: 19 <br>Males:  16 <br>Suitability: 0.2876","<b>Site: 166 <\/b><hr>\nFemales: 26 <br>Males:  19 <br>Suitability: 0.2673","<b>Site: 58 <\/b><hr>\nFemales: 9 <br>Males:  11 <br>Suitability: 0.9019","<b>Site: 169 <\/b><hr>\nFemales: 28 <br>Males:  47 <br>Suitability: 0.3132","<b>Site: 32 <\/b><hr>\nFemales: 27 <br>Males:  40 <br>Suitability: 0.0563","<b>Site: 93 <\/b><hr>\nFemales: 21 <br>Males:  25 <br>Suitability: 0.1627","<b>Site: 161 <\/b><hr>\nFemales: 63 <br>Males:  64 <br>Suitability: 0.2791","<b>Site: 12 <\/b><hr>\nFemales: 21 <br>Males:  24 <br>Suitability: 0.3519","<b>Site: 162 <\/b><hr>\nFemales: 41 <br>Males:  57 <br>Suitability: 0.6136","<b>Site: sfran <\/b><hr>\nFemales: 16 <br>Males:  26 <br>Suitability: 0.3211","<b>Site: 160 <\/b><hr>\nFemales: 36 <br>Males:  48 <br>Suitability: 0.3652","<b>Site: 159 <\/b><hr>\nFemales: 15 <br>Males:  22 <br>Suitability: 0.188","<b>Site: 89 <\/b><hr>\nFemales: 19 <br>Males:  18 <br>Suitability: 0.3975","<b>Site: 171 <\/b><hr>\nFemales: 39 <br>Males:  38 <br>Suitability: 0.4614","<b>Site: 173 <\/b><hr>\nFemales: 32 <br>Males:  19 <br>Suitability: 0.5243","<b>Site: 177 <\/b><hr>\nFemales: 50 <br>Males:  49 <br>Suitability: 0.2618","<b>Site: 175 <\/b><hr>\nFemales: 8 <br>Males:  13 <br>Suitability: 0.4214","<b>Site: 84 <\/b><hr>\nFemales: 17 <br>Males:  13 <br>Suitability: 0.3953","<b>Site: 9 <\/b><hr>\nFemales: 10 <br>Males:  11 <br>Suitability: 0.5641","<b>Site: 88 <\/b><hr>\nFemales: 18 <br>Males:  23 <br>Suitability: 0.2186"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["OpenTopoMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"limits":{"lat":[23.2855,29.32541],"lng":[-114.29353,-109.327]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Make sure to click on one of the markers and see the popup information that we added <em>en route</em> via that mutate and some HTML code.</p>
+<p>In this case, we are using the latitude and longitude as numerical values of which the <code>leaflet</code> library is able to intrepret properly. However, just like we did for <a href="https://dyerlab.github.io/ENVS-Lectures/r_language/dates/slides.html#1">date-like data</a>, we can convert these into a geographically relevant data type that knows a lot about geospatial processes rather than keeping it as a numeric value that we “assume” will work properly. For this we will use the <code>sf</code> library.</p>
+<section id="sf-objects" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sf-objects"><span class="header-section-number">12.1</span> <code>sf</code> Objects</h2>
+<p><em>Simple Features</em> (hereafter abbreviated as <code>sf</code>) are an open standard developed by the Open Geospatial Consortium (<a href="https://ogc.org">OGC</a>). They define the following basic types:</p>
+<ul>
+<li>POINT<br>
+</li>
+<li>LINESTRING</li>
+<li>POLYGON<br>
+</li>
+<li>MULTIPOINT</li>
+<li>MULTILINESTRING</li>
+<li>MULTIPOLYGON</li>
+<li>GEOMETRYCOLLECTION</li>
+</ul>
+<p>Each of these basic types can be represented within a single column of a <code>data.frame</code>. To do this, we need to tell the conversion function <code>st_as_sf()</code> which columns to consider as the datum and which ellipsoid to use.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( sf )</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>( <span class="at">coords=</span><span class="fu">c</span>(<span class="st">"Longitude"</span>,<span class="st">"Latitude"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">crs =</span> <span class="dv">4326</span> ) <span class="ot">-&gt;</span> data</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 7 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -110.951 ymin: 23.2855 xmax: -109.8507 ymax: 24.21441
+Geodetic CRS:  WGS 84
+# A tibble: 6 × 8
+  Site  Males Females Suitability MFRatio GenVarArapat GenVarEuphli
+  &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+1 Aqu      12       9       0.722   1.33         0.120       0.0968
+2 73       11       5       0.146   2.2          0.137       0.253 
+3 157      26      30       0.881   0.867        0.150       0.191 
+4 153      35      41       0.732   0.854        0.333       0.276 
+5 163      21      21       0.433   1            0.298       0.338 
+6 48       18      27       0.620   0.667        0.115       0.213 
+# ℹ 1 more variable: geometry &lt;POINT [°]&gt;</code></pre>
+</div>
+</div>
+<p>This conversion to an <code>sf</code> object adds attributes to the <code>data.frame</code> and <code>tibble</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sf"         "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+<p>This additional <code>sf</code> attributes gives it more qualities such as a bounding box (e.g., the area within which all the poitns exist)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">st_bbox</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      xmin       ymin       xmax       ymax 
+-114.29353   23.28550 -109.32700   29.32541 </code></pre>
+</div>
+</div>
+<p>Distances between objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">st_distance</span>( data[<span class="dv">1</span>,], data[<span class="dv">2</span>,])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Units: [m]
+        [,1]
+[1,] 84376.8</code></pre>
+</div>
+</div>
+<p>As well as complex geospatial operations such as finding the convex hull (the minimal area containing all poitns).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_union</span>() <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_convex_hull</span>() <span class="ot">-&gt;</span> hull</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>hull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Geometry set for 1 feature 
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -114.2935 ymin: 23.2855 xmax: -109.327 ymax: 29.32541
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POLYGON ((-114.2935 29.32541, -113.9914 28.6605...</code></pre>
+</div>
+</div>
+<p>the center of the all the points.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>hull <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_centroid</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Geometry set for 1 feature 
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -111.3417 ymin: 26.37741 xmax: -111.3417 ymax: 26.37741
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-111.3417 26.37741)</code></pre>
+</div>
+</div>
+<p>and the area enclosed by all the points (for various units).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( units )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>udunits database from /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/units/share/udunits/udunits2.xml</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>hull <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_area</span>() <span class="sc">|&gt;</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>( km<span class="sc">^</span><span class="dv">2</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>122130.5 [km^2]</code></pre>
+</div>
+</div>
+<section id="reprojecting" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="reprojecting"><span class="header-section-number">12.1.1</span> Reprojecting</h3>
+<p>In addition to the operations above, properly created <code>sf</code> objects can easily be projected from one CRS into another (epsg 6372 is a common projection covering Mexico based upon the GRS80 elipsoid and the latest ITRF2008 datum standard based on the meter)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>( <span class="dv">6372</span> ) <span class="sc">|&gt;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_bbox</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   xmin    ymin    xmax    ymax 
+1307745 1274010 1773676 1968473 </code></pre>
+</div>
+</div>
+<p>Again, do this <strong>first</strong> to all your data to make sure it is put into a proper projection (and most of your headaches will disappear).</p>
+</section>
+<section id="plotting-sf-objects" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="plotting-sf-objects"><span class="header-section-number">12.1.2</span> Plotting <code>sf</code> Objects</h3>
+<p>Analogous to the duality between built-in <code>R</code> plotting and <code>ggplot</code> approaches, we can use either of these frameworks to plot <code>sf</code> objects.</p>
+<p>As built-in objects, a <code>sf</code> data set that has a geometry coordinate is intrinsically linked to all the other data columns. If we plot the entire data frame, we see that for each non-geometry data column, we create an individual plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The data with the <code>data.frame</code> can be accessed as normal.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( data<span class="sc">$</span>Suitability )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>But if we plot it using the square brackets and names of dat columns, we can link the <code>geometry</code> column to it and plot it as a spatial representation of those data (and adorn it with the normal <code>plot()</code> upgrades accordingly).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( data[<span class="st">"Suitability"</span>], <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Perhaps not surprisingly, <code>ggplot()</code> also works the same way, however, the geospatial coordiantes for the plot aare taken care of using <code>geom_sf()</code> and you are left with definining which of the data columns you want to put into the plot as a component of the <code>aes()</code> definition.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( data, <span class="fu">aes</span>(<span class="at">color=</span>Suitability) ) <span class="sc">+</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>( )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It works the same ways for lables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( data ) <span class="sc">+</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>( <span class="fu">aes</span>(<span class="at">label=</span>Site) ) <span class="sc">+</span> </span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+give correct results for longitude/latitude data</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="map-overlays" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Map Overlays</h1>
+<p>We can go out and grab a map background to overlay these plots onto, giving more context (similiarly to how we did this above using leaflet).</p>
+<p>The <code>map_data()</code> function is part of <code>ggplot()</code> and produces a <code>data.frame</code> object where each row is a coordinate used to draw polygons (see <a href="https://dyerlab.github.io/ENVS-Lectures/spatial/spatial_polygons/narrative.nb.html">narrative</a> on polygons for more information).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_data</span>(<span class="st">"world"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( region <span class="sc">==</span> <span class="st">"Mexico"</span>) <span class="ot">-&gt;</span> map</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( map )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       long      lat group order region       subregion
+1 -91.68369 18.67734   970 60731 Mexico Isla del Carmen
+2 -91.79614 18.65420   970 60732 Mexico Isla del Carmen
+3 -91.81612 18.67588   970 60733 Mexico Isla del Carmen
+4 -91.58911 18.77803   970 60734 Mexico Isla del Carmen
+5 -91.55029 18.77368   970 60735 Mexico Isla del Carmen
+6 -91.53672 18.76001   970 60736 Mexico Isla del Carmen</code></pre>
+</div>
+</div>
+<p>In <code>ggplot</code> there is a <code>geom_polygon()</code> function that takes these series of coordiantes and draws them properly over which we can lay down the <code>sf</code> object.</p>
+<p>However, notice that the boundary boxes for the data and the map are vastly different (the underlying map is much bigger).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>( <span class="at">Data =</span> <span class="fu">st_bbox</span>( data ), <span class="at">Map =</span> <span class="fu">c</span>(<span class="fu">min</span>(map<span class="sc">$</span>long), <span class="fu">min</span>(map<span class="sc">$</span>lat), <span class="fu">max</span>(map<span class="sc">$</span>long), <span class="fu">max</span>(map<span class="sc">$</span>lat) ) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Data        Map
+xmin -114.29353 -118.40137
+ymin   23.28550   14.54541
+xmax -109.32700  -86.69629
+ymax   29.32541   32.71533</code></pre>
+</div>
+</div>
+<p>So if we plot it as is, we have points only in a small area of the plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( ) <span class="sc">+</span> </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>( <span class="fu">aes</span>( <span class="at">x=</span>long, </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y=</span>lat, </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">group=</span>group ), </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>map, </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill=</span><span class="st">"grey"</span> ) <span class="sc">+</span> </span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>( <span class="at">data=</span>data, </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">color=</span>Suitability), </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Longitude"</span>) <span class="sc">+</span> </span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Latitude"</span>) <span class="sc">+</span> </span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>( <span class="at">base_size =</span> <span class="dv">12</span> ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In a normal <code>ggplot()</code> display we could use <code>+ xlim() + ylim()</code> but since we are combining both <code>geom_polygon</code> and <code>geom_sf</code>, we are required to do this in the <code>coord_sf()</code> function to make it work correctly<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( ) <span class="sc">+</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>( <span class="fu">aes</span>( <span class="at">x=</span>long, </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y=</span>lat, </span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">group=</span>group ), </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>map, </span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill=</span><span class="st">"grey"</span> ) <span class="sc">+</span> </span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>( <span class="at">data=</span>data, </span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">color=</span>Suitability), </span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Longitude"</span>) <span class="sc">+</span> </span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Latitude"</span>) <span class="sc">+</span> </span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>( <span class="at">base_size =</span> <span class="dv">12</span> ) <span class="sc">+</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>( <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">115</span>, <span class="sc">-</span><span class="dv">105</span>),</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="narrative_points_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://doi.org/10.1002/9781118786352.wbieg1011">Tobler, W. R. 1970. <em>Economic Geography</em>, <strong>46</strong>, 234–240.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Translation from one CRS to another in <em>all GIS software</em> is handled by the open source <a href="https://prog.org">proj.org</a> library.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The EPSG standard was originally created in 1985 by the <a href="European Petroleum Survey Group">https://en.wikipedia.org/wiki/European_Petroleum_Survey_Group</a> and made public in 1993.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This standard is defined by <a href="https://www.inegi.org.mx">Sistema Nacional de Información Estadística y Geográfica</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This is because if we use the normal procedures, we mess up the order in which everything is plot in <code>geom_polygon()</code>, try it and see.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./narrative_ggplot.html" class="pagination-link" aria-label="`ggplot2` Graphics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./narrative_rasters.html" class="pagination-link" aria-label="Raster Data">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
