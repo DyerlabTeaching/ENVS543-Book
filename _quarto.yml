@@ -9,22 +9,27 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - narrative_markdown.qmd
-    - narrative_datatypes.qmd
-    - narrative_containers.qmd
-    - narrative_tidyverse.qmd
-    - narrative_factors.qmd
-    - narrative_joins.qmd
-    - narrative_classic.qmd
-    - narrative_ggplot.qmd
-    - narrative_points.qmd
-    - narrative_rasters.qmd
-    - narrative_correlation.qmd
-    - narrative_regression.qmd
-    - narrative_aov.qmd
-    - narrative_ordination.qmd
-
-bibliography: references.bib
+    - part: "part1.qmd"
+      chapters:
+        - narrative_markdown.qmd
+        - narrative_datatypes.qmd
+        - narrative_containers.qmd
+        - narrative_tidyverse.qmd
+        - narrative_factors.qmd
+        - narrative_joins.qmd
+        - narrative_classic.qmd
+        - narrative_ggplot.qmd
+    - part: "part2.qmd"
+      chapters:
+        - narrative_points.qmd
+        - narrative_vector.qmd
+        - narrative_rasters.qmd
+    - part: "part3.qmd"
+      chapters:
+        - narrative_correlation.qmd
+        - narrative_regression.qmd
+        - narrative_aov.qmd
+        - narrative_ordination.qmd
 
 format:
   html:

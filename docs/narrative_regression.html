@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Regression – ENVS543-Book</title>
+<title>14&nbsp; Regression – ENVS543-Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./narrative_regression.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part3.html">Statistical Models</a></li><li class="breadcrumb-item"><a href="./narrative_regression.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -185,90 +185,129 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_datatypes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_containers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Containers</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_factors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_joins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_classic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spatial Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_points.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vector Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_rasters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_aov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_ordination.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -279,26 +318,26 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#least-squares-fitting" id="toc-least-squares-fitting" class="nav-link active" data-scroll-target="#least-squares-fitting"><span class="header-section-number">13.1</span> Least Squares Fitting</a></li>
-  <li><a href="#our-friend-lm" id="toc-our-friend-lm" class="nav-link" data-scroll-target="#our-friend-lm"><span class="header-section-number">13.2</span> Our Friend <code>lm()</code></a></li>
-  <li><a href="#model-fit" id="toc-model-fit" class="nav-link" data-scroll-target="#model-fit"><span class="header-section-number">13.3</span> Model Fit</a></li>
-  <li><a href="#analysis-of-variance-tables---decomposing-variation" id="toc-analysis-of-variance-tables---decomposing-variation" class="nav-link" data-scroll-target="#analysis-of-variance-tables---decomposing-variation"><span class="header-section-number">13.4</span> Analysis of Variance Tables - Decomposing Variation</a></li>
-  <li><a href="#variance-explained" id="toc-variance-explained" class="nav-link" data-scroll-target="#variance-explained"><span class="header-section-number">13.5</span> Variance Explained</a></li>
-  <li><a href="#extensions-of-the-model" id="toc-extensions-of-the-model" class="nav-link" data-scroll-target="#extensions-of-the-model"><span class="header-section-number">13.6</span> Extensions of the Model</a></li>
-  <li><a href="#comparing-models" id="toc-comparing-models" class="nav-link" data-scroll-target="#comparing-models"><span class="header-section-number">13.7</span> Comparing Models</a>
+  <li><a href="#least-squares-fitting" id="toc-least-squares-fitting" class="nav-link active" data-scroll-target="#least-squares-fitting"><span class="header-section-number">14.1</span> Least Squares Fitting</a></li>
+  <li><a href="#our-friend-lm" id="toc-our-friend-lm" class="nav-link" data-scroll-target="#our-friend-lm"><span class="header-section-number">14.2</span> Our Friend <code>lm()</code></a></li>
+  <li><a href="#model-fit" id="toc-model-fit" class="nav-link" data-scroll-target="#model-fit"><span class="header-section-number">14.3</span> Model Fit</a></li>
+  <li><a href="#analysis-of-variance-tables---decomposing-variation" id="toc-analysis-of-variance-tables---decomposing-variation" class="nav-link" data-scroll-target="#analysis-of-variance-tables---decomposing-variation"><span class="header-section-number">14.4</span> Analysis of Variance Tables - Decomposing Variation</a></li>
+  <li><a href="#variance-explained" id="toc-variance-explained" class="nav-link" data-scroll-target="#variance-explained"><span class="header-section-number">14.5</span> Variance Explained</a></li>
+  <li><a href="#extensions-of-the-model" id="toc-extensions-of-the-model" class="nav-link" data-scroll-target="#extensions-of-the-model"><span class="header-section-number">14.6</span> Extensions of the Model</a></li>
+  <li><a href="#comparing-models" id="toc-comparing-models" class="nav-link" data-scroll-target="#comparing-models"><span class="header-section-number">14.7</span> Comparing Models</a>
   <ul class="collapse">
-  <li><a href="#effects-of-adding-parameters" id="toc-effects-of-adding-parameters" class="nav-link" data-scroll-target="#effects-of-adding-parameters"><span class="header-section-number">13.7.1</span> Effects of Adding Parameters</a></li>
+  <li><a href="#effects-of-adding-parameters" id="toc-effects-of-adding-parameters" class="nav-link" data-scroll-target="#effects-of-adding-parameters"><span class="header-section-number">14.7.1</span> Effects of Adding Parameters</a></li>
   </ul></li>
-  <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting"><span class="header-section-number">13.8</span> Model Fitting</a></li>
+  <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting"><span class="header-section-number">14.8</span> Model Fitting</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part3.html">Statistical Models</a></li><li class="breadcrumb-item"><a href="./narrative_regression.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Regression</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Regression</span></h1>
 </div>
 
 
@@ -357,8 +396,8 @@ y_{ij} = \beta_0 + \beta_1 x_{i} + \epsilon_j
 </div>
 </div>
 <p>The notion here is to be estimate the underlying formula for that red line that describes the variation in the original values in how <code>y</code> changes systematically across measured values of <code>x</code>.</p>
-<section id="least-squares-fitting" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="least-squares-fitting"><span class="header-section-number">13.1</span> Least Squares Fitting</h2>
+<section id="least-squares-fitting" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="least-squares-fitting"><span class="header-section-number">14.1</span> Least Squares Fitting</h2>
 <p>So how do we figure this out? One of the most common ways is to uses a methods called <em>Least Squared Distance</em> fitting. To describe this, consider a set of hypothetical random models with random values estimated for both the intercept (<span class="math inline">\(\beta_0\)</span>) and slope (<span class="math inline">\(\beta_1\)</span>) coefficients. These <em>could be</em> close to a good models or not.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">beta0 =</span> <span class="fu">runif</span>(<span class="dv">250</span>,<span class="sc">-</span><span class="dv">20</span>,<span class="dv">40</span>),</span>
@@ -366,12 +405,12 @@ y_{ij} = \beta_0 + \beta_1 x_{i} + \epsilon_j
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( models )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     beta0             beta1        
- Min.   :-19.991   Min.   :-4.9135  
- 1st Qu.: -5.990   1st Qu.:-2.6507  
- Median :  7.232   Median : 0.1406  
- Mean   :  8.413   Mean   : 0.1011  
- 3rd Qu.: 22.953   3rd Qu.: 2.7713  
- Max.   : 39.629   Max.   : 4.9641  </code></pre>
+ Min.   :-19.278   Min.   :-4.8773  
+ 1st Qu.: -4.007   1st Qu.:-2.3003  
+ Median : 10.569   Median : 0.2848  
+ Mean   : 10.172   Mean   : 0.2234  
+ 3rd Qu.: 25.124   3rd Qu.: 2.6655  
+ Max.   : 39.088   Max.   : 4.9964  </code></pre>
 </div>
 </div>
 <p>We can plot these and the original data and all these randomly defined models.</p>
@@ -422,13 +461,13 @@ y_{ij} = \beta_0 + \beta_1 x_{i} + \epsilon_j
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( models )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      beta0     beta1     dist
-1 -14.71784 -1.106390 53.86110
-2  29.60017  2.911233 14.87005
-3  27.91356  4.823258 24.15727
-4 -11.15647 -4.507139 70.89301
-5  24.49023 -3.431638 31.80479
-6  37.20375 -1.388194 12.84480</code></pre>
+<pre><code>       beta0      beta1     dist
+1  12.969838 -1.2256852 28.27772
+2  -4.748690  4.5757558 13.65923
+3 -12.950984 -0.4196526 48.07277
+4  35.231742  2.9720295 20.56175
+5   6.042705  2.7967813 11.56233
+6  10.756644  0.1975126 21.70686</code></pre>
 </div>
 </div>
 <p>If we look through these models, we can see which are better than others by sorting in increasing squared distance.</p>
@@ -496,8 +535,8 @@ y_{ij} = \beta_0 + \beta_1 x_{i} + \epsilon_j
 <p>You could imagine that we could iteratively soom in this grid and find the best fit combination of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> values until we converged on a really well fit set.</p>
 <p>There is a more direct way to get to these results (though is much less pretty to look at) using the <code>lm()</code> linear models function.</p>
 </section>
-<section id="our-friend-lm" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="our-friend-lm"><span class="header-section-number">13.2</span> Our Friend <code>lm()</code></h2>
+<section id="our-friend-lm" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="our-friend-lm"><span class="header-section-number">14.2</span> Our Friend <code>lm()</code></h2>
 <p>To specify a potential model, we need to get the function the form we are interested in using.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>( y <span class="sc">~</span> x, <span class="at">data =</span> df )</span>
@@ -531,8 +570,8 @@ Coefficients:
 </div>
 <p>Fortunately, we have a lot of additional information available to us because we used the <code>lm()</code> function.</p>
 </section>
-<section id="model-fit" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="model-fit"><span class="header-section-number">13.3</span> Model Fit</h2>
+<section id="model-fit" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="model-fit"><span class="header-section-number">14.3</span> Model Fit</h2>
 <p>We can estimate a bunch of different models but before we look to see if it well behaved. There are several interesting plots that we can examine from the model object such as:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( fit, <span class="at">which =</span> <span class="dv">1</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -565,8 +604,8 @@ Coefficients:
 </div>
 </div>
 </section>
-<section id="analysis-of-variance-tables---decomposing-variation" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="analysis-of-variance-tables---decomposing-variation"><span class="header-section-number">13.4</span> Analysis of Variance Tables - Decomposing Variation</h2>
+<section id="analysis-of-variance-tables---decomposing-variation" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="analysis-of-variance-tables---decomposing-variation"><span class="header-section-number">14.4</span> Analysis of Variance Tables - Decomposing Variation</h2>
 <p>Thus far, we’ve been able to estiamte a model, but is it one that explains a significant amount of variation? To determine this, we use the <em>analysis of variance table</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>( fit )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -599,8 +638,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <li><p><code>Pr(&gt;F)</code> is the probability associated the value of the <span class="math inline">\(F\)</span>-statistic and is dependent upon the degrees of freedom for the model and residuals.</p></li>
 </ul>
 </section>
-<section id="variance-explained" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="variance-explained"><span class="header-section-number">13.5</span> Variance Explained</h2>
+<section id="variance-explained" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="variance-explained"><span class="header-section-number">14.5</span> Variance Explained</h2>
 <p>There is a correlative measurement in regression models to the Pearson Product Moment Coefficient, (<span class="math inline">\(\rho\)</span>) in a statistic called <span class="math inline">\(R^2\)</span>. This parameter tells you, <em>How much of the observed variation in <code>y</code> is explained by the model?</em></p>
 <p>The equation for <em>R^2</em> is:</p>
 <p><span class="math display">\[
@@ -665,8 +704,8 @@ F-statistic: 16.57 on 1 and 8 DF,  p-value: 0.003581</code></pre>
 </div>
 <p>(e.g., the square of the correlation estimate <span class="math inline">\(r\)</span> is equal to <span class="math inline">\(R^2\)</span>).</p>
 </section>
-<section id="extensions-of-the-model" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="extensions-of-the-model"><span class="header-section-number">13.6</span> Extensions of the Model</h2>
+<section id="extensions-of-the-model" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="extensions-of-the-model"><span class="header-section-number">14.6</span> Extensions of the Model</h2>
 <p>There are several helper functions for dealing with regression models such as finding the predicted values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>( fit ) <span class="ot">-&gt;</span> yhat </span>
@@ -713,8 +752,8 @@ F-statistic: 16.57 on 1 and 8 DF,  p-value: 0.003581</code></pre>
 </div>
 </div>
 </section>
-<section id="comparing-models" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="comparing-models"><span class="header-section-number">13.7</span> Comparing Models</h2>
+<section id="comparing-models" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="comparing-models"><span class="header-section-number">14.7</span> Comparing Models</h2>
 <p>OK, so we have a model that appears to suggest that the predicted values in <code>x</code> can explain the variation observed in <code>y</code>. Great. But, is this the best model or only one that is sufficiently <em>meh</em> such that we can reject the null hypothesis. How can we tell?</p>
 <p>There are two parameters that we have already looked at that may help. These are:</p>
 <ul>
@@ -963,8 +1002,8 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \epsilon
 </div>
 </div>
 <p>So how do we figure out which one is best?</p>
-<section id="effects-of-adding-parameters" class="level3" data-number="13.7.1">
-<h3 data-number="13.7.1" class="anchored" data-anchor-id="effects-of-adding-parameters"><span class="header-section-number">13.7.1</span> Effects of Adding Parameters</h3>
+<section id="effects-of-adding-parameters" class="level3" data-number="14.7.1">
+<h3 data-number="14.7.1" class="anchored" data-anchor-id="effects-of-adding-parameters"><span class="header-section-number">14.7.1</span> Effects of Adding Parameters</h3>
 <p>Before we can answer this, we should be clear about one thing. We are getting more variance explained by adding more predictor variables. In fact, by adding any variable, whether they are informative or not, one can explain some amount of the Sums of Squares in a model. Taken to the extreme, this means that we could add an infinite number of explanatory variables to a model and explain all the variation there is!</p>
 <p>Here is an example using our small data set. I’m going to make several models, one of which is the original one and the remaining add one more predeictor varible that is made up of a random variables. We will then look at the <span class="math inline">\(R^2\)</span> of each of these models.</p>
 <div class="cell">
@@ -1045,42 +1084,42 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \epsilon
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 1 Random Variables</td>
-<td style="text-align: right;">0.6153</td>
+<td style="text-align: right;">0.6070</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 2 Random Variables</td>
-<td style="text-align: right;">0.6181</td>
+<td style="text-align: right;">0.6129</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 3 Random Variables</td>
-<td style="text-align: right;">0.6257</td>
+<td style="text-align: right;">0.6198</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 4 Random Variables</td>
-<td style="text-align: right;">0.6345</td>
+<td style="text-align: right;">0.6302</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 5 Random Variables</td>
-<td style="text-align: right;">0.6358</td>
+<td style="text-align: right;">0.6336</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 6 Random Variables</td>
-<td style="text-align: right;">0.6399</td>
+<td style="text-align: right;">0.6340</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 7 Random Variables</td>
-<td style="text-align: right;">0.6401</td>
+<td style="text-align: right;">0.6345</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 8 Random Variables</td>
-<td style="text-align: right;">0.6402</td>
+<td style="text-align: right;">0.6361</td>
 <td style="text-align: right;">0e+00</td>
 </tr>
 </tbody>
@@ -1091,8 +1130,8 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \epsilon
 <p>This is a well-known situation in statistics. An in fact, we must be very careful when we are examining the differences between models and attempting to decide which set of models are actually better than other sets of models.</p>
 </section>
 </section>
-<section id="model-fitting" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="model-fitting"><span class="header-section-number">13.8</span> Model Fitting</h2>
+<section id="model-fitting" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="model-fitting"><span class="header-section-number">14.8</span> Model Fitting</h2>
 <p>To get around this, we have a few tools at our disposal. The most common approach is to look at the <em>information content</em> in each model relative to the amount of pedictor variables. In essence, we must <em>punish</em> ourselves for adding more predictors so that we do not all run around and add random data to our models. The most common one is called Akaike Information Criterion (AIC), and provide a general framework for comparing several models.</p>
 <p><span class="math display">\[
 AIC = -2 \ln L + 2p
@@ -1133,91 +1172,91 @@ AIC = -2 \ln L + 2p
 <td style="text-align: left;">Ozone ~ Temp</td>
 <td style="text-align: right;">0.488</td>
 <td style="text-align: right;">1067.706</td>
-<td style="text-align: right;">69.683</td>
+<td style="text-align: right;">68.989</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Wind</td>
 <td style="text-align: right;">0.362</td>
 <td style="text-align: right;">1093.187</td>
-<td style="text-align: right;">95.164</td>
+<td style="text-align: right;">94.470</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Solar</td>
 <td style="text-align: right;">0.121</td>
 <td style="text-align: right;">1083.714</td>
-<td style="text-align: right;">85.691</td>
+<td style="text-align: right;">84.997</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind</td>
 <td style="text-align: right;">0.569</td>
 <td style="text-align: right;">1049.741</td>
-<td style="text-align: right;">51.718</td>
+<td style="text-align: right;">51.024</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Solar</td>
 <td style="text-align: right;">0.510</td>
 <td style="text-align: right;">1020.820</td>
-<td style="text-align: right;">22.797</td>
+<td style="text-align: right;">22.103</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Wind + Solar</td>
 <td style="text-align: right;">0.449</td>
 <td style="text-align: right;">1033.816</td>
-<td style="text-align: right;">35.793</td>
+<td style="text-align: right;">35.098</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar</td>
 <td style="text-align: right;">0.606</td>
 <td style="text-align: right;">998.717</td>
-<td style="text-align: right;">0.694</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 1 Random Variables</td>
-<td style="text-align: right;">0.615</td>
-<td style="text-align: right;">998.023</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.607</td>
+<td style="text-align: right;">1000.394</td>
+<td style="text-align: right;">1.677</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 2 Random Variables</td>
-<td style="text-align: right;">0.618</td>
-<td style="text-align: right;">999.231</td>
-<td style="text-align: right;">1.209</td>
+<td style="text-align: right;">0.613</td>
+<td style="text-align: right;">1000.719</td>
+<td style="text-align: right;">2.002</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 3 Random Variables</td>
-<td style="text-align: right;">0.626</td>
-<td style="text-align: right;">998.982</td>
-<td style="text-align: right;">0.959</td>
+<td style="text-align: right;">0.620</td>
+<td style="text-align: right;">1000.719</td>
+<td style="text-align: right;">2.002</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 4 Random Variables</td>
-<td style="text-align: right;">0.634</td>
-<td style="text-align: right;">998.360</td>
-<td style="text-align: right;">0.337</td>
+<td style="text-align: right;">0.630</td>
+<td style="text-align: right;">999.642</td>
+<td style="text-align: right;">0.925</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 5 Random Variables</td>
-<td style="text-align: right;">0.636</td>
-<td style="text-align: right;">999.950</td>
-<td style="text-align: right;">1.927</td>
+<td style="text-align: right;">0.634</td>
+<td style="text-align: right;">1000.614</td>
+<td style="text-align: right;">1.897</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 6 Random Variables</td>
-<td style="text-align: right;">0.640</td>
-<td style="text-align: right;">1000.702</td>
-<td style="text-align: right;">2.679</td>
+<td style="text-align: right;">0.634</td>
+<td style="text-align: right;">1002.490</td>
+<td style="text-align: right;">3.773</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 7 Random Variables</td>
-<td style="text-align: right;">0.640</td>
-<td style="text-align: right;">1002.648</td>
-<td style="text-align: right;">4.625</td>
+<td style="text-align: right;">0.634</td>
+<td style="text-align: right;">1004.368</td>
+<td style="text-align: right;">5.650</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ozone ~ Temp + Wind + Solar + 8 Random Variables</td>
-<td style="text-align: right;">0.640</td>
-<td style="text-align: right;">1004.603</td>
-<td style="text-align: right;">6.580</td>
+<td style="text-align: right;">0.636</td>
+<td style="text-align: right;">1005.860</td>
+<td style="text-align: right;">7.143</td>
 </tr>
 </tbody>
 </table>
@@ -1631,12 +1670,12 @@ AIC = -2 \ln L + 2p
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./narrative_correlation.html" class="pagination-link" aria-label="Correlations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./narrative_aov.html" class="pagination-link" aria-label="Analysis of Variance">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

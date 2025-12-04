@@ -44,3 +44,8 @@ vignettes/*.pdf
 README.html
 README_files/*
 *.rmarkdown
+__MACOSX
+Zoning*
+Centerlines-shp*
+index_files
+*.zip

@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./narrative_rasters.html" rel="next">
-<link href="./narrative_ggplot.html" rel="prev">
+<link href="./narrative_vector.html" rel="next">
+<link href="./part2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./narrative_points.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part2.html">Spatial Data</a></li><li class="breadcrumb-item"><a href="./narrative_points.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -166,90 +166,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_datatypes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_containers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Containers</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_factors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_joins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_classic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spatial Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_points.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./narrative_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vector Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_rasters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Raster Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlations</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Regression</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_aov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Analysis of Variance</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./narrative_ordination.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ordination</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -285,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part2.html">Spatial Data</a></li><li class="breadcrumb-item"><a href="./narrative_points.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Point Data</span></h1>
 </div>
@@ -807,8 +846,8 @@ dbl (8): Males, Females, Suitability, MFRatio, GenVarArapat, GenVarEuphli, L...
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>( <span class="sc">~</span>Longitude, <span class="sc">~</span>Latitude, <span class="at">popup =</span> <span class="sc">~</span>Label ) <span class="sc">|&gt;</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>( <span class="st">"OpenTopoMap"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-18b6fc0408cd0ecf81f0" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-18b6fc0408cd0ecf81f0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[[23.2855,24.00789,24.0195,24.13389,24.2115,24.21441,24.58843,24.87611,25.0247,25.34819,25.55757,25.60521,25.91409,26.0155,26.20876,26.63783,26.94589,27.0367,27.18232,27.2028,27.3632,27.40498,27.52944,28.03661,28.22308,28.40846,28.66056,28.72796,28.96651,29.01457,29.32541],[-110.10429,-109.85071,-110.096,-110.46236,-110.951,-110.27252,-110.74599,-110.69175,-111.675,-111.60056,-111.21563,-111.32638,-112.08062,-111.35475,-111.37833,-109.327,-112.04613,-112.986,-112.66552,-112.408,-112.964,-112.52959,-113.31609,-113.39991,-113.18263,-112.86985,-113.99141,-113.48973,-113.66787,-113.94486,-114.29353],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Site: Aqu <\/b><hr>\nFemales: 9 <br>Males:  12 <br>Suitability: 0.7217","<b>Site: 73 <\/b><hr>\nFemales: 5 <br>Males:  11 <br>Suitability: 0.1455","<b>Site: 157 <\/b><hr>\nFemales: 30 <br>Males:  26 <br>Suitability: 0.881","<b>Site: 153 <\/b><hr>\nFemales: 41 <br>Males:  35 <br>Suitability: 0.7325","<b>Site: 163 <\/b><hr>\nFemales: 21 <br>Males:  21 <br>Suitability: 0.4329","<b>Site: 48 <\/b><hr>\nFemales: 27 <br>Males:  18 <br>Suitability: 0.6195","<b>Site: 75 <\/b><hr>\nFemales: 18 <br>Males:  16 <br>Suitability: 0.8656","<b>Site: 77 <\/b><hr>\nFemales: 16 <br>Males:  19 <br>Suitability: 0.4226","<b>Site: const <\/b><hr>\nFemales: 11 <br>Males:  18 <br>Suitability: 0.1744","<b>Site: 51 <\/b><hr>\nFemales: 11 <br>Males:  9 <br>Suitability: 0.4125","<b>Site: 168 <\/b><hr>\nFemales: 25 <br>Males:  28 <br>Suitability: 0.4965","<b>Site: 64 <\/b><hr>\nFemales: 19 <br>Males:  16 <br>Suitability: 0.2876","<b>Site: 166 <\/b><hr>\nFemales: 26 <br>Males:  19 <br>Suitability: 0.2673","<b>Site: 58 <\/b><hr>\nFemales: 9 <br>Males:  11 <br>Suitability: 0.9019","<b>Site: 169 <\/b><hr>\nFemales: 28 <br>Males:  47 <br>Suitability: 0.3132","<b>Site: 32 <\/b><hr>\nFemales: 27 <br>Males:  40 <br>Suitability: 0.0563","<b>Site: 93 <\/b><hr>\nFemales: 21 <br>Males:  25 <br>Suitability: 0.1627","<b>Site: 161 <\/b><hr>\nFemales: 63 <br>Males:  64 <br>Suitability: 0.2791","<b>Site: 12 <\/b><hr>\nFemales: 21 <br>Males:  24 <br>Suitability: 0.3519","<b>Site: 162 <\/b><hr>\nFemales: 41 <br>Males:  57 <br>Suitability: 0.6136","<b>Site: sfran <\/b><hr>\nFemales: 16 <br>Males:  26 <br>Suitability: 0.3211","<b>Site: 160 <\/b><hr>\nFemales: 36 <br>Males:  48 <br>Suitability: 0.3652","<b>Site: 159 <\/b><hr>\nFemales: 15 <br>Males:  22 <br>Suitability: 0.188","<b>Site: 89 <\/b><hr>\nFemales: 19 <br>Males:  18 <br>Suitability: 0.3975","<b>Site: 171 <\/b><hr>\nFemales: 39 <br>Males:  38 <br>Suitability: 0.4614","<b>Site: 173 <\/b><hr>\nFemales: 32 <br>Males:  19 <br>Suitability: 0.5243","<b>Site: 177 <\/b><hr>\nFemales: 50 <br>Males:  49 <br>Suitability: 0.2618","<b>Site: 175 <\/b><hr>\nFemales: 8 <br>Males:  13 <br>Suitability: 0.4214","<b>Site: 84 <\/b><hr>\nFemales: 17 <br>Males:  13 <br>Suitability: 0.3953","<b>Site: 9 <\/b><hr>\nFemales: 10 <br>Males:  11 <br>Suitability: 0.5641","<b>Site: 88 <\/b><hr>\nFemales: 18 <br>Males:  23 <br>Suitability: 0.2186"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["OpenTopoMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"limits":{"lat":[23.2855,29.32541],"lng":[-114.29353,-109.327]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-e4c9d112007c0962373c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e4c9d112007c0962373c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[[23.2855,24.00789,24.0195,24.13389,24.2115,24.21441,24.58843,24.87611,25.0247,25.34819,25.55757,25.60521,25.91409,26.0155,26.20876,26.63783,26.94589,27.0367,27.18232,27.2028,27.3632,27.40498,27.52944,28.03661,28.22308,28.40846,28.66056,28.72796,28.96651,29.01457,29.32541],[-110.10429,-109.85071,-110.096,-110.46236,-110.951,-110.27252,-110.74599,-110.69175,-111.675,-111.60056,-111.21563,-111.32638,-112.08062,-111.35475,-111.37833,-109.327,-112.04613,-112.986,-112.66552,-112.408,-112.964,-112.52959,-113.31609,-113.39991,-113.18263,-112.86985,-113.99141,-113.48973,-113.66787,-113.94486,-114.29353],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Site: Aqu <\/b><hr>\nFemales: 9 <br>Males:  12 <br>Suitability: 0.7217","<b>Site: 73 <\/b><hr>\nFemales: 5 <br>Males:  11 <br>Suitability: 0.1455","<b>Site: 157 <\/b><hr>\nFemales: 30 <br>Males:  26 <br>Suitability: 0.881","<b>Site: 153 <\/b><hr>\nFemales: 41 <br>Males:  35 <br>Suitability: 0.7325","<b>Site: 163 <\/b><hr>\nFemales: 21 <br>Males:  21 <br>Suitability: 0.4329","<b>Site: 48 <\/b><hr>\nFemales: 27 <br>Males:  18 <br>Suitability: 0.6195","<b>Site: 75 <\/b><hr>\nFemales: 18 <br>Males:  16 <br>Suitability: 0.8656","<b>Site: 77 <\/b><hr>\nFemales: 16 <br>Males:  19 <br>Suitability: 0.4226","<b>Site: const <\/b><hr>\nFemales: 11 <br>Males:  18 <br>Suitability: 0.1744","<b>Site: 51 <\/b><hr>\nFemales: 11 <br>Males:  9 <br>Suitability: 0.4125","<b>Site: 168 <\/b><hr>\nFemales: 25 <br>Males:  28 <br>Suitability: 0.4965","<b>Site: 64 <\/b><hr>\nFemales: 19 <br>Males:  16 <br>Suitability: 0.2876","<b>Site: 166 <\/b><hr>\nFemales: 26 <br>Males:  19 <br>Suitability: 0.2673","<b>Site: 58 <\/b><hr>\nFemales: 9 <br>Males:  11 <br>Suitability: 0.9019","<b>Site: 169 <\/b><hr>\nFemales: 28 <br>Males:  47 <br>Suitability: 0.3132","<b>Site: 32 <\/b><hr>\nFemales: 27 <br>Males:  40 <br>Suitability: 0.0563","<b>Site: 93 <\/b><hr>\nFemales: 21 <br>Males:  25 <br>Suitability: 0.1627","<b>Site: 161 <\/b><hr>\nFemales: 63 <br>Males:  64 <br>Suitability: 0.2791","<b>Site: 12 <\/b><hr>\nFemales: 21 <br>Males:  24 <br>Suitability: 0.3519","<b>Site: 162 <\/b><hr>\nFemales: 41 <br>Males:  57 <br>Suitability: 0.6136","<b>Site: sfran <\/b><hr>\nFemales: 16 <br>Males:  26 <br>Suitability: 0.3211","<b>Site: 160 <\/b><hr>\nFemales: 36 <br>Males:  48 <br>Suitability: 0.3652","<b>Site: 159 <\/b><hr>\nFemales: 15 <br>Males:  22 <br>Suitability: 0.188","<b>Site: 89 <\/b><hr>\nFemales: 19 <br>Males:  18 <br>Suitability: 0.3975","<b>Site: 171 <\/b><hr>\nFemales: 39 <br>Males:  38 <br>Suitability: 0.4614","<b>Site: 173 <\/b><hr>\nFemales: 32 <br>Males:  19 <br>Suitability: 0.5243","<b>Site: 177 <\/b><hr>\nFemales: 50 <br>Males:  49 <br>Suitability: 0.2618","<b>Site: 175 <\/b><hr>\nFemales: 8 <br>Males:  13 <br>Suitability: 0.4214","<b>Site: 84 <\/b><hr>\nFemales: 17 <br>Males:  13 <br>Suitability: 0.3953","<b>Site: 9 <\/b><hr>\nFemales: 10 <br>Males:  11 <br>Suitability: 0.5641","<b>Site: 88 <\/b><hr>\nFemales: 18 <br>Males:  23 <br>Suitability: 0.2186"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["OpenTopoMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"limits":{"lat":[23.2855,29.32541],"lng":[-114.29353,-109.327]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Make sure to click on one of the markers and see the popup information that we added <em>en route</em> via that mutate and some HTML code.</p>
@@ -1496,13 +1535,13 @@ ymax   29.32541   32.71533</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./narrative_ggplot.html" class="pagination-link" aria-label="`ggplot2` Graphics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>ggplot2</code> Graphics</span></span>
+      <a href="./part2.html" class="pagination-link" aria-label="Spatial Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Spatial Data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./narrative_rasters.html" class="pagination-link" aria-label="Raster Data">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raster Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./narrative_vector.html" class="pagination-link" aria-label="Vector Data">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vector Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

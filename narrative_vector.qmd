@@ -6,7 +6,6 @@ title: "Vector Data"
 
 > Connecting points creates more complicated data types—vector data—that represent lines and polygons.
 
-
 In this topic, we will focus on lines and polygons.  These are represented as `sf` objects, we can leverage a large amount of `st_*` functions to perform manipulations, and we can visualize them using either built-in routines or via `ggplot` (as expected).
 
 ## Raw Data
@@ -18,6 +17,8 @@ You can load in shapefile data directly into R but we have to do a little work. 
 Here are two shape file archives that I have up on Github in the class repository.  
 
 ```{r}
+library( sf )
+library( tidyverse )
 roads_url <- "https://github.com/dyerlab/ENVS-Lectures/raw/master/data/Centerlines-shp.zip"
 district_url <- "https://github.com/dyerlab/ENVS-Lectures/raw/master/data/Zoning_Districts-shp.zip"
 ```

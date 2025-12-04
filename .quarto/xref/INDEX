@@ -52,5 +52,17 @@
   },
   "narrative_ordination.qmd": {
     "narrative_ordination.html": "a87ab60e"
+  },
+  "part1.qmd": {
+    "part1.html": "0761e301"
+  },
+  "part2.qmd": {
+    "part2.html": "a669db15"
+  },
+  "narrative_vector.qmd": {
+    "narrative_vector.html": "f76a7977"
+  },
+  "part3.qmd": {
+    "part3.html": "bf9fcec3"
   }
 }

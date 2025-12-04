@@ -1,0 +1,5 @@
+---
+title: "Spatial Data"
+---
+
+This section focuses on point, line, polygon, and raster data types and their maniplations.

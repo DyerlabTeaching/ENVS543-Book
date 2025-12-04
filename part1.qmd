@@ -1,0 +1,5 @@
+---
+title: "R Fundamentals"
+---
+
+This section contains chapters covering basic `R` and data manipulation skills.
