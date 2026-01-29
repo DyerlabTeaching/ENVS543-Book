@@ -3,11 +3,22 @@ project:
   output-dir: docs
 
 book:
-  title: "ENVS543 Textbook"
-  author: "Rodney Dyer"
-  date: "12/4/2025"
+  title: "Environmental Data Literacy"
+  license: "CC BY-NC"
+  author: 
+    - name: Rodney Dyer
+      orcid: 0000-0003-4707-3453
+      email: rjdyer@vcu.edu
+      affiliations: 
+      - name: School for Life Sciences and Sustainability
+        address: Virginia Commonwealth university
+        city: Richmond
+        state: VA
+        postal-code: 23284
+  date: "December 4, 2025"
   chapters:
     - index.qmd
+    - syllabus.qmd
     - part: "part1.qmd"
       chapters:
         - narrative_markdown.qmd
@@ -32,10 +43,7 @@ book:
 
 format:
   html:
-    output-dir: docs
     css: media/style.css
     theme:
       - cosmo
-      - brand
-
-
+      
