@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,17 +289,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-ggplot" id="toc-basic-ggplot" class="nav-link active" data-scroll-target="#basic-ggplot"><span class="header-section-number">8.1</span> Basic ggplot</a></li>
-  <li><a href="#aestheics-and-scope" id="toc-aestheics-and-scope" class="nav-link" data-scroll-target="#aestheics-and-scope"><span class="header-section-number">8.2</span> Aestheics and Scope</a></li>
-  <li><a href="#labels-titles" id="toc-labels-titles" class="nav-link" data-scroll-target="#labels-titles"><span class="header-section-number">8.3</span> Labels &amp; Titles</a></li>
-  <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots"><span class="header-section-number">8.4</span> Scatter Plots</a>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">8.1</span> Lecture Materials</a></li>
+  <li><a href="#basic-ggplot" id="toc-basic-ggplot" class="nav-link" data-scroll-target="#basic-ggplot"><span class="header-section-number">8.2</span> Basic ggplot</a></li>
+  <li><a href="#aestheics-and-scope" id="toc-aestheics-and-scope" class="nav-link" data-scroll-target="#aestheics-and-scope"><span class="header-section-number">8.3</span> Aestheics and Scope</a></li>
+  <li><a href="#labels-titles" id="toc-labels-titles" class="nav-link" data-scroll-target="#labels-titles"><span class="header-section-number">8.4</span> Labels &amp; Titles</a></li>
+  <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots"><span class="header-section-number">8.5</span> Scatter Plots</a>
   <ul class="collapse">
-  <li><a href="#in-or-out-of-aes" id="toc-in-or-out-of-aes" class="nav-link" data-scroll-target="#in-or-out-of-aes"><span class="header-section-number">8.4.1</span> In or Out of <code>aes()</code></a></li>
+  <li><a href="#in-or-out-of-aes" id="toc-in-or-out-of-aes" class="nav-link" data-scroll-target="#in-or-out-of-aes"><span class="header-section-number">8.5.1</span> In or Out of <code>aes()</code></a></li>
   </ul></li>
-  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">8.5</span> Themes</a></li>
-  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">8.6</span> Boxplots</a></li>
-  <li><a href="#overlays" id="toc-overlays" class="nav-link" data-scroll-target="#overlays"><span class="header-section-number">8.7</span> Overlays</a></li>
-  <li><a href="#labeling" id="toc-labeling" class="nav-link" data-scroll-target="#labeling"><span class="header-section-number">8.8</span> Labeling</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">8.6</span> Themes</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">8.7</span> Boxplots</a></li>
+  <li><a href="#overlays" id="toc-overlays" class="nav-link" data-scroll-target="#overlays"><span class="header-section-number">8.8</span> Overlays</a></li>
+  <li><a href="#labeling" id="toc-labeling" class="nav-link" data-scroll-target="#labeling"><span class="header-section-number">8.9</span> Labeling</a></li>
   </ul>
 </nav>
     </div>
@@ -325,7 +326,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide"></iframe>
+<section id="lecture-materials" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">8.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>The <code>ggplot2</code> library is a gramattical approach to data display.</p>
 </blockquote>
@@ -383,8 +387,9 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 <p>A system for ‘declaratively’ creating graphics, based on “The Grammar of Graphics”. You provide the data, tell ‘ggplot2’ how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</p>
 </blockquote>
 <p>Throughout the majority of this course, we will be using this library and this approach for all but the most trivial of graphical displays.</p>
-<section id="basic-ggplot" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="basic-ggplot"><span class="header-section-number">8.1</span> Basic ggplot</h2>
+</section>
+<section id="basic-ggplot" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="basic-ggplot"><span class="header-section-number">8.2</span> Basic ggplot</h2>
 <p>As outlined above, the basis of this appraoch is an additive (and iterative) process of creating a graphic. This all starts with the data. For our purposes, we will use the same iris <code>data.frame</code> as in the previous section on base graphics.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -451,8 +456,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 <p>Now we have a base graph!</p>
 </section>
-<section id="aestheics-and-scope" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="aestheics-and-scope"><span class="header-section-number">8.2</span> Aestheics and Scope</h2>
+<section id="aestheics-and-scope" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="aestheics-and-scope"><span class="header-section-number">8.3</span> Aestheics and Scope</h2>
 <p>The location of the data and the <code>aes()</code> determines the <em>scope</em> of the assignment. What I mean by this is:</p>
 <ul>
 <li>If the data and <code>aes()</code> is in the the <code>ggplot()</code> function, then everything in the whole plot <em>inherits</em> that assignment.</li>
@@ -521,8 +526,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </div>
 </section>
-<section id="labels-titles" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="labels-titles"><span class="header-section-number">8.3</span> Labels &amp; Titles</h2>
+<section id="labels-titles" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="labels-titles"><span class="header-section-number">8.4</span> Labels &amp; Titles</h2>
 <p>Just like we added geometric layers to the plot to make histograms and densities, we do the same for labels and titles.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( iris,  <span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length) ) <span class="sc">+</span> </span>
@@ -539,8 +544,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </div>
 </section>
-<section id="scatter-plots" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">8.4</span> Scatter Plots</h2>
+<section id="scatter-plots" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">8.5</span> Scatter Plots</h2>
 <p>With two columns of data, we can make the old scatter plot using the <code>geom_point()</code> function.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( iris, <span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length, <span class="at">y=</span>Sepal.Width) ) <span class="sc">+</span> <span class="fu">geom_point</span>( <span class="at">col=</span><span class="st">"purple"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -577,8 +582,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </div>
 </div>
-<section id="in-or-out-of-aes" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="in-or-out-of-aes"><span class="header-section-number">8.4.1</span> In or Out of <code>aes()</code></h3>
+<section id="in-or-out-of-aes" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="in-or-out-of-aes"><span class="header-section-number">8.5.1</span> In or Out of <code>aes()</code></h3>
 <p>Notice in the last graph I put the name of the data column in the aesthetic but have the color (<code>col</code>) within the <code>aes()</code> function call in the graph before that, I put color outside of the <code>aes()</code> in the <code>geom_point()</code> function. What gives? Here is a simple rule.</p>
 <blockquote class="blockquote">
 <p>If information from within the <code>data.frame</code> is needed to customize the display of data then it must be designated within the <code>aes()</code>, whereas if the display of the data is to be applied to the entire geometric layer, it is specified outside of the <code>aes()</code> call.</p>
@@ -622,8 +627,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </section>
 </section>
-<section id="themes" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="themes"><span class="header-section-number">8.5</span> Themes</h2>
+<section id="themes" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="themes"><span class="header-section-number">8.6</span> Themes</h2>
 <p>The overall coloration of the plot is determined by the theme.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -681,8 +686,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>( <span class="fu">theme_bw</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="boxplots" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">8.6</span> Boxplots</h2>
+<section id="boxplots" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">8.7</span> Boxplots</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( iris, <span class="fu">aes</span>( <span class="at">x =</span> Sepal.Length) ) <span class="sc">+</span> <span class="fu">geom_boxplot</span>( <span class="at">notch=</span><span class="cn">TRUE</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -704,8 +709,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </div>
 </section>
-<section id="overlays" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="overlays"><span class="header-section-number">8.7</span> Overlays</h2>
+<section id="overlays" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="overlays"><span class="header-section-number">8.8</span> Overlays</h2>
 <p>Just like in the previous</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>( iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width) ) <span class="sc">+</span> </span>
@@ -738,8 +743,8 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 </div>
 </div>
 </section>
-<section id="labeling" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="labeling"><span class="header-section-number">8.8</span> Labeling</h2>
+<section id="labeling" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="labeling"><span class="header-section-number">8.9</span> Labeling</h2>
 <p>We can create two kinds of annotations, text on the raw graph and text associated with some of the points. Labels of the first kind can be added direclty by placing raw data inside the <code>aes()</code> function.</p>
 <p>I’ll start by taking the correlation between sepal width and length.</p>
 <div class="cell">

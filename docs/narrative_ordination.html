@@ -175,7 +175,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -317,10 +317,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#principle-component-analyses" id="toc-principle-component-analyses" class="nav-link active" data-scroll-target="#principle-component-analyses"><span class="header-section-number">15.1</span> Principle Component Analyses</a></li>
-  <li><a href="#principal-coordinate-analyses-pcoa" id="toc-principal-coordinate-analyses-pcoa" class="nav-link" data-scroll-target="#principal-coordinate-analyses-pcoa"><span class="header-section-number">15.2</span> Principal Coordinate Analyses (PCoA)</a></li>
-  <li><a href="#non-metric-multiple-dimensional-scaling-nmds" id="toc-non-metric-multiple-dimensional-scaling-nmds" class="nav-link" data-scroll-target="#non-metric-multiple-dimensional-scaling-nmds"><span class="header-section-number">15.3</span> Non-metric Multiple Dimensional Scaling (NMDS)</a></li>
-  <li><a href="#using-rotated-data" id="toc-using-rotated-data" class="nav-link" data-scroll-target="#using-rotated-data"><span class="header-section-number">15.4</span> Using Rotated Data</a></li>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">15.1</span> Lecture Materials</a></li>
+  <li><a href="#principle-component-analyses" id="toc-principle-component-analyses" class="nav-link" data-scroll-target="#principle-component-analyses"><span class="header-section-number">15.2</span> Principle Component Analyses</a></li>
+  <li><a href="#principal-coordinate-analyses-pcoa" id="toc-principal-coordinate-analyses-pcoa" class="nav-link" data-scroll-target="#principal-coordinate-analyses-pcoa"><span class="header-section-number">15.3</span> Principal Coordinate Analyses (PCoA)</a></li>
+  <li><a href="#non-metric-multiple-dimensional-scaling-nmds" id="toc-non-metric-multiple-dimensional-scaling-nmds" class="nav-link" data-scroll-target="#non-metric-multiple-dimensional-scaling-nmds"><span class="header-section-number">15.4</span> Non-metric Multiple Dimensional Scaling (NMDS)</a></li>
+  <li><a href="#using-rotated-data" id="toc-using-rotated-data" class="nav-link" data-scroll-target="#using-rotated-data"><span class="header-section-number">15.5</span> Using Rotated Data</a></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +347,10 @@ window.Quarto = {
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Ordination/slides.html#/title-slide"></iframe>
+<section id="lecture-materials" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">15.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Ordination/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Ordination/slides.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>Ordination is a technique to take high-dimensional data and to represent it in a lower dimensional context.</p>
 </blockquote>
@@ -423,8 +427,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="principle-component-analyses" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="principle-component-analyses"><span class="header-section-number">15.1</span> Principle Component Analyses</h2>
+</section>
+<section id="principle-component-analyses" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="principle-component-analyses"><span class="header-section-number">15.2</span> Principle Component Analyses</h2>
 <p>Principle component analysis (PCA) is a translation of the original data into new coordinate spaces. This has absolutely nothing to do with the relationship among the data themselves but is more of a way to create new coordinates for each data point under the following criteria:<br>
 1. The number of axes in the translated data are the same as the number of axes in the original data. 2. Axes are chosen by taking all the data and finding transects through it that account for the broadest variation in the data. 3. Each axis is defined as a linear combination of the original axes. 3. Subsequent axes <em>must be</em> orthoganal to all previous ones (e.g., at 90<span class="math inline">\(\deg\)</span> angles). 4. The amount of the total variation in the system can be partitioned by these new axes and they are ordered from those that explain the most variation to those who explain the least.</p>
 <p>An exmaple of this rotation is given below.</p>
@@ -494,11 +499,11 @@ FG  0.0001261491 -0.0001705335 -0.001548091  5.531911e-01 -8.330529e-01</code></
 </div>
 </div>
 </section>
-<section id="principal-coordinate-analyses-pcoa" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="principal-coordinate-analyses-pcoa"><span class="header-section-number">15.2</span> Principal Coordinate Analyses (PCoA)</h2>
+<section id="principal-coordinate-analyses-pcoa" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="principal-coordinate-analyses-pcoa"><span class="header-section-number">15.3</span> Principal Coordinate Analyses (PCoA)</h2>
 </section>
-<section id="non-metric-multiple-dimensional-scaling-nmds" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="non-metric-multiple-dimensional-scaling-nmds"><span class="header-section-number">15.3</span> Non-metric Multiple Dimensional Scaling (NMDS)</h2>
+<section id="non-metric-multiple-dimensional-scaling-nmds" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="non-metric-multiple-dimensional-scaling-nmds"><span class="header-section-number">15.4</span> Non-metric Multiple Dimensional Scaling (NMDS)</h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( vegan )</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>beers <span class="sc">%&gt;%</span></span>
@@ -514,8 +519,8 @@ FG  0.0001261491 -0.0001705335 -0.001548091  5.531911e-01 -8.330529e-01</code></
 </div>
 </div>
 </section>
-<section id="using-rotated-data" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="using-rotated-data"><span class="header-section-number">15.4</span> Using Rotated Data</h2>
+<section id="using-rotated-data" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="using-rotated-data"><span class="header-section-number">15.5</span> Using Rotated Data</h2>
 
 
 </section>

@@ -1,11 +1,19 @@
-# Index {.unnumbered}
+
+![](media/title_image.JPG){.rounded}
+
+# Frontmatter {.unnumbered}
 
 Environmental Data Literacy is a comprehensive guide designed to bridge the gap between ecological research and modern data science. By leveraging the power of the R ecosystem and the Tidyverse, this textbook empowers students and practitioners to move beyond basic spreadsheet analysis into a reproducible workflow encompassing data manipulation, spatial visualization, and advanced statistical modeling. From mastering the fundamentals of Markdown and data structures to executing complex multivariate ordinations and raster processing, this book provides the essential toolkit for turning raw environmental observations into actionable scientific insights.
+
+This is a Quarto book created from lecture materials I use to teach [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543) at [Virginia Commonwealth University](https://vcu.edu).  
+
 
 
 ## License
 
-This book is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+© 2025 by Rodney J. Dyer.  
+
+All rights reserved. The author assumes no responsibility for the use or misuse of information contained in this text.  This book is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 
 You are free to:  
 
@@ -18,11 +26,26 @@ Under the following terms:
   - *NonCommercial* — You may not use the material for commercial purposes.  
 
 
+## How to Cite
+
+This is an open source, online textbook and can be cited as:
+
+> Dyer Rodney J. 2025.  Environmental Data Literacy. [https://environmentaldataliteracy.org](https://environmentaldataliteracy.org). 
+
+Or use the following BibTeX entry.
+
+```bibtex
+@misc{dyer_2025,
+  author = {Dyer, Rodney J},
+  title = {Environmental Data Literacy},
+  year = {2025},
+  url = {https://environmentaldataliteracy.org}
+}
+```
+
 ## Logistics
 
-This is a Quarto book created from lecture materials I use to teach [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543) at [Virginia Commonwealth University](https://vcu.edu).  If you would like to compile this book yourself, you will find the sourse code at its [GitHub repository](https://github.com/DyerlabTeaching/ENVS543-Book).
-
-The following code runs each time you render the project.  It will check to see if you have all the required libraries.  It then installs missing ones and then loads them into memory (so we do not get those stupid package startup messages).
+If you would like to compile this book yourself, you will find the sourse code at its [GitHub repository](https://github.com/DyerlabTeaching/ENVS543-Book).  The following code runs each time you render the project.  It will check to see if you have all the required libraries.  It then installs missing ones and then loads them into memory (so we do not get those stupid package startup messages).
 
 ```{r}
 source("package_loader.R")

@@ -176,7 +176,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -318,15 +318,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#some-new-data" id="toc-some-new-data" class="nav-link active" data-scroll-target="#some-new-data"><span class="header-section-number">12.1</span> Some New Data</a></li>
-  <li><a href="#parameters-estimates" id="toc-parameters-estimates" class="nav-link" data-scroll-target="#parameters-estimates"><span class="header-section-number">12.2</span> Parameters &amp; Estimates</a></li>
-  <li><a href="#parametric-assumptions" id="toc-parametric-assumptions" class="nav-link" data-scroll-target="#parametric-assumptions"><span class="header-section-number">12.3</span> Parametric Assumptions</a>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">12.1</span> Lecture Materials</a></li>
+  <li><a href="#some-new-data" id="toc-some-new-data" class="nav-link" data-scroll-target="#some-new-data"><span class="header-section-number">12.2</span> Some New Data</a></li>
+  <li><a href="#parameters-estimates" id="toc-parameters-estimates" class="nav-link" data-scroll-target="#parameters-estimates"><span class="header-section-number">12.3</span> Parameters &amp; Estimates</a></li>
+  <li><a href="#parametric-assumptions" id="toc-parametric-assumptions" class="nav-link" data-scroll-target="#parametric-assumptions"><span class="header-section-number">12.4</span> Parametric Assumptions</a>
   <ul class="collapse">
-  <li><a href="#testing-for-normality." id="toc-testing-for-normality." class="nav-link" data-scroll-target="#testing-for-normality."><span class="header-section-number">12.3.1</span> Testing for Normality.</a></li>
-  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations"><span class="header-section-number">12.3.2</span> Transformations</a></li>
+  <li><a href="#testing-for-normality." id="toc-testing-for-normality." class="nav-link" data-scroll-target="#testing-for-normality."><span class="header-section-number">12.4.1</span> Testing for Normality.</a></li>
+  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations"><span class="header-section-number">12.4.2</span> Transformations</a></li>
   </ul></li>
-  <li><a href="#equal-variance" id="toc-equal-variance" class="nav-link" data-scroll-target="#equal-variance"><span class="header-section-number">12.4</span> Equal Variance</a></li>
-  <li><a href="#independence-of-data" id="toc-independence-of-data" class="nav-link" data-scroll-target="#independence-of-data"><span class="header-section-number">12.5</span> Independence of Data</a></li>
+  <li><a href="#equal-variance" id="toc-equal-variance" class="nav-link" data-scroll-target="#equal-variance"><span class="header-section-number">12.5</span> Equal Variance</a></li>
+  <li><a href="#independence-of-data" id="toc-independence-of-data" class="nav-link" data-scroll-target="#independence-of-data"><span class="header-section-number">12.6</span> Independence of Data</a></li>
   <li><a href="#correlation-tests" id="toc-correlation-tests" class="nav-link" data-scroll-target="#correlation-tests"><span class="header-section-number">13</span> Correlation Tests</a>
   <ul class="collapse">
   <li><a href="#parametric-test-pearson-product-moment-correlations" id="toc-parametric-test-pearson-product-moment-correlations" class="nav-link" data-scroll-target="#parametric-test-pearson-product-moment-correlations"><span class="header-section-number">13.1</span> Parametric Test: Pearson Product Moment Correlations</a></li>
@@ -358,7 +359,10 @@ window.Quarto = {
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Correlation/slides.html#/title-slide"></iframe>
+<section id="lecture-materials" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">12.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Correlation/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Correlation/slides.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>Correlation is a test to see if two variables change in a coordinate fashion. However, this does not imply they are functionally linked or causal in nature.</p>
 </blockquote>
@@ -506,8 +510,9 @@ sample estimates:
 </div>
 <p>We do in fact see a significant (P = 0.0253) relationship.</p>
 <p>Now, do we think that because Nicolas Cage makes more movies people are dying at an increased rate? No.&nbsp;These are spurious correlations, though do prove a point about causation.</p>
-<section id="some-new-data" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="some-new-data"><span class="header-section-number">12.1</span> Some New Data</h2>
+</section>
+<section id="some-new-data" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="some-new-data"><span class="header-section-number">12.2</span> Some New Data</h2>
 <p>For this topic, I thought I would turn to a bit of a more digestible set of data—data describing beer styles! There is a new CSV data set on the GitHub site located at the following URL.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>beer_url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/dyerlab/ENVS-Lectures/master/data/Beer_Styles.csv"</span></span>
@@ -560,15 +565,15 @@ dbl (10): ABV_Min, ABV_Max, IBU_Min, IBU_Max, SRM_Min, SRM_Max, OG_Min, OG_M...
 </ul>
 <p>As we talk about correlations, we will use these as examples.</p>
 </section>
-<section id="parameters-estimates" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="parameters-estimates"><span class="header-section-number">12.2</span> Parameters &amp; Estimates</h2>
+<section id="parameters-estimates" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="parameters-estimates"><span class="header-section-number">12.3</span> Parameters &amp; Estimates</h2>
 <p>In statistics, we have two kinds of entities, parameters and estimates, which are dualities of each other. The <code>TRUE</code> mean of a set of data is referred to by <span class="math inline">\(\mu\)</span> whereas the mean of the data we measured is referred to as <span class="math inline">\(\bar{x}\)</span>. The greek version is the <em>idealized</em> value for the parameter, something that we are striving to find the real estimate of. However, as a Frequentist, we can never actually get to that parameter (remember the actual population of data is infinite but we can only sample a small amount of it) and when we talk about the data associated with what we collect, we refer to it as a estimate and use normal variable names.</p>
 </section>
-<section id="parametric-assumptions" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="parametric-assumptions"><span class="header-section-number">12.3</span> Parametric Assumptions</h2>
+<section id="parametric-assumptions" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="parametric-assumptions"><span class="header-section-number">12.4</span> Parametric Assumptions</h2>
 <p>For much of the statistics we use, there are underlying assumptions about the form of the data that we shold look at.</p>
-<section id="testing-for-normality." class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="testing-for-normality."><span class="header-section-number">12.3.1</span> Testing for Normality.</h3>
+<section id="testing-for-normality." class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="testing-for-normality."><span class="header-section-number">12.4.1</span> Testing for Normality.</h3>
 <blockquote class="blockquote">
 <p>The data can be estimated by a normal density function, or at least can be transformed into data that is reasonably normal in distribution.</p>
 </blockquote>
@@ -624,8 +629,8 @@ W = 0.94595, p-value = 0.0004532</code></pre>
 </div>
 <p>Rejection of the null hypothesis (e.g., a small <code>p-value</code> from the test) indicates that the data <em>are not</em> to be considered as coming from a normal distribution. So, for the <code>ABV_Min</code> data above, it appears that it is not actually normally distributed. So what do we do?</p>
 </section>
-<section id="transformations" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="transformations"><span class="header-section-number">12.3.2</span> Transformations</h3>
+<section id="transformations" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="transformations"><span class="header-section-number">12.4.2</span> Transformations</h3>
 <p>If the data are not normal, we can look towards trying to see if we can transform it to a normally distributed variable. There are a lot of</p>
 <p><em>Studentized Data</em> - One way to standardize the data is to make it have a mean of 0.0 and a standard deviation of 1.0. To do this, we subtract the <code>mean()</code> and divide by the <code>sd()</code>.</p>
 <div class="cell">
@@ -694,12 +699,12 @@ W = 0.96746, p-value = 0.01418</code></pre>
 </div>
 </section>
 </section>
-<section id="equal-variance" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="equal-variance"><span class="header-section-number">12.4</span> Equal Variance</h2>
+<section id="equal-variance" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="equal-variance"><span class="header-section-number">12.5</span> Equal Variance</h2>
 <p>Another parametric assumption is the equality of variance across a range of the data. This means, for example, that the variance from one part of the experiment should not be different than the variance in samples from another portion of data. We will return to this when we evaluate regression models.</p>
 </section>
-<section id="independence-of-data" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="independence-of-data"><span class="header-section-number">12.5</span> Independence of Data</h2>
+<section id="independence-of-data" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="independence-of-data"><span class="header-section-number">12.6</span> Independence of Data</h2>
 <p>The samples you collect, and the way that you design your experiments are most important to ensure that your data are individually independent. You need to think about this very carefully as you design your experiments.</p>
 </section>
 <section id="correlation-tests" class="level1" data-number="13">

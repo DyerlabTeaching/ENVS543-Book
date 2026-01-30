@@ -176,7 +176,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -318,10 +318,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data"><span class="header-section-number">7.1</span> The Data</a></li>
-  <li><a href="#basic-plotting-in-r" id="toc-basic-plotting-in-r" class="nav-link" data-scroll-target="#basic-plotting-in-r"><span class="header-section-number">7.2</span> Basic Plotting in R</a></li>
-  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors"><span class="header-section-number">7.3</span> Colors</a></li>
-  <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations"><span class="header-section-number">7.4</span> Annotations</a></li>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">7.1</span> Lecture Materials</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">7.2</span> The Data</a></li>
+  <li><a href="#basic-plotting-in-r" id="toc-basic-plotting-in-r" class="nav-link" data-scroll-target="#basic-plotting-in-r"><span class="header-section-number">7.3</span> Basic Plotting in R</a></li>
+  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors"><span class="header-section-number">7.4</span> Colors</a></li>
+  <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations"><span class="header-section-number">7.5</span> Annotations</a></li>
   </ul>
 </nav>
     </div>
@@ -347,12 +348,16 @@ window.Quarto = {
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide"></iframe>
+<section id="lecture-materials" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">7.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>Visualization gives you answers to questions you didn’t know you had.</p>
 </blockquote>
-<section id="the-data" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="the-data"><span class="header-section-number">7.1</span> The Data</h2>
+</section>
+<section id="the-data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">7.2</span> The Data</h2>
 <p>The <code>iris</code> flower data set (also known as <em>Fisher’s Iris data set</em>) is a multivariate data set introduced by the British statistician, eugenicist, and biologist <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> in his <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x">1936</a> paper entitled, <em>The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis</em>.</p>
 <p>These data are part of the base <code>R</code> distribution and contain sepal and pedal measurements for three species if congeneric plants, <em>Iris setosa</em>, <em>I. versicolor</em>, and <em>I. virginica</em>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -382,8 +387,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="basic-plotting-in-r" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="basic-plotting-in-r"><span class="header-section-number">7.2</span> Basic Plotting in R</h2>
+<section id="basic-plotting-in-r" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="basic-plotting-in-r"><span class="header-section-number">7.3</span> Basic Plotting in R</h2>
 <p>The base <code>R</code> comes with several built-in plotting functions, each of which is accessed through a single function with a wide array of optional arguments that modify the overall appearance.</p>
 <p><em>Histograms - The Density of A Single Data Vector</em></p>
 <div class="cell">
@@ -670,15 +675,15 @@ iris$Species: virginica
 </div>
 </div>
 </section>
-<section id="colors" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="colors"><span class="header-section-number">7.3</span> Colors</h2>
+<section id="colors" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="colors"><span class="header-section-number">7.4</span> Colors</h2>
 <p><em>Named Colors - </em> There are 657 pre-defined, named colors built into the base <code>R</code> distribution. Here is a random selection of those values.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>randomColors <span class="ot">&lt;-</span> <span class="fu">sample</span>( <span class="fu">colors</span>(), <span class="at">size =</span> <span class="fu">nrow</span>(iris) )</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(randomColors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "gray97"     "gray60"     "grey14"     "skyblue"    "ivory2"    
-[6] "lightcoral"</code></pre>
+<pre><code>[1] "cyan1"        "bisque1"      "grey3"        "brown1"       "lightsalmon3"
+[6] "gray36"      </code></pre>
 </div>
 </div>
 <p>To use these colors, you can specify them by name for either all the elements</p>
@@ -769,8 +774,8 @@ YlOrRd           9      seq       TRUE</code></pre>
 </div>
 <p>It is very helpful to look at the different kinds of data palettes available and I’ll show you how to use them below when we color in the states based upon population size at the end of this document.</p>
 </section>
-<section id="annotations" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="annotations"><span class="header-section-number">7.4</span> Annotations</h2>
+<section id="annotations" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="annotations"><span class="header-section-number">7.5</span> Annotations</h2>
 <p>You can easily add text onto a graph using the <code>text()</code> function. Here is the correlation between the sepal length and width (the function <code>cor.test()</code> does the statistical test).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>cor <span class="ot">&lt;-</span> <span class="fu">cor.test</span>( iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width )</span>

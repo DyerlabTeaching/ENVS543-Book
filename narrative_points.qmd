@@ -1,11 +1,25 @@
 ---
 title: "Point Data"
-format: html
 ---
 
+![](media/chapter_points.jpg){.rounded fig-alt="Decorative chapter image."}
+
+## Lecture Materials
+
+::: {.content-visible when-format="html"}
+
+Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the [online version](https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide){.external target="_blank"} in a new browser window.
+
 ```{=html}
-<iframe src="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide"></iframe>
+<iframe src="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide" width="100%" height="400px"></iframe>
 ```
+:::
+
+::: {.content-visible unless-format="html"}
+> **Lecture Slides:** Available interactively in the [online version](https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide)
+
+![Lecture Slides](media/slides_points.png)
+:::
 
 > Everything is related to everything else, but near things are more related to each other.  Tobler's First Law of Geography[^1]
 
@@ -154,7 +168,10 @@ Once we have an ellipsoid model to work with we must define a *DATUM* type that 
   - Richmond, Virginia: 18S 282051 4156899
 
 
-<div class="box-red"><table><tr><td><font style="font-size: 350%">⚠️</font></td><td>&nbsp;</td><td>You **must** set both the ellipsoid and datum to be **EXACTLY THE SAME** for all of your data before you can do any work with it.  If they are not on the same lumpy bumpy planet or in the same coordinate system, you will be screwed (that is a technical term).</td></tr></table></div>
+::: {.callout-warning}
+## Important
+You **must** set both the ellipsoid and datum to be **EXACTLY THE SAME** for all of your data before you can do any work with it. If they are not on the same lumpy bumpy planet or in the same coordinate system, you will be screwed (that is a technical term).
+:::
 
 
 
@@ -197,7 +214,10 @@ GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.2572235
 ```
 
 
-<div class="box-green"><table><tr><td>Always let the underlying software make any changes to projection information.  There is a lot of difficult conversions that need to happen to reproject from one CRS to another.</td><td>&nbsp;</td><td><font style="font-size: 350%">🌎</font></td></tr></table></div>
+::: {.callout-tip}
+## Best Practice
+Always let the underlying software make any changes to projection information. There is a lot of difficult conversions that need to happen to reproject from one CRS to another.
+:::
 
 
 
@@ -208,12 +228,11 @@ GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.2572235
 
 To start off, we will load in some data from the bark beetle, *Araptus attenuatus*, a Sonoran Desert endemic parasite that lives within the plant *Euphorbia lomelii*.
 
-<table>
-<tr>
-<td>![Araptus attenuatus](https://live.staticflickr.com/65535/50441339417_74e04216fa_w_d.jpg)</td>
-<td>![Euphorbia lomelii](https://live.staticflickr.com/65535/50441175211_ba3b9df2ea_w_d.jpg)</td>
-</tr>
-</table>
+::: {layout-ncol=2}
+![Araptus attenuatus](https://live.staticflickr.com/65535/50441339417_74e04216fa_w_d.jpg)
+
+![Euphorbia lomelii](https://live.staticflickr.com/65535/50441175211_ba3b9df2ea_w_d.jpg)
+:::
 
 As part of some work that we have done on these species, we have looked at the relationship between habitat suitability and sex ratio bias.  The life history for this beetle is such that males will establish home by burrowing in the senescing tissues of the host plant.  Once established, feamles are attracted via phermones.  
 
@@ -237,11 +256,12 @@ data |>
 
 We can also plot these locations and fill in some interpretive data using the `leaflet` library to create an interactive map as follows:
 
+::: {.content-visible when-format="html"}
 ```{r message=FALSE, warning=FALSE}
 library( leaflet )
 data |>
-  mutate( Label = paste( "<b>Site:", Site, 
-                         "</b><hr>\nFemales:", Females, 
+  mutate( Label = paste( "<b>Site:", Site,
+                         "</b><hr>\nFemales:", Females,
                          "<br>Males: ", Males,
                          "<br>Suitability:", Suitability) ) |>
   leaflet() |>
@@ -249,6 +269,11 @@ data |>
   addProviderTiles( "OpenTopoMap" )
 ```
 Make sure to click on one of the markers and see the popup information that we added *en route* via that mutate and some HTML code.
+:::
+
+::: {.content-visible unless-format="html"}
+![Araptus Beetle Sampling Sites - Interactive map available in online version](media/map_points_leaflet.png)
+:::
 
 In this case, we are using the latitude and longitude as numerical values of which the `leaflet` library is able to intrepret properly.  However, just like we did for [date-like data](https://dyerlab.github.io/ENVS-Lectures/r_language/dates/slides.html#1), we can convert these into a geographically relevant data type that knows a lot about geospatial processes rather than keeping it as a numeric value that we "assume" will work properly.  For this we will use the `sf` library.
 

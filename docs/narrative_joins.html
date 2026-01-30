@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,14 +289,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#keys" id="toc-keys" class="nav-link active" data-scroll-target="#keys"><span class="header-section-number">6.1</span> Keys</a></li>
-  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">6.2</span> Joins</a>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">6.1</span> Lecture Materials</a></li>
+  <li><a href="#keys" id="toc-keys" class="nav-link" data-scroll-target="#keys"><span class="header-section-number">6.2</span> Keys</a></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">6.3</span> Joins</a>
   <ul class="collapse">
-  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">6.2.1</span> Left Join</a></li>
-  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join"><span class="header-section-number">6.2.2</span> Right Join</a></li>
-  <li><a href="#full-or-outer-join" id="toc-full-or-outer-join" class="nav-link" data-scroll-target="#full-or-outer-join"><span class="header-section-number">6.2.3</span> Full (or Outer) Join</a></li>
-  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join"><span class="header-section-number">6.2.4</span> Inner Join</a></li>
-  <li><a href="#filtering-joins" id="toc-filtering-joins" class="nav-link" data-scroll-target="#filtering-joins"><span class="header-section-number">6.2.5</span> Filtering Joins</a></li>
+  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">6.3.1</span> Left Join</a></li>
+  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join"><span class="header-section-number">6.3.2</span> Right Join</a></li>
+  <li><a href="#full-or-outer-join" id="toc-full-or-outer-join" class="nav-link" data-scroll-target="#full-or-outer-join"><span class="header-section-number">6.3.3</span> Full (or Outer) Join</a></li>
+  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join"><span class="header-section-number">6.3.4</span> Inner Join</a></li>
+  <li><a href="#filtering-joins" id="toc-filtering-joins" class="nav-link" data-scroll-target="#filtering-joins"><span class="header-section-number">6.3.5</span> Filtering Joins</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -323,7 +324,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide"></iframe>
+<section id="lecture-materials" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">6.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>Effectively storing data often requires the use of several data frames to reduce redundancy. In this short chapter, we will cover how to join data from multiple sources.</p>
 </blockquote>
@@ -358,8 +362,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3   D 12</code></pre>
 </div>
 </div>
-<section id="keys" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="keys"><span class="header-section-number">6.1</span> Keys</h2>
+</section>
+<section id="keys" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="keys"><span class="header-section-number">6.2</span> Keys</h2>
 <p>An important component of relational data are the <em>keys</em>. These are unique identifiers for a particular datum from a table. In each of these examples the variable (obviously named) <code>Key</code> is what is called a <em>Primary Key</em> because it uniquely identifies each row. You can verify this by counting the number of entries then filtering only for ones with 2 or more instances.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( tidyverse )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -389,14 +394,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>The keys are used to link together different tables.</p>
 </section>
-<section id="joins" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="joins"><span class="header-section-number">6.2</span> Joins</h2>
+<section id="joins" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="joins"><span class="header-section-number">6.3</span> Joins</h2>
 <blockquote class="blockquote">
 <p>A <em>join</em> is where we combine information contained within two data frames.<br>
 Joins are ways to merge together data and come in four flavors.</p>
 </blockquote>
-<section id="left-join" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="left-join"><span class="header-section-number">6.2.1</span> Left Join</h3>
+<section id="left-join" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="left-join"><span class="header-section-number">6.3.1</span> Left Join</h3>
 <p>A <em>left join</em> is one where all the data from the left data frame is in the result and the data whose keys in the right data frame are present in the left one are also included. Graphically, this leads to:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -416,8 +421,8 @@ Joins are ways to merge together data and come in four flavors.</p>
 </div>
 </div>
 </section>
-<section id="right-join" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="right-join"><span class="header-section-number">6.2.2</span> Right Join</h3>
+<section id="right-join" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="right-join"><span class="header-section-number">6.3.2</span> Right Join</h3>
 <p>The right join does the same thing but keeps all the keys in the right data table and has missing data where the key in the left one is not in the right one.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -437,8 +442,8 @@ Joins are ways to merge together data and come in four flavors.</p>
 </div>
 </div>
 </section>
-<section id="full-or-outer-join" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="full-or-outer-join"><span class="header-section-number">6.2.3</span> Full (or Outer) Join</h3>
+<section id="full-or-outer-join" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="full-or-outer-join"><span class="header-section-number">6.3.3</span> Full (or Outer) Join</h3>
 <p>This join is one where all the keys are retained adding missing data as necessary.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -458,8 +463,8 @@ Joins are ways to merge together data and come in four flavors.</p>
 </div>
 </div>
 </section>
-<section id="inner-join" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="inner-join"><span class="header-section-number">6.2.4</span> Inner Join</h3>
+<section id="inner-join" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="inner-join"><span class="header-section-number">6.3.4</span> Inner Join</h3>
 <p>The last one retains <em>only</em> those keys that are common in both.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -477,8 +482,8 @@ Joins are ways to merge together data and come in four flavors.</p>
 </div>
 </div>
 </section>
-<section id="filtering-joins" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="filtering-joins"><span class="header-section-number">6.2.5</span> Filtering Joins</h3>
+<section id="filtering-joins" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="filtering-joins"><span class="header-section-number">6.3.5</span> Filtering Joins</h3>
 <p>We can also use joins to filter values within one <code>data.frame</code>. Here the <code>semi_join()</code> keeps everything in the left data that has a key in the right one, but <strong>importantly</strong> it does not import the right data columns into the result.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.X <span class="sc">%&gt;%</span></span>

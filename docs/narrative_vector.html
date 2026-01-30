@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Frontmatter</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,15 +289,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#raw-data" id="toc-raw-data" class="nav-link active" data-scroll-target="#raw-data"><span class="header-section-number">10.1</span> Raw Data</a></li>
-  <li><a href="#lines" id="toc-lines" class="nav-link" data-scroll-target="#lines"><span class="header-section-number">10.2</span> Lines</a></li>
-  <li><a href="#polygons" id="toc-polygons" class="nav-link" data-scroll-target="#polygons"><span class="header-section-number">10.3</span> Polygons</a>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><span class="header-section-number">10.1</span> Lecture Materials</a></li>
+  <li><a href="#raw-data" id="toc-raw-data" class="nav-link" data-scroll-target="#raw-data"><span class="header-section-number">10.2</span> Raw Data</a></li>
+  <li><a href="#lines" id="toc-lines" class="nav-link" data-scroll-target="#lines"><span class="header-section-number">10.3</span> Lines</a></li>
+  <li><a href="#polygons" id="toc-polygons" class="nav-link" data-scroll-target="#polygons"><span class="header-section-number">10.4</span> Polygons</a>
   <ul class="collapse">
-  <li><a href="#polygons-from-data-frames" id="toc-polygons-from-data-frames" class="nav-link" data-scroll-target="#polygons-from-data-frames"><span class="header-section-number">10.3.1</span> Polygons from Data Frames</a></li>
-  <li><a href="#polygons-from-shapefiles" id="toc-polygons-from-shapefiles" class="nav-link" data-scroll-target="#polygons-from-shapefiles"><span class="header-section-number">10.3.2</span> Polygons from Shapefiles</a></li>
+  <li><a href="#polygons-from-data-frames" id="toc-polygons-from-data-frames" class="nav-link" data-scroll-target="#polygons-from-data-frames"><span class="header-section-number">10.4.1</span> Polygons from Data Frames</a></li>
+  <li><a href="#polygons-from-shapefiles" id="toc-polygons-from-shapefiles" class="nav-link" data-scroll-target="#polygons-from-shapefiles"><span class="header-section-number">10.4.2</span> Polygons from Shapefiles</a></li>
   </ul></li>
-  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations"><span class="header-section-number">10.4</span> Operations</a></li>
-  <li><a href="#spatial-joins" id="toc-spatial-joins" class="nav-link" data-scroll-target="#spatial-joins"><span class="header-section-number">10.5</span> Spatial Joins</a></li>
+  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations"><span class="header-section-number">10.5</span> Operations</a></li>
+  <li><a href="#spatial-joins" id="toc-spatial-joins" class="nav-link" data-scroll-target="#spatial-joins"><span class="header-section-number">10.6</span> Spatial Joins</a></li>
   </ul>
 </nav>
     </div>
@@ -323,13 +324,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<iframe src="https://dyerlabteaching.github.io/Shapefiles/slides.html#/title-slide"></iframe>
+<p><img src="media/chapter_vector.jpg" class="rounded img-fluid" alt="Decorative chapter image showing a milkweed beetle on a plant."></p>
+<section id="lecture-materials" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">10.1</span> Lecture Materials</h2>
+<p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows view or open the <a href="https://dyerlabteaching.github.io/Shapefiles/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
+<iframe src="https://dyerlabteaching.github.io/Shapefiles/slides.html#/title-slide" width="100%" height="400px"></iframe>
 <blockquote class="blockquote">
 <p>Connecting points creates more complicated data types—vector data—that represent lines and polygons.</p>
 </blockquote>
 <p>In this topic, we will focus on lines and polygons. These are represented as <code>sf</code> objects, we can leverage a large amount of <code>st_*</code> functions to perform manipulations, and we can visualize them using either built-in routines or via <code>ggplot</code> (as expected).</p>
-<section id="raw-data" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="raw-data"><span class="header-section-number">10.1</span> Raw Data</h2>
+</section>
+<section id="raw-data" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="raw-data"><span class="header-section-number">10.2</span> Raw Data</h2>
 <p>The data for this are going to be represented by roads and development zones in Richmond, Virginia. These data are made available by the GIS Department of the City of Richmond. For this example, we will be loading these in as <em>shapefiles</em>.</p>
 <p>You can load in shapefile data directly into R but we have to do a little work. First, we should understand that <em>a shapefile</em> is not an actual file, it is a collection of several files. They are often zipped up into a single archive.</p>
 <p>Here are two shape file archives that I have up on Github in the class repository.</p>
@@ -372,8 +378,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>( <span class="st">"ls"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="lines" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="lines"><span class="header-section-number">10.2</span> Lines</h2>
+<section id="lines" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="lines"><span class="header-section-number">10.3</span> Lines</h2>
 <p>We’ve covered <a href="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide">points</a> and now if we put them together in a sequence, we get lines. They are taken in the order given, just like when we were plotting polygons using <code>geom_polygon()</code>. Instead of loading these in manually, I’m going to load in the shapefile with the roads. To load in shapefiles, we use the <code>st_read()</code> function and pass it the .shp file.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>roads <span class="ot">&lt;-</span> <span class="fu">st_read</span>( <span class="st">"Centerlines-shp/tran_Carriageway.shp"</span> ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -573,11 +579,11 @@ First 10 features:
 </div>
 </div>
 </section>
-<section id="polygons" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="polygons"><span class="header-section-number">10.3</span> Polygons</h2>
+<section id="polygons" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="polygons"><span class="header-section-number">10.4</span> Polygons</h2>
 <p>Polygons are simply lines whose first and last point are the same (e.g., they close upon themselves). We can create these <em>de novo</em></p>
-<section id="polygons-from-data-frames" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="polygons-from-data-frames"><span class="header-section-number">10.3.1</span> Polygons from Data Frames</h3>
+<section id="polygons-from-data-frames" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="polygons-from-data-frames"><span class="header-section-number">10.4.1</span> Polygons from Data Frames</h3>
 <p>As a first approximation, we can grab polygon data from <code>ggplot</code> itself. Here I pull in the <code>data.frame</code> representing the counties of Virginia.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( maps )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -657,8 +663,8 @@ Attaching package: 'maps'</code></pre>
 </div>
 <p>Notice that the points on the border are repeated in both <code>County == "hanover"</code> and <code>County == "henrico"</code>.</p>
 </section>
-<section id="polygons-from-shapefiles" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="polygons-from-shapefiles"><span class="header-section-number">10.3.2</span> Polygons from Shapefiles</h3>
+<section id="polygons-from-shapefiles" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="polygons-from-shapefiles"><span class="header-section-number">10.4.2</span> Polygons from Shapefiles</h3>
 <p>We can also load these in from shapefiles. In the Richmond GIS data, we have Zoning District data. We can unzip them in the current directory as before.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>( <span class="st">"./Districts.zip"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -863,8 +869,8 @@ chr (2): Name, Category
 </div>
 </section>
 </section>
-<section id="operations" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="operations"><span class="header-section-number">10.4</span> Operations</h2>
+<section id="operations" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="operations"><span class="header-section-number">10.5</span> Operations</h2>
 <p>So we will close this out by looking at a few different operations that we can use for polygons. First, I’m going to load in the road shapefile (that was named by some random sequence of letters) and reproject it.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( roads, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -920,8 +926,8 @@ all geometries</code></pre>
 </div>
 </div>
 </section>
-<section id="spatial-joins" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="spatial-joins"><span class="header-section-number">10.5</span> Spatial Joins</h2>
+<section id="spatial-joins" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="spatial-joins"><span class="header-section-number">10.6</span> Spatial Joins</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>( theFan )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">

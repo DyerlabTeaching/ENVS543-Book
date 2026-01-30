@@ -2,9 +2,24 @@
 title: "Raster Data"
 ---
 
+![](media/chapter_raster.jpg){.rounded fig-alt="Decorative chapter image."}
+
+## Lecture Materials
+
+::: {.content-visible when-format="html"}
+
+Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the [online version](https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide){.external target="_blank"} in a new browser window.
+
 ```{=html}
-<iframe src="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide"></iframe>
+<iframe src="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide" width="100%" height="400px"></iframe>
 ```
+:::
+
+::: {.content-visible unless-format="html"}
+> **Lecture Slides:** Available interactively in the [online version](https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide)
+
+![Lecture Slides](media/slides_rasters.png)
+:::
 
 > Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.
 

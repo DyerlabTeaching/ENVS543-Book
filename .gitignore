@@ -50,8 +50,16 @@ Centerlines-shp*
 index_files
 *.zip
 
+media/chapter_images
+CLAUDE.md
+.claude
+
 
 
 
 
 **/*.quarto_ipynb
+
+# Node.js (for screenshot capture script)
+node_modules/
+package-lock.json
