@@ -2,7 +2,9 @@
 title: "Raster Data"
 ---
 
-![](media/chapter_raster.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_raster.jpg){.rounded fig-alt="Decorative chapter image showing the Sea of Cortez near Loreto Baja California Sur."}
+
+> Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.
 
 ## Lecture Materials
 
@@ -20,8 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_rasters.png)
 :::
-
-> Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.
 
 All raster operations in this topic are accomplished using the `raster` library.
 
@@ -263,7 +263,7 @@ plot( alt )
 click(alt, xy=TRUE, value=TRUE, n=3 ) -> points
 ```
 
-![map with points](https://live.staticflickr.com/65535/50505505948_08e3e91dfb_c_d.jpg)
+![map with points](media/map_with_points.jpg)
 ```{r echo=FALSE}
 points <- data.frame( x = c(-113.6292, -112.4792, -111.2458, -109.9958),
                       y = c(28.45417, 26.85417, 24.83750, 23.48750),

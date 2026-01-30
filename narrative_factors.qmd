@@ -2,7 +2,9 @@
 title: "Factor Data"
 ---
 
-![](media/chapter_factors.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_factors.jpg){.rounded fig-alt="Decorative chapter image showing several wild horses on the beach in coastal North Carolina."}
+
+> Factors allow us to represent a type of data that exclusive and categorical.  These data may, or may not, be ordered and in most cases, we can think of these kinds of data to represent things like, treatment levels, sampling locations, etc.
 
 ## Lecture Materials
 
@@ -20,9 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_factors.png)
 :::
-
-
-> Factors allow us to represent a type of data that exclusive and categorical.  These data may, or may not, be ordered and in most cases, we can think of these kinds of data to represent things like, treatment levels, sampling locations, etc.
 
 ## Factors
 

@@ -1,6 +1,5 @@
 # Syllabus {.unnumbered}
 
-
 <p align="center">
 <img src="media/DataAnimation.gif" alt="multiple data sets with the exact same mean, standard deviation, and correlation (to 2 decimal points) but very different distributions."/>
 </p>

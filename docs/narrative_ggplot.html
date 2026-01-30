@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,17 +326,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><img src="media/chapter_ggplot.jpg" class="rounded img-fluid" alt="Decorative chapter image of leaves turning colors for an ornamental plant."></p>
+<blockquote class="blockquote">
+<p>The <code>ggplot2</code> library is a gramattical approach to data display.</p>
+</blockquote>
 <section id="lecture-materials" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">8.1</span> Lecture Materials</h2>
 <p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
 <iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides.html#/title-slide" width="100%" height="400px"></iframe>
-<blockquote class="blockquote">
-<p>The <code>ggplot2</code> library is a gramattical approach to data display.</p>
-</blockquote>
 <p>In base <code>R</code>, the graphics are generally produced by adding a lot of optional arguments to a single function such as <code>plot()</code> or <code>barplot()</code> or <code>boxplot()</code>. We can get some kinds of overlays using <code>text()</code> or <code>points()</code> or <code>lines()</code> but there is not a cohesive framework for setting this up. For even moderately complex graphical display, these approaches become unwieldy when we have to cram all that information into extra optional arguments.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50184447608_a5ca7680f5_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/base_plot_r.jpg" class="img-fluid figure-img"></p>
 <figcaption>base plot in R</figcaption>
 </figure>
 </div>
@@ -378,7 +379,7 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 <p>Luckily for us, there are people who spend a lot of time working on these issues and thinking about how to best help us effectively display data. One of these individuals was Leland Wilkinson, whose book <em>The Grammar of Graphics</em> defined just such a system.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50184460853_63ea8a2a97_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/grammar_of_graphics.jpg" class="img-fluid figure-img"></p>
 <figcaption>The Grammar of Graphics by Leland Wilkinson</figcaption>
 </figure>
 </div>
@@ -393,7 +394,7 @@ Figure&nbsp;8.1: Corruption and Human Develoment among OECD countries from <i>Th
 <p>As outlined above, the basis of this appraoch is an additive (and iterative) process of creating a graphic. This all starts with the data. For our purposes, we will use the same iris <code>data.frame</code> as in the previous section on base graphics.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50163458792_2e3e877468_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/iris_species.jpg" class="img-fluid figure-img"></p>
 <figcaption>The iris data</figcaption>
 </figure>
 </div>

@@ -2,7 +2,9 @@
 title: "Correlations"
 ---
 
-![](media/chapter_correlation.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_correlation.jpg){.rounded fig-alt="Decorative chapter image of an old field and fence in Virginia."}
+
+> Correlation is a test to see if two variables change in a coordinate fashion. However, this does not imply they are functionally linked or causal in nature.
 
 ## Lecture Materials
 
@@ -20,10 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_correlation.png)
 :::
-
-
-> Correlation is a test to see if two variables change in a coordinate fashion. However, this does not imply they are functionally linked or causal in nature.
-
 
 Consider the following data consisting of the the decade from 1999 - 2009 and recording the number of movies each year by the American Actor, and cultural treasure, Mr. Nicolas Cage (source IMDB).
 
@@ -269,7 +267,7 @@ The values of these data fall wihtin the range of: $-1 \le \rho \le +1$ with neg
 
 Here are some examples of the distribution of two variables and their associated correlation coefficient.
 
-![*Figure 1: Data and associated correlation statistics.*](https://live.staticflickr.com/65535/50569436828_a110515a21_c_d.jpg)
+![*Figure 1: Data and associated correlation statistics.*](media/correlation_data.jpg)
 
 Significance testing for a correlation such as $\rho$ determine the extent to which we thing the value of is deviant from zero.  The Null Hypothesis is $H_O: \rho \ne 0$ and can be evaluated using the Student's t.test.  With large enough sample sizes, it can be approximated by: 
 

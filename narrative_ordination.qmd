@@ -2,7 +2,9 @@
 title: "Ordination"
 ---
 
-![](media/chapter_ordination.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_ordination.jpg){.rounded fig-alt="Decorative chapter image of a small mamallaria cactus in bloom in Baja California."}
+
+> Ordination is a technique to take high-dimensional data and to represent it in a lower dimensional context.
 
 ## Lecture Materials
 
@@ -20,11 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_ordination.png)
 :::
-
-
-
-> Ordination is a technique to take high-dimensional data and to represent it in a lower dimensional context.  
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set( echo = TRUE, 
@@ -85,7 +82,7 @@ Principle component analysis (PCA) is a translation of the original data into ne
 
 An exmaple of this rotation is given below.
 
-![A rotation of 2-dimenational data from the original coordinate space (represented by the x- and y-axes) onto synthetic principal component (the red axes). The rotation itself maximizes the distributional width of the data (depicted as density plots in grey for the original axes and red for the rotated axes).](https://live.staticflickr.com/65535/50613620086_2d1f9ca6dd_c_d.jpg)
+![A rotation of 2-dimenational data from the original coordinate space (represented by the x- and y-axes) onto synthetic principal component (the red axes). The rotation itself maximizes the distributional width of the data (depicted as density plots in grey for the original axes and red for the rotated axes).](media/pca_rotation.jpg)
 
 To conduct this rotation on our data, we use the function `prcomp()`.  It does the rotation and returns an analysis object that has all the information we need in it.
 

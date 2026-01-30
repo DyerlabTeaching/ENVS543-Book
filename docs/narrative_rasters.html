@@ -176,7 +176,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -356,13 +356,14 @@ window.Quarto = {
 </header>
 
 
+<p><img src="media/chapter_raster.jpg" class="rounded img-fluid" alt="Decorative chapter image showing the Sea of Cortez near Loreto Baja California Sur."></p>
+<blockquote class="blockquote">
+<p>Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.</p>
+</blockquote>
 <section id="lecture-materials" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">11.1</span> Lecture Materials</h2>
 <p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
 <iframe src="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide" width="100%" height="400px"></iframe>
-<blockquote class="blockquote">
-<p>Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.</p>
-</blockquote>
 <p>All raster operations in this topic are accomplished using the <code>raster</code> library.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -382,20 +383,20 @@ window.Quarto = {
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-[1,]   18   17   10   12   12   11   14
-[2,]   11   14    7   15   12   11   10
-[3,]   15    9   12   16    8   13   21
-[4,]    8   12   15   15   10   14   12
-[5,]   16    9   10    8   13   10   12
-[6,]   13   10   16    8   13   11   12
-[7,]   13    9   11   12   11    8   12</code></pre>
+[1,]   19   19    6   14    7   13   17
+[2,]   13    8   12   12   10   10   13
+[3,]   14   14   14    8   12   15   12
+[4,]    9   10   13   11   18   11   15
+[5,]   12   15   13    9   14    8   14
+[6,]    5   13   22    8   14   15   16
+[7,]   13   13   12    9   13    8    9</code></pre>
 </div>
 </div>
 <p>While we haven’t used matrices much thus far, it is a lot like a <code>data.frame</code> with respect to getting and setting values using numerical indices. For example, the value of the 3rd row and 5th column is:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>,<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 </div>
 <p>To convert this set of data, as a matrix, into a geospatially referenced <code>raster()</code> object we do the following:</p>
@@ -410,7 +411,7 @@ extent     : 0, 1, 0, 1  (xmin, xmax, ymin, ymax)
 crs        : NA 
 source     : memory
 names      : layer 
-values     : 7, 21  (min, max)</code></pre>
+values     : 5, 22  (min, max)</code></pre>
 </div>
 </div>
 <p>Notice that when I plot it out, it does not show the data, but a summary of the data along with some key data about the contents, including:<br>
@@ -725,7 +726,7 @@ values     : -202, 1838  (min, max)</code></pre>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50505505948_08e3e91dfb_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/map_with_points.jpg" class="img-fluid figure-img"></p>
 <figcaption>map with points</figcaption>
 </figure>
 </div>

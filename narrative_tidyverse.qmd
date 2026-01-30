@@ -2,7 +2,9 @@
 title: "Tidyverse"
 ---
 
-![](media/chapter_tidyverse.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_tidyverse.jpg){.rounded fig-alt="Decorative chapter image showing pepsis wasp, also known as the tarantuala hawk."}
+
+> The ability to quickly and easily manipulate and rework data is the base foundation for all the work you will be doing in `R`.  There is no more fundamental (and important) skill required than being able to quickly and easily take raw data and reconfigure it properly for inclusion into an analysis, summary, graphic, or table.  Using features of the `tidyverse` library are key.
 
 ## Lecture Materials
 
@@ -20,13 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_tidyverse.png)
 :::
-
-
-
-> The ability to quickly and easily manipulate and rework data is the base foundation for all the work you will be doing in `R`.  There is no more fundamental (and important) skill required than being able to quickly and easily take raw data and reconfigure it properly for inclusion into an analysis, summary, graphic, or table.  Using features of the `tidyverse` library are key.
-
-
-
 
 
 

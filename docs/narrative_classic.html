@@ -176,7 +176,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -348,13 +348,14 @@ window.Quarto = {
 </header>
 
 
+<p><img src="media/chapter_classic.jpg" class="rounded img-fluid" alt="Decorative chapter image showing an orange newt on the forest floor."></p>
+<blockquote class="blockquote">
+<p>Visualization gives you answers to questions you didn’t know you had.</p>
+</blockquote>
 <section id="lecture-materials" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">7.1</span> Lecture Materials</h2>
 <p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
 <iframe src="https://dyerlabteaching.github.io/Graphics-That-Do-Not-Suck/slides_classic.html#/title-slide" width="100%" height="400px"></iframe>
-<blockquote class="blockquote">
-<p>Visualization gives you answers to questions you didn’t know you had.</p>
-</blockquote>
 </section>
 <section id="the-data" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">7.2</span> The Data</h2>
@@ -362,7 +363,7 @@ window.Quarto = {
 <p>These data are part of the base <code>R</code> distribution and contain sepal and pedal measurements for three species if congeneric plants, <em>Iris setosa</em>, <em>I. versicolor</em>, and <em>I. virginica</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50163458792_2e3e877468_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/iris_species.jpg" class="img-fluid figure-img"></p>
 <figcaption>The three species of iris in the default data set.</figcaption>
 </figure>
 </div>
@@ -682,8 +683,8 @@ iris$Species: virginica
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>randomColors <span class="ot">&lt;-</span> <span class="fu">sample</span>( <span class="fu">colors</span>(), <span class="at">size =</span> <span class="fu">nrow</span>(iris) )</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(randomColors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "cyan1"        "bisque1"      "grey3"        "brown1"       "lightsalmon3"
-[6] "gray36"      </code></pre>
+<pre><code>[1] "slategray2" "palegreen4" "orangered3" "darkcyan"   "maroon1"   
+[6] "firebrick" </code></pre>
 </div>
 </div>
 <p>To use these colors, you can specify them by name for either all the elements</p>
@@ -718,7 +719,7 @@ iris$Species: virginica
 </div>
 <p><em>Hex Colors: </em> You can also use hexadecimal representations of colors, which is most commonly used on the internet. A hex representation of colors consists of red, green, and blue values encoded as numbers in base 16 (e.g., the single digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F). There are a lot of great resources on the internet for color themes that report red, green, blue and hex values. I often use the <a href="https://coolors.co">coolors.co</a> website to look for themes that go well together for slides or presentations.</p>
 <p><em>Color Brewer</em> Finally, there is an interesting website at <a href="https://colorbrewer2.org">colorbrewer2.org</a> that has some interesting built-in palettes. There is an associated library that makes creating palettes for plots really easy and as you get more expreienced with <code>R</code>, you will find this very helpful. For quick visualizations and estimation of built-in color palettes, you can look at the <a href="https://colorbrewer2.org">website</a> (below).</p>
-<p><img src="https://live.staticflickr.com/65535/50174527901_ae29c0e624_c_d.jpg" class="img-fluid" alt="ColorBrewer Site"> or look at the colors in <code>R</code></p>
+<p><img src="media/colorbrewer_site.jpg" class="img-fluid" alt="ColorBrewer Site"> or look at the colors in <code>R</code></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

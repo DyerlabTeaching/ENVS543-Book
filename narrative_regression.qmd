@@ -2,7 +2,9 @@
 title: "Regression"
 ---
 
-![](media/chapter_regression.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_regression.jpg){.rounded fig-alt="Decorative chapter image showing a donkey on the beach near Ixtapa, Mexico."}
+
+> The overall goal of any model is to provide a low-level description of patterns within the data.
 
 ## Lecture Materials
 
@@ -21,18 +23,12 @@ Below are the slides that are used in the lecture component of this topic. You c
 ![Lecture Slides](media/slides_regression.png)
 :::
 
-
-
-
 ```{r setup, include=FALSE}
 library( knitr )
 library( kableExtra )
 library( tidyverse )
 theme_set( theme_minimal( base_size = 16) )
 ```
-
-
-> The overall goal of any model is to provide a low-level description of patterns within the data.
 
 
 

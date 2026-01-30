@@ -2,7 +2,9 @@
 title: "Joins"
 ---
 
-![](media/chapter_joins.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_joins.jpg){.rounded fig-alt="Decorative chapter image of a flooeded forest."}
+
+> Effectively storing data often requires the use of several data frames to reduce redundancy.  In this short chapter, we will cover how to join data from multiple sources.
 
 ## Lecture Materials
 
@@ -23,17 +25,10 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 
 
-> Effectively storing data often requires the use of several data frames to reduce redundancy.  In this short chapter, we will cover how to join data from multiple sources.
-
-
-
-
-
-
 Rarely do we work on only one `data.frame`, particularly when we start working with complex data and data contained within relational databases.  In these cases, data are factored into several tables (akin to `data.frame` objects) with entries that connect the information from one table to another.   Consider the following example tables
 
 
-![Example data table structure](https://live.staticflickr.com/65535/50427672632_24e45139a8_c_d.jpg)
+![Example data table structure](media/data_table_structure.jpg)
 
 
 Each has a column I named *Key* and another with some data in it.  In `R` they could be defined as:
@@ -82,7 +77,7 @@ Joins are ways to merge together data and come in four flavors.
 A *left join* is one where all the data from the left data frame is in the result and the data whose keys in the right data frame are present in the left one are also included.  Graphically, this leads to:
 
 
-![left join](https://live.staticflickr.com/65535/50427817371_678f0f64c7_c_d.jpg)
+![left join](media/left_join.jpg)
 
 Where in `R` we do this using the `left_join()` function. 
 
@@ -97,7 +92,7 @@ df.X %>%
 
 The right join does the same thing but keeps all the keys in the right data table and has missing data where the key in the left one is not in the right one.
 
-![Right Join](https://live.staticflickr.com/65535/50427125528_0de6281475_c_d.jpg)
+![Right Join](media/right_join.jpg)
 
 This is accomplished using the `right_join()` function.
 
@@ -113,7 +108,7 @@ df.X %>%
 This join is one where all the keys are retained adding missing data as necessary.
 
 
-![Outer Join](https://live.staticflickr.com/65535/50427993992_4ccede1574_c_d.jpg)
+![Outer Join](media/outer_join.jpg)
 
 ```{r}
 df.X %>%
@@ -125,7 +120,7 @@ df.X %>%
 
 The last one retains *only* those keys that are common in both.
 
-![Inner Join](https://live.staticflickr.com/65535/50427125683_ac44eb1500_c_d.jpg)
+![Inner Join](media/inner_join.jpg)
 
 ```{r}
 df.X %>%

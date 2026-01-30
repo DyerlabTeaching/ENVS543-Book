@@ -2,7 +2,9 @@
 title: "Data Containers"
 ---
 
-![](media/chapter_containers.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_containers.jpg){.rounded fig-alt="Decorative chapter image showing forested hillside in the autumn."}
+
+> Data needs to be contained within objects so that we can examine, manipulate, sort, analyze, and communicate about it. In this topic, we examine some of the more basic
 
 ## Lecture Materials
 
@@ -20,9 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_containers.png)
 :::
-
-> Data needs to be contained within objects so that we can examine, manipulate, sort, analyze, and communicate about it. In this topic, we examine some of the more basic 
-
 
 ## Vectors
 

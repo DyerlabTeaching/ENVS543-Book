@@ -2,7 +2,9 @@
 title: "`ggplot2` Graphics"
 ---
 
-![](media/chapter_ggplot.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_ggplot.jpg){.rounded fig-alt="Decorative chapter image of leaves turning colors for an ornamental plant."}
+
+> The `ggplot2` library is a gramattical approach to data display.
 
 ## Lecture Materials
 
@@ -21,15 +23,9 @@ Below are the slides that are used in the lecture component of this topic. You c
 ![Lecture Slides](media/slides_ggplot.png)
 :::
 
-
-
-> The `ggplot2` library is a gramattical approach to data display.
-
-
-
 In base `R`, the graphics are generally produced by adding a lot of optional arguments to a single function such as `plot()` or `barplot()` or `boxplot()`.  We can get some kinds of overlays using `text()` or `points()` or `lines()` but there is not a cohesive framework for setting this up.  For even moderately complex graphical display, these approaches become unwieldy when we have to cram all that information into extra optional arguments.  
 
-![base plot in R](https://live.staticflickr.com/65535/50184447608_a5ca7680f5_c_d.jpg)
+![base plot in R](media/base_plot_r.jpg)
 
 Consider the graph below whose data are from a 2011 article in *The Economist* measuring human development and perception of corruption for 173 countries (@fig-economist).  Both the amount of data and the way in which the data are displayed (physically and aesthetically) are somewhat complex.
 
@@ -101,7 +97,7 @@ Truth be told (and you can look at the RMD of this file to verify), this one gra
 
 Luckily for us, there are people who spend a lot of time working on these issues and thinking about how to best help us effectively display data.  One of these individuals was Leland Wilkinson, whose book *The Grammar of Graphics* defined just such a system.
 
-![The Grammar of Graphics by Leland Wilkinson](https://live.staticflickr.com/65535/50184460853_63ea8a2a97_w_d.jpg)
+![The Grammar of Graphics by Leland Wilkinson](media/grammar_of_graphics.jpg)
 
 This philosophy has been inserted into the `R` Ecosystem by Hadley Wickham in the `ggplot2` library, which is descbribed as: 
 
@@ -113,7 +109,7 @@ Throughout the majority of this course, we will be using this library and this a
 
 As outlined above, the basis of this appraoch is an additive (and iterative) process of creating a graphic.  This all starts with the data.  For our purposes, we will use the same iris `data.frame` as in the previous section on base graphics. 
 
-![The iris data](https://live.staticflickr.com/65535/50163458792_2e3e877468_c_d.jpg)
+![The iris data](media/iris_species.jpg)
 
 ```{r}
 summary( iris )

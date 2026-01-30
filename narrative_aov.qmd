@@ -1,6 +1,8 @@
 # Analysis of Variance
 
-![](media/chapter_aov.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_aov.jpg){.rounded fig-alt="Decorative chapter image showing a milkweek beetle on a plant."}
+
+> If your data are taken from discrete groups (e.g., treatments), then we are generally testing the equality of each group mean.
 
 ## Lecture Materials
 
@@ -18,9 +20,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_aov.png)
 :::
-
-
-> If your data are taken from discrete groups (e.g., treatments), then we are generally testing the equality of each group mean.  
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center", fig.width = 6, fig.height=5, warning=FALSE, message=FALSE)

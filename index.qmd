@@ -1,9 +1,9 @@
 
-![](media/title_image.JPG){.rounded}
+![](media/chapter_frontmatter.jpg){.rounded fig-alt="Decorative chapter heading image of a senote in a tropical forest."}
 
-# Frontmatter {.unnumbered}
+# Index {.unnumbered .hidden-title}
 
-Environmental Data Literacy is a comprehensive guide designed to bridge the gap between ecological research and modern data science. By leveraging the power of the R ecosystem and the Tidyverse, this textbook empowers students and practitioners to move beyond basic spreadsheet analysis into a reproducible workflow encompassing data manipulation, spatial visualization, and advanced statistical modeling. From mastering the fundamentals of Markdown and data structures to executing complex multivariate ordinations and raster processing, this book provides the essential toolkit for turning raw environmental observations into actionable scientific insights.
+`Environmental Data Literacy` is a comprehensive guide designed to bridge the gap between ecological research and modern data science. By leveraging the power of the R ecosystem and the Tidyverse, this textbook empowers students and practitioners to move beyond basic spreadsheet analysis into a reproducible workflow encompassing data manipulation, spatial visualization, and advanced statistical modeling. From mastering the fundamentals of Markdown and data structures to executing complex multivariate ordinations and raster processing, this book provides the essential toolkit for turning raw environmental observations into actionable scientific insights.
 
 This is a Quarto book created from lecture materials I use to teach [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543) at [Virginia Commonwealth University](https://vcu.edu).  
 

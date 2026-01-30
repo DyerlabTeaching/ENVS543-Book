@@ -2,9 +2,13 @@
 title: "Vector Data"
 ---
 
-![](media/chapter_vector.jpg){.rounded fig-alt="Decorative chapter image showing a milkweed beetle on a plant."}
+![](media/chapter_vector.jpg){.rounded fig-alt="Decorative chapter image showing a wetland and lake with a dock near Loch Lamond in Scotland."}
 
-## Lecture Materials 
+> Connecting points creates more complicated data types—vector data—that represent lines and polygons.
+
+In this topic, we will focus on lines and polygons.  These are represented as `sf` objects, we can leverage a large amount of `st_*` functions to perform manipulations, and we can visualize them using either built-in routines or via `ggplot` (as expected).
+
+## Lecture Materials
 
 ::: {.content-visible when-format="html"}
 
@@ -20,11 +24,6 @@ Below are the slides that are used in the lecture component of this topic.  You 
 
 ![Lecture Slides](media/slides_vector.png)
 :::
-
-> Connecting points creates more complicated data types—vector data—that represent lines and polygons.
-
-
-In this topic, we will focus on lines and polygons.  These are represented as `sf` objects, we can leverage a large amount of `st_*` functions to perform manipulations, and we can visualize them using either built-in routines or via `ggplot` (as expected).
 
 ## Raw Data
 

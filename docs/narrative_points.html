@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -346,13 +346,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><img src="media/chapter_points.jpg" class="rounded img-fluid" alt="Decorative chapter image of the desert landscape in Baja California with cacti and boojum trees."></p>
+<blockquote class="blockquote">
+<p>Everything is related to everything else, but near things are more related to each other. Tobler’s First Law of Geography<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
 <section id="lecture-materials" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">9.1</span> Lecture Materials</h2>
 <p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
 <iframe src="https://dyerlabteaching.github.io/Spatial-Points/slides.html#/title-slide" width="100%" height="400px"></iframe>
-<blockquote class="blockquote">
-<p>Everything is related to everything else, but near things are more related to each other. Tobler’s First Law of Geography<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</blockquote>
 <p>Let’s start by loading in some of the libraries we’ll be using for this exercise.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( sf )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -381,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50504854173_2080b28f87_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/baja_california.jpg" class="img-fluid figure-img"></p>
 <figcaption>Baja California</figcaption>
 </figure>
 </div>
@@ -620,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50437120363_d8e0686d38_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/azimuthal_projection.jpg" class="img-fluid figure-img"></p>
 <figcaption>Azequidistant</figcaption>
 </figure>
 </div>
@@ -643,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50437120498_8dd67df3f1_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/cylindrical_projection.jpg" class="img-fluid figure-img"></p>
 <figcaption>Cylindrical Projection</figcaption>
 </figure>
 </div>
@@ -665,7 +666,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50437120428_6da48bed81_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/conic_projection.jpg" class="img-fluid figure-img"></p>
 <figcaption>Conic Projection</figcaption>
 </figure>
 </div>
@@ -718,7 +719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>One of the repositories for these projections can be found at <a href="https://epsg.io">epsg.io</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://epsg.io"><img src="https://live.staticflickr.com/65535/50445538736_bc1c3456e5_k_d.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="https://epsg.io"><img src="media/epsg_io.jpg" class="img-fluid figure-img"></a></p>
 <figcaption>epsg.io</figcaption>
 </figure>
 </div>
@@ -761,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50441339417_74e04216fa_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/araptus_attenuatus.jpg" class="img-fluid figure-img"></p>
 <figcaption>Araptus attenuatus</figcaption>
 </figure>
 </div>
@@ -769,7 +770,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50441175211_ba3b9df2ea_w_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/euphorbia_lomelii.jpg" class="img-fluid figure-img"></p>
 <figcaption>Euphorbia lomelii</figcaption>
 </figure>
 </div>
@@ -844,8 +845,8 @@ dbl (8): Males, Females, Suitability, MFRatio, GenVarArapat, GenVarEuphli, L...
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>( <span class="sc">~</span>Longitude, <span class="sc">~</span>Latitude, <span class="at">popup =</span> <span class="sc">~</span>Label ) <span class="sc">|&gt;</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>( <span class="st">"OpenTopoMap"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-4038091e7fe73ba4ca24" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-4038091e7fe73ba4ca24">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[[23.2855,24.00789,24.0195,24.13389,24.2115,24.21441,24.58843,24.87611,25.0247,25.34819,25.55757,25.60521,25.91409,26.0155,26.20876,26.63783,26.94589,27.0367,27.18232,27.2028,27.3632,27.40498,27.52944,28.03661,28.22308,28.40846,28.66056,28.72796,28.96651,29.01457,29.32541],[-110.10429,-109.85071,-110.096,-110.46236,-110.951,-110.27252,-110.74599,-110.69175,-111.675,-111.60056,-111.21563,-111.32638,-112.08062,-111.35475,-111.37833,-109.327,-112.04613,-112.986,-112.66552,-112.408,-112.964,-112.52959,-113.31609,-113.39991,-113.18263,-112.86985,-113.99141,-113.48973,-113.66787,-113.94486,-114.29353],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Site: Aqu <\/b><hr>\nFemales: 9 <br>Males:  12 <br>Suitability: 0.7217","<b>Site: 73 <\/b><hr>\nFemales: 5 <br>Males:  11 <br>Suitability: 0.1455","<b>Site: 157 <\/b><hr>\nFemales: 30 <br>Males:  26 <br>Suitability: 0.881","<b>Site: 153 <\/b><hr>\nFemales: 41 <br>Males:  35 <br>Suitability: 0.7325","<b>Site: 163 <\/b><hr>\nFemales: 21 <br>Males:  21 <br>Suitability: 0.4329","<b>Site: 48 <\/b><hr>\nFemales: 27 <br>Males:  18 <br>Suitability: 0.6195","<b>Site: 75 <\/b><hr>\nFemales: 18 <br>Males:  16 <br>Suitability: 0.8656","<b>Site: 77 <\/b><hr>\nFemales: 16 <br>Males:  19 <br>Suitability: 0.4226","<b>Site: const <\/b><hr>\nFemales: 11 <br>Males:  18 <br>Suitability: 0.1744","<b>Site: 51 <\/b><hr>\nFemales: 11 <br>Males:  9 <br>Suitability: 0.4125","<b>Site: 168 <\/b><hr>\nFemales: 25 <br>Males:  28 <br>Suitability: 0.4965","<b>Site: 64 <\/b><hr>\nFemales: 19 <br>Males:  16 <br>Suitability: 0.2876","<b>Site: 166 <\/b><hr>\nFemales: 26 <br>Males:  19 <br>Suitability: 0.2673","<b>Site: 58 <\/b><hr>\nFemales: 9 <br>Males:  11 <br>Suitability: 0.9019","<b>Site: 169 <\/b><hr>\nFemales: 28 <br>Males:  47 <br>Suitability: 0.3132","<b>Site: 32 <\/b><hr>\nFemales: 27 <br>Males:  40 <br>Suitability: 0.0563","<b>Site: 93 <\/b><hr>\nFemales: 21 <br>Males:  25 <br>Suitability: 0.1627","<b>Site: 161 <\/b><hr>\nFemales: 63 <br>Males:  64 <br>Suitability: 0.2791","<b>Site: 12 <\/b><hr>\nFemales: 21 <br>Males:  24 <br>Suitability: 0.3519","<b>Site: 162 <\/b><hr>\nFemales: 41 <br>Males:  57 <br>Suitability: 0.6136","<b>Site: sfran <\/b><hr>\nFemales: 16 <br>Males:  26 <br>Suitability: 0.3211","<b>Site: 160 <\/b><hr>\nFemales: 36 <br>Males:  48 <br>Suitability: 0.3652","<b>Site: 159 <\/b><hr>\nFemales: 15 <br>Males:  22 <br>Suitability: 0.188","<b>Site: 89 <\/b><hr>\nFemales: 19 <br>Males:  18 <br>Suitability: 0.3975","<b>Site: 171 <\/b><hr>\nFemales: 39 <br>Males:  38 <br>Suitability: 0.4614","<b>Site: 173 <\/b><hr>\nFemales: 32 <br>Males:  19 <br>Suitability: 0.5243","<b>Site: 177 <\/b><hr>\nFemales: 50 <br>Males:  49 <br>Suitability: 0.2618","<b>Site: 175 <\/b><hr>\nFemales: 8 <br>Males:  13 <br>Suitability: 0.4214","<b>Site: 84 <\/b><hr>\nFemales: 17 <br>Males:  13 <br>Suitability: 0.3953","<b>Site: 9 <\/b><hr>\nFemales: 10 <br>Males:  11 <br>Suitability: 0.5641","<b>Site: 88 <\/b><hr>\nFemales: 18 <br>Males:  23 <br>Suitability: 0.2186"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["OpenTopoMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"limits":{"lat":[23.2855,29.32541],"lng":[-114.29353,-109.327]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-8a6aa2e1ef357de18ff9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8a6aa2e1ef357de18ff9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[[23.2855,24.00789,24.0195,24.13389,24.2115,24.21441,24.58843,24.87611,25.0247,25.34819,25.55757,25.60521,25.91409,26.0155,26.20876,26.63783,26.94589,27.0367,27.18232,27.2028,27.3632,27.40498,27.52944,28.03661,28.22308,28.40846,28.66056,28.72796,28.96651,29.01457,29.32541],[-110.10429,-109.85071,-110.096,-110.46236,-110.951,-110.27252,-110.74599,-110.69175,-111.675,-111.60056,-111.21563,-111.32638,-112.08062,-111.35475,-111.37833,-109.327,-112.04613,-112.986,-112.66552,-112.408,-112.964,-112.52959,-113.31609,-113.39991,-113.18263,-112.86985,-113.99141,-113.48973,-113.66787,-113.94486,-114.29353],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Site: Aqu <\/b><hr>\nFemales: 9 <br>Males:  12 <br>Suitability: 0.7217","<b>Site: 73 <\/b><hr>\nFemales: 5 <br>Males:  11 <br>Suitability: 0.1455","<b>Site: 157 <\/b><hr>\nFemales: 30 <br>Males:  26 <br>Suitability: 0.881","<b>Site: 153 <\/b><hr>\nFemales: 41 <br>Males:  35 <br>Suitability: 0.7325","<b>Site: 163 <\/b><hr>\nFemales: 21 <br>Males:  21 <br>Suitability: 0.4329","<b>Site: 48 <\/b><hr>\nFemales: 27 <br>Males:  18 <br>Suitability: 0.6195","<b>Site: 75 <\/b><hr>\nFemales: 18 <br>Males:  16 <br>Suitability: 0.8656","<b>Site: 77 <\/b><hr>\nFemales: 16 <br>Males:  19 <br>Suitability: 0.4226","<b>Site: const <\/b><hr>\nFemales: 11 <br>Males:  18 <br>Suitability: 0.1744","<b>Site: 51 <\/b><hr>\nFemales: 11 <br>Males:  9 <br>Suitability: 0.4125","<b>Site: 168 <\/b><hr>\nFemales: 25 <br>Males:  28 <br>Suitability: 0.4965","<b>Site: 64 <\/b><hr>\nFemales: 19 <br>Males:  16 <br>Suitability: 0.2876","<b>Site: 166 <\/b><hr>\nFemales: 26 <br>Males:  19 <br>Suitability: 0.2673","<b>Site: 58 <\/b><hr>\nFemales: 9 <br>Males:  11 <br>Suitability: 0.9019","<b>Site: 169 <\/b><hr>\nFemales: 28 <br>Males:  47 <br>Suitability: 0.3132","<b>Site: 32 <\/b><hr>\nFemales: 27 <br>Males:  40 <br>Suitability: 0.0563","<b>Site: 93 <\/b><hr>\nFemales: 21 <br>Males:  25 <br>Suitability: 0.1627","<b>Site: 161 <\/b><hr>\nFemales: 63 <br>Males:  64 <br>Suitability: 0.2791","<b>Site: 12 <\/b><hr>\nFemales: 21 <br>Males:  24 <br>Suitability: 0.3519","<b>Site: 162 <\/b><hr>\nFemales: 41 <br>Males:  57 <br>Suitability: 0.6136","<b>Site: sfran <\/b><hr>\nFemales: 16 <br>Males:  26 <br>Suitability: 0.3211","<b>Site: 160 <\/b><hr>\nFemales: 36 <br>Males:  48 <br>Suitability: 0.3652","<b>Site: 159 <\/b><hr>\nFemales: 15 <br>Males:  22 <br>Suitability: 0.188","<b>Site: 89 <\/b><hr>\nFemales: 19 <br>Males:  18 <br>Suitability: 0.3975","<b>Site: 171 <\/b><hr>\nFemales: 39 <br>Males:  38 <br>Suitability: 0.4614","<b>Site: 173 <\/b><hr>\nFemales: 32 <br>Males:  19 <br>Suitability: 0.5243","<b>Site: 177 <\/b><hr>\nFemales: 50 <br>Males:  49 <br>Suitability: 0.2618","<b>Site: 175 <\/b><hr>\nFemales: 8 <br>Males:  13 <br>Suitability: 0.4214","<b>Site: 84 <\/b><hr>\nFemales: 17 <br>Males:  13 <br>Suitability: 0.3953","<b>Site: 9 <\/b><hr>\nFemales: 10 <br>Males:  11 <br>Suitability: 0.5641","<b>Site: 88 <\/b><hr>\nFemales: 18 <br>Males:  23 <br>Suitability: 0.2186"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["OpenTopoMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"limits":{"lat":[23.2855,29.32541],"lng":[-114.29353,-109.327]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Make sure to click on one of the markers and see the popup information that we added <em>en route</em> via that mutate and some HTML code.</p>

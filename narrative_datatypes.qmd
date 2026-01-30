@@ -2,7 +2,9 @@
 title: "Data Types"
 ---
 
-![](media/chapter_datatypes.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_datatypes.jpg){.rounded fig-alt="Decorative chapter image showing a termpreate forest in Virginia during the fall with golden leaves."}
+
+> When we work with an analysis language, we need to be very precise about how we represent the data we collect.  R is a general analysis language and has a wide range of native data types and can easily be expanded using the package system.
 
 ## Lecture Materials
 
@@ -20,8 +22,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 
 ![Lecture Slides](media/slides_datatypes.png)
 :::
-
-> When we work with an analysis language, we need to be very precise about how we represent the data we collect.  R is a general analysis language and has a wide range of native data types and can easily be expanded using the package system.  
 
 ## Missing Data
 

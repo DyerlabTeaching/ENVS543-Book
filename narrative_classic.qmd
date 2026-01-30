@@ -2,7 +2,9 @@
 title: "Data Visualization"
 ---
 
-![](media/chapter_classic.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_classic.jpg){.rounded fig-alt="Decorative chapter image showing an orange newt on the forest floor."}
+
+> Visualization gives you answers to questions you didn't know you had.
 
 ## Lecture Materials
 
@@ -21,17 +23,13 @@ Below are the slides that are used in the lecture component of this topic. You c
 ![Lecture Slides](media/slides_classic.png)
 :::
 
-
-> Visualization gives you answers to questions you didn’t know you had.
-
-
 ## The Data
 
 The `iris` flower data set (also known as *Fisher's Iris data set*) is a multivariate data set introduced by the British statistician, eugenicist, and biologist [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) in his [1936](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x) paper entitled, *The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis*.
 
 These data are part of the base `R` distribution and contain sepal and pedal measurements for three species if congeneric plants, *Iris setosa*, *I. versicolor*, and *I. virginica*.  
 
-![The three species of iris in the default data set.](https://live.staticflickr.com/65535/50163458792_2e3e877468_c_d.jpg)
+![The three species of iris in the default data set.](media/iris_species.jpg)
 
 Here is what the data summary looks like.
 
@@ -296,7 +294,7 @@ boxplot( Sepal.Length ~ Species,
 
 *Color Brewer* Finally, there is an interesting website at [colorbrewer2.org](https://colorbrewer2.org) that has some interesting built-in palettes.  There is an associated library that makes creating palettes for plots really easy and as you get more expreienced with `R`, you will find this very helpful.  For quick visualizations and estimation of built-in color palettes, you can look at the [website](https://colorbrewer2.org) (below).
 
-![ColorBrewer Site](https://live.staticflickr.com/65535/50174527901_ae29c0e624_c_d.jpg)
+![ColorBrewer Site](media/colorbrewer_site.jpg)
 or look at the colors in `R`
 
 ```{r}

@@ -2,7 +2,9 @@
 title: "Point Data"
 ---
 
-![](media/chapter_points.jpg){.rounded fig-alt="Decorative chapter image."}
+![](media/chapter_points.jpg){.rounded fig-alt="Decorative chapter image of the desert landscape in Baja California with cacti and boojum trees."}
+
+> Everything is related to everything else, but near things are more related to each other.  Tobler's First Law of Geography[^1]
 
 ## Lecture Materials
 
@@ -21,8 +23,6 @@ Below are the slides that are used in the lecture component of this topic. You c
 ![Lecture Slides](media/slides_points.png)
 :::
 
-> Everything is related to everything else, but near things are more related to each other.  Tobler's First Law of Geography[^1]
-
 Let's start by loading in some of the libraries we'll be using for this exercise.
 
 ```{r}
@@ -35,7 +35,7 @@ library( tidyverse )
 
 
 <center>
-![Baja California](https://live.staticflickr.com/65535/50504854173_2080b28f87_c_d.jpg)
+![Baja California](media/baja_california.jpg)
 </center>
 
 ## Learning Objectives
@@ -119,7 +119,7 @@ ggplot( states, aes( x = long,
 An Azimuth Projection is one that is formed by a 2-dimensional plane that is tangential to the surface of the earth at example one point.  This point may be polar (north or south pole) or oblique (e.g., over Richmond, Virginia).
 
 <center>
-![Azequidistant](https://live.staticflickr.com/65535/50437120363_d8e0686d38_w_d.jpg)
+![Azequidistant](media/azimuthal_projection.jpg)
 </center>
 
 We can apply different ellipsoids to the map *when we plot it* by adjusting the coordinate space it is plot within using the `coord_map()` modification.  For a whole list of available projections, see `?mapproject`.
@@ -134,7 +134,7 @@ p + coord_map( "azequalarea")
 A cylindrical projection is one where a cylinder is wrapped around the earth creating straight lines for all parallel away from the equator.
 
 
-<center>![Cylindrical Projection](https://live.staticflickr.com/65535/50437120498_8dd67df3f1_w_d.jpg)</center>
+<center>![Cylindrical Projection](media/cylindrical_projection.jpg)</center>
 
 
 ```{r}
@@ -146,7 +146,7 @@ p + coord_map("cylindrical")
 
 Conic projections are symmetric around the prime meridian and all parallels are segments of conecntric circles.
 
-<center>![Conic Projection](https://live.staticflickr.com/65535/50437120428_6da48bed81_w_d.jpg)</center>
+<center>![Conic Projection](media/conic_projection.jpg)</center>
 
 
 ```{r}
@@ -181,7 +181,7 @@ Projections are a combination of the underlying elipse as well as the definition
 
 One of the repositories for these projections can be found at [epsg.io](https://epsg.io).
 
-[![epsg.io](https://live.staticflickr.com/65535/50445538736_bc1c3456e5_k_d.jpg)](https://epsg.io)
+[![epsg.io](media/epsg_io.jpg)](https://epsg.io)
 
 The EPSG Geodetic Parameter Dataset (also known as the EPGS[^3] registry) is a publc registry of datums, spatial reference systems, and earth elipsoids.  Each item is assigned a specific EPSG code
 
@@ -229,9 +229,9 @@ Always let the underlying software make any changes to projection information. T
 To start off, we will load in some data from the bark beetle, *Araptus attenuatus*, a Sonoran Desert endemic parasite that lives within the plant *Euphorbia lomelii*.
 
 ::: {layout-ncol=2}
-![Araptus attenuatus](https://live.staticflickr.com/65535/50441339417_74e04216fa_w_d.jpg)
+![Araptus attenuatus](media/araptus_attenuatus.jpg)
 
-![Euphorbia lomelii](https://live.staticflickr.com/65535/50441175211_ba3b9df2ea_w_d.jpg)
+![Euphorbia lomelii](media/euphorbia_lomelii.jpg)
 :::
 
 As part of some work that we have done on these species, we have looked at the relationship between habitat suitability and sex ratio bias.  The life history for this beetle is such that males will establish home by burrowing in the senescing tissues of the host plant.  Once established, feamles are attracted via phermones.  

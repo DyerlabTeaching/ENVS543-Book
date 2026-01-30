@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,17 +324,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><img src="media/chapter_joins.jpg" class="rounded img-fluid" alt="Decorative chapter image of a flooeded forest."></p>
+<blockquote class="blockquote">
+<p>Effectively storing data often requires the use of several data frames to reduce redundancy. In this short chapter, we will cover how to join data from multiple sources.</p>
+</blockquote>
 <section id="lecture-materials" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="lecture-materials"><span class="header-section-number">6.1</span> Lecture Materials</h2>
 <p>Below are the slides that are used in the lecture component of this topic. You can cycle through them using the cursor arrows or open the <a href="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide" class="external" target="_blank">online version</a> in a new browser window.</p>
 <iframe src="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide" width="100%" height="400px"></iframe>
-<blockquote class="blockquote">
-<p>Effectively storing data often requires the use of several data frames to reduce redundancy. In this short chapter, we will cover how to join data from multiple sources.</p>
-</blockquote>
 <p>Rarely do we work on only one <code>data.frame</code>, particularly when we start working with complex data and data contained within relational databases. In these cases, data are factored into several tables (akin to <code>data.frame</code> objects) with entries that connect the information from one table to another. Consider the following example tables</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50427672632_24e45139a8_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/data_table_structure.jpg" class="img-fluid figure-img"></p>
 <figcaption>Example data table structure</figcaption>
 </figure>
 </div>
@@ -405,7 +406,7 @@ Joins are ways to merge together data and come in four flavors.</p>
 <p>A <em>left join</em> is one where all the data from the left data frame is in the result and the data whose keys in the right data frame are present in the left one are also included. Graphically, this leads to:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50427817371_678f0f64c7_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/left_join.jpg" class="img-fluid figure-img"></p>
 <figcaption>left join</figcaption>
 </figure>
 </div>
@@ -426,7 +427,7 @@ Joins are ways to merge together data and come in four flavors.</p>
 <p>The right join does the same thing but keeps all the keys in the right data table and has missing data where the key in the left one is not in the right one.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50427125528_0de6281475_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/right_join.jpg" class="img-fluid figure-img"></p>
 <figcaption>Right Join</figcaption>
 </figure>
 </div>
@@ -447,7 +448,7 @@ Joins are ways to merge together data and come in four flavors.</p>
 <p>This join is one where all the keys are retained adding missing data as necessary.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50427993992_4ccede1574_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/outer_join.jpg" class="img-fluid figure-img"></p>
 <figcaption>Outer Join</figcaption>
 </figure>
 </div>
@@ -468,7 +469,7 @@ Joins are ways to merge together data and come in four flavors.</p>
 <p>The last one retains <em>only</em> those keys that are common in both.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://live.staticflickr.com/65535/50427125683_ac44eb1500_c_d.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/inner_join.jpg" class="img-fluid figure-img"></p>
 <figcaption>Inner Join</figcaption>
 </figure>
 </div>
