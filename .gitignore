@@ -55,10 +55,12 @@ CLAUDE.md
 .claude
 
 
-
-
-
 **/*.quarto_ipynb
+*_cache/
+
+# iCloud shit
+* [0-9].*
+* [0-9][0-9].*
 
 # Node.js (for screenshot capture script)
 node_modules/

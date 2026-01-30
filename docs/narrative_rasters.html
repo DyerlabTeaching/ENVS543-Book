@@ -383,20 +383,20 @@ window.Quarto = {
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-[1,]   19   19    6   14    7   13   17
-[2,]   13    8   12   12   10   10   13
-[3,]   14   14   14    8   12   15   12
-[4,]    9   10   13   11   18   11   15
-[5,]   12   15   13    9   14    8   14
-[6,]    5   13   22    8   14   15   16
-[7,]   13   13   12    9   13    8    9</code></pre>
+[1,]   14   21   12   12   11   12    9
+[2,]   12   11   13   15   11    8    6
+[3,]   12   14    9   14   15   15    9
+[4,]    9   13    7   16   10   11   13
+[5,]   19   12   10   15   11   11   14
+[6,]    9   18   13   13    8   14    9
+[7,]   10    9   15   18   12   15   13</code></pre>
 </div>
 </div>
 <p>While we haven’t used matrices much thus far, it is a lot like a <code>data.frame</code> with respect to getting and setting values using numerical indices. For example, the value of the 3rd row and 5th column is:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>,<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
+<pre><code>[1] 15</code></pre>
 </div>
 </div>
 <p>To convert this set of data, as a matrix, into a geospatially referenced <code>raster()</code> object we do the following:</p>
@@ -411,7 +411,7 @@ extent     : 0, 1, 0, 1  (xmin, xmax, ymin, ymax)
 crs        : NA 
 source     : memory
 names      : layer 
-values     : 5, 22  (min, max)</code></pre>
+values     : 6, 21  (min, max)</code></pre>
 </div>
 </div>
 <p>Notice that when I plot it out, it does not show the data, but a summary of the data along with some key data about the contents, including:<br>

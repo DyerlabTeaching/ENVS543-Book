@@ -1,5 +1,7 @@
 ---
 title: "Vector Data"
+execute: 
+  cache: true
 ---
 
 ![](media/chapter_vector.jpg){.rounded fig-alt="Decorative chapter image showing a wetland and lake with a dock near Loch Lamond in Scotland."}

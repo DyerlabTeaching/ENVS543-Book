@@ -340,11 +340,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><img src="media/chapter_frontmatter.jpg" class="rounded img-fluid" alt="Decorative chapter heading image of a senote in a tropical forest."></p>
+<p><img src="media/title_image.JPG" class="rounded img-fluid" alt="Decorative image showing environmental data visualization."></p>
 <section id="index" class="level1 unnumbered hidden-title">
 <h1 class="unnumbered hidden-title">Index</h1>
 <p><code>Environmental Data Literacy</code> is a comprehensive guide designed to bridge the gap between ecological research and modern data science. By leveraging the power of the R ecosystem and the Tidyverse, this textbook empowers students and practitioners to move beyond basic spreadsheet analysis into a reproducible workflow encompassing data manipulation, spatial visualization, and advanced statistical modeling. From mastering the fundamentals of Markdown and data structures to executing complex multivariate ordinations and raster processing, this book provides the essential toolkit for turning raw environmental observations into actionable scientific insights.</p>
 <p>This is a Quarto book created from lecture materials I use to teach <a href="https://bulletin.vcu.edu/search/?P=ENVS+543">ENVS543: Environmental Data Literacy</a> at <a href="https://vcu.edu">Virginia Commonwealth University</a>.</p>
+<p>A PDF version of this book can be <a href="https://github.com/DyerlabTeaching/ENVS543-Book/releases/download/pdf_2025_12/Environmental-Data-Literacy.pdf">downloaded here</a>, though all the interactive content has been removed.</p>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
 <p>© 2025 by Rodney J. Dyer.</p>
@@ -382,13 +383,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"package_loader.R"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>libraries <span class="ot">&lt;-</span> <span class="fu">extract_libraries_from_markdown</span>()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>need_to_install <span class="ot">&lt;-</span> <span class="fu">check_missing_packages</span>( libraries )</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install_missing_packages</span>( need_to_install )</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( pkg <span class="cf">in</span> libraries ) { </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>( <span class="fu">library</span>(pkg, <span class="at">character.only =</span> <span class="cn">TRUE</span>) )</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>( <span class="fu">theme_minimal</span>( <span class="at">base_size=</span><span class="dv">16</span>) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>libraries <span class="ot">&lt;-</span> <span class="fu">extract_libraries_from_markdown</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in file(con, "r"): 'raw = FALSE' but './narrative_vector_cache' is not
+a regular file</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in file(con, "r"): cannot open file './narrative_vector_cache': it is a
+directory</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error reading file ./narrative_vector_cache:
+cannot open the connection</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in file(con, "r"): 'raw = FALSE' but './narrative_vector_files' is not
+a regular file</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in file(con, "r"): cannot open file './narrative_vector_files': it is a
+directory</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error reading file ./narrative_vector_files:
+cannot open the connection</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>need_to_install <span class="ot">&lt;-</span> <span class="fu">check_missing_packages</span>( libraries )</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_missing_packages</span>( need_to_install )</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( pkg <span class="cf">in</span> libraries ) { </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>( <span class="fu">library</span>(pkg, <span class="at">character.only =</span> <span class="cn">TRUE</span>) )</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>( <span class="fu">theme_minimal</span>( <span class="at">base_size=</span><span class="dv">16</span>) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

@@ -148,5 +148,5 @@ beers %>%
 
 
 
-[^1]: Pielou EC, (1984) The interpretation of ecological data: A primer on classification and ordination.  288pg. ISBN: ![978-0-471-88950-2](https://www.wiley.com/en-us/The+Interpretation+of+Ecological+Data%3A+A+Primer+on+Classification+and+Ordination-p-9780471889502)
+[^1]: Pielou EC, (1984) The interpretation of ecological data: A primer on classification and ordination.  288pg. ISBN: [978-0-471-88950-2](https://www.wiley.com/en-us/The+Interpretation+of+Ecological+Data%3A+A+Primer+on+Classification+and+Ordination-p-9780471889502)
 

@@ -1,5 +1,5 @@
 
-![](media/chapter_frontmatter.jpg){.rounded fig-alt="Decorative chapter heading image of a senote in a tropical forest."}
+![](media/title_image.JPG){.rounded fig-alt="Decorative image showing environmental data visualization."}
 
 # Index {.unnumbered .hidden-title}
 
@@ -7,7 +7,7 @@
 
 This is a Quarto book created from lecture materials I use to teach [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543) at [Virginia Commonwealth University](https://vcu.edu).  
 
-
+A PDF version of this book can be [downloaded here](https://github.com/DyerlabTeaching/ENVS543-Book/releases/download/pdf_2025_12/Environmental-Data-Literacy.pdf), though all the interactive content has been removed.
 
 ## License
 

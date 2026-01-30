@@ -46,4 +46,14 @@ format:
     css: media/style.css
     theme:
       - cosmo
-      
+  pdf:
+    documentclass: book
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    papersize: letter
+    geometry:
+      - margin=1in
+    fig-pos: 'H'
+    keep-tex: false
