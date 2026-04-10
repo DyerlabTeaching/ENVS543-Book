@@ -14,3 +14,41 @@ iframe {
 h1.hidden-title {
   display: none;
 }
+
+
+
+/* Container for the boxes */
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Individual gold box styling */
+.gold-box {
+  background-color: #f8b133; /* VCU Gold approximation */
+  padding: 20px 10px;
+  text-align: center;
+  flex: 1; /* Makes boxes equal width */
+  min-width: 200px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.gold-box:hover {
+  transform: scale(1.02);
+  filter: brightness(95%);
+}
+
+/* Text styling inside the boxes */
+.gold-box a {
+  color: black !important;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
