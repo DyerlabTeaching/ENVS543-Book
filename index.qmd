@@ -1,25 +1,20 @@
+---
+title: "Environmental Data Literacy"
+---
 
+::: {.content-visible when-format="html"}
 ![](media/title_image.JPG){.rounded fig-alt="Decorative image showing environmental data visualization."}
-
-# Index {.unnumbered .hidden-title}
+:::
 
 `Environmental Data Literacy` is a comprehensive guide designed to bridge the gap between ecological research and modern data science. By leveraging the power of the R ecosystem and the Tidyverse, this textbook empowers students and practitioners to move beyond basic spreadsheet analysis into a reproducible workflow encompassing data manipulation, spatial visualization, and advanced statistical modeling. From mastering the fundamentals of Markdown and data structures to executing complex multivariate ordinations and raster processing, this book provides the essential toolkit for turning raw environmental observations into actionable scientific insights.
-
-
-## AI-Assisted Learning
-
-![](media/envsAI-TA.png)
-
-
-The auhor has designed a custom AI chat assistant based on this content.  We will be using the [Positron IDE](https://positron.posit.co/) in class, though it may be integrated into most common chat-based interfaces. Ask your envsAI-TA a question, it can draw on the vocabulary, context, and examples you are encountering here, in the slides presented, and from the data we use in class, rather than giving generic answers and AI slop. Think of it as giving your AI tutor a copy of the syllabus, the textbook, and the lab manual, all at once.
-
-Dr. Dyer will provide a connection information and setup instructions on the first day of class for [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543). 
 
 
 ## Open and Affordable Course Content
 
 This textbook is being offered in support of [VCU Libraries' Open and Affordable Course Content Initiative](https://www.library.vcu.edu/research-teaching/open-and-affordable-course-content/).
 
+
+::: {.content-visible when-format="html"}
 ::: {.button-container}
 
 ::: {.gold-box}
@@ -32,10 +27,18 @@ This textbook is being offered in support of [VCU Libraries' Open and Affordable
 
 :::
 
+:::
 
 
-A PDF version of this book can be [downloaded here](https://github.com/DyerlabTeaching/ENVS543-Book/releases/download/pdf_2025_12/Environmental-Data-Literacy.pdf), though all the interactive content has been removed.
 
+## AI-Assisted Learning
+
+![](media/envsAI-TA.png)
+
+
+The auhor has designed a custom AI chat assistant based on this content.  We will be using the [Positron IDE](https://positron.posit.co/) in class, though it may be integrated into most common chat-based interfaces. Ask your envsAI-TA a question, it can draw on the vocabulary, context, and examples you are encountering here, in the slides presented, and from the data we use in class, rather than giving generic answers and AI slop. Think of it as giving your AI tutor a copy of the syllabus, the textbook, and the lab manual, all at once.
+
+Dr. Dyer will provide a connection information and setup instructions on the first day of class for [ENVS543: Environmental Data Literacy](https://bulletin.vcu.edu/search/?P=ENVS+543). A PDF version of this book can be [downloaded here](https://github.com/DyerlabTeaching/ENVS543-Book/releases/download/pdf_2025_12/Environmental-Data-Literacy.pdf), though all the interactive content has been removed.
 
 
 ## License

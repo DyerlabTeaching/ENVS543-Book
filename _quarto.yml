@@ -44,16 +44,32 @@ book:
 format:
   html:
     css: media/style.css
-    theme:
-      - cosmo
-  pdf:
-    documentclass: book
     toc: true
     toc-depth: 2
     number-sections: true
+    number-depth: 1
+    theme:
+      - cosmo
+  pdf:
+    pdf-engine: xelatex
+    documentclass: book
+    fontsize: 11pt
+    toc: true
+    toc-depth: 2
+    
     colorlinks: true
     papersize: letter
     geometry:
       - margin=1in
     fig-pos: 'H'
     keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{fontspec}
+        \setmainfont{Helvetica Neue}
+        \setmonofont{Menlo}
+        \usepackage{pdfpages}
+        \renewcommand{\maketitle}{}
+    include-before-body:
+      text: |
+        \includepdf[pages=1]{media/cover.pdf}

@@ -258,6 +258,7 @@ We can also plot these locations and fill in some interpretive data using the `l
 
 ::: {.content-visible when-format="html"}
 ```{r message=FALSE, warning=FALSE}
+#| eval: !expr knitr::is_html_output()
 library( leaflet )
 data |>
   mutate( Label = paste( "<b>Site:", Site,

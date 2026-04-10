@@ -490,6 +490,7 @@ We can quickly use these data and make an interactive labeled map of it in a few
 
 ::: {.content-visible when-format="html"}
 ```{r}
+#| eval: !expr knitr::is_html_output()
 library( leaflet )
 beetles %>%
   leaflet() %>%
