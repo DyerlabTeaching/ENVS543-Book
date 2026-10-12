@@ -319,8 +319,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#principal-component-analyses" id="toc-principal-component-analyses" class="nav-link" data-scroll-target="#principal-component-analyses">Principal Component Analyses</a></li>
+  <li><a href="#principal-component-analyses" id="toc-principal-component-analyses" class="nav-link active" data-scroll-target="#principal-component-analyses">Principal Component Analyses</a></li>
   <li><a href="#non-metric-multidimensional-scaling-nmds" id="toc-non-metric-multidimensional-scaling-nmds" class="nav-link" data-scroll-target="#non-metric-multidimensional-scaling-nmds">Non-metric Multidimensional Scaling (NMDS)</a></li>
   </ul>
 </nav>
@@ -347,20 +346,12 @@ window.Quarto = {
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="A small Mammillaria cactus in bloom in Baja California."></p>
 <blockquote class="blockquote">
 <p>Ordination is a collective term for multivariate techniques which summarize a multidimensional dataset in such a way that when it is projected onto a low dimensional space, any intrinsic pattern the data may possess becomes apparent upon visual inspection<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Ordination/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Ordination/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Ordination/in-class.html">in-class</a> activity.</li>
-<li><a href="https://dyerlabteaching.github.io/CourseData/Genetic/mv_genos.csv">Data Set</a></li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <p>Ordination is a technique to take high-dimensional data and to represent it in a lower dimensional context.</p>
 <p>One of the largest challenges in data analysis is the ability to understand and gain inferences from it! This is especially compounded when we have many different kinds of data describing our individual observations. For example, at a particular vernal pool, we may have measured pool size, pool depth, elevation, rainfall, temperature, canopy cover, pH, aquatic vegetation, species1 density, species2 density, etc. To describe all of these variables we could either plot all combinations of them <em>or</em> be a bit clever and use some ordination approaches.</p>
 <p>For this activity, I am going to use the beer styles as a data set in explaining a couple of different types of ordination. It is available as the raw CSV file.</p>
@@ -444,7 +435,6 @@ dbl (10): ABV_Min, ABV_Max, IBU_Min, IBU_Max, SRM_Min, SRM_Max, OG_Min, OG_M...
 </div>
 </div>
 </div>
-</section>
 <section id="principal-component-analyses" class="level2">
 <h2 class="anchored" data-anchor-id="principal-component-analyses">Principal Component Analyses</h2>
 <p>Principal component analysis (PCA) is a translation of the original data into new coordinate spaces. This has absolutely nothing to do with the relationship among the data themselves but is more of a way to create new coordinates for each data point under the following criteria:<br>

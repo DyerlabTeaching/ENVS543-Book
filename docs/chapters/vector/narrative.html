@@ -291,8 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#raw-data" id="toc-raw-data" class="nav-link" data-scroll-target="#raw-data">Raw Data</a></li>
+  <li><a href="#raw-data" id="toc-raw-data" class="nav-link active" data-scroll-target="#raw-data">Raw Data</a></li>
   <li><a href="#lines" id="toc-lines" class="nav-link" data-scroll-target="#lines">Lines</a></li>
   <li><a href="#polygons" id="toc-polygons" class="nav-link" data-scroll-target="#polygons">Polygons</a></li>
   <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations">Operations</a></li>
@@ -322,20 +321,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="A wetland and lake with a dock near Loch Lomond in Scotland."></p>
 <blockquote class="blockquote">
 <p>Connecting points creates more complicated data types—vector data—that represent lines and polygons.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Shapefiles/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Shapefiles/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Shapefiles/in-class.html">in-class</a> activity.</li>
-<li>A <a href="https://github.com/rstudio/cheatsheets/blob/master/sf.pdf">Cheatsheet</a> for the <code>sf</code> library.</li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'sf' was built under R version 4.6.1</code></pre>
@@ -356,7 +347,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>In this topic, we will focus on lines and polygons. These are represented as <code>sf</code> objects, we can leverage a large amount of <code>st_*</code> functions to perform manipulations, and we can visualize them using either built-in routines or via <code>ggplot</code> (as expected).</p>
-</section>
 <section id="raw-data" class="level2">
 <h2 class="anchored" data-anchor-id="raw-data">Raw Data</h2>
 <p>The data for this are going to be represented by roads and development zones in Richmond, Virginia. These data are made available by the GIS Department of the City of Richmond. For this example, we will be loading these in as <em>shapefiles</em>.</p>
@@ -401,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>roads <span class="ot">&lt;-</span> <span class="fu">st_read</span>( <span class="fu">file.path</span>( shp_dir, <span class="st">"Centerlines-shp/tran_Carriageway.shp"</span> ) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `tran_Carriageway' from data source 
-  `/private/var/folders/57/_81c61111l10c9c_pt_bb7y80000gn/T/Rtmp51HbKF/Centerlines-shp/tran_Carriageway.shp' 
+  `/private/var/folders/57/_81c61111l10c9c_pt_bb7y80000gn/T/RtmpOXkkDk/Centerlines-shp/tran_Carriageway.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 29081 features and 25 fields
 Geometry type: LINESTRING
@@ -694,7 +684,7 @@ Attaching package: 'maps'</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>districts <span class="ot">&lt;-</span> <span class="fu">st_read</span>( <span class="fu">file.path</span>( shp_dir, <span class="st">"Zoning_Districts.shp"</span> ) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `Zoning_Districts' from data source 
-  `/private/var/folders/57/_81c61111l10c9c_pt_bb7y80000gn/T/Rtmp51HbKF/Zoning_Districts.shp' 
+  `/private/var/folders/57/_81c61111l10c9c_pt_bb7y80000gn/T/RtmpOXkkDk/Zoning_Districts.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 634 features and 14 fields
 Geometry type: MULTIPOLYGON

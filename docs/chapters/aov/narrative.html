@@ -320,8 +320,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#one-sample-hypotheses" id="toc-one-sample-hypotheses" class="nav-link" data-scroll-target="#one-sample-hypotheses">One Sample Hypotheses</a></li>
+  <li><a href="#one-sample-hypotheses" id="toc-one-sample-hypotheses" class="nav-link active" data-scroll-target="#one-sample-hypotheses">One Sample Hypotheses</a></li>
   <li><a href="#two-sample-hypotheses" id="toc-two-sample-hypotheses" class="nav-link" data-scroll-target="#two-sample-hypotheses">Two Sample Hypotheses</a></li>
   <li><a href="#many-sample-hypotheses" id="toc-many-sample-hypotheses" class="nav-link" data-scroll-target="#many-sample-hypotheses">Many Sample Hypotheses</a></li>
   </ul>
@@ -349,22 +348,13 @@ window.Quarto = {
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="A milkweed beetle on a plant."></p>
 <blockquote class="blockquote">
 <p>Here we explore methods applicable to testing hypotheses about specific parameters, as equal to a specified value (a <span class="math inline">\(t\)</span>-test), equal between two samples (paired <span class="math inline">\(t\)</span>-tests), and equal among more than two groups (analysis of variance).</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Analysis-of-Variance/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Analysis-of-Variance/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Analysis-of-Variance/in-class.html">in-class</a> activity.</li>
-<li>An online <a href="https://youtu.be/Kfm7GAvqyG0">lecture</a> for this topic as Dyer was sick.</li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <p>In this and the next section, we will examine how to tell the difference between measures of central tendency. This is applied to a single set of data, pairs of data sets, and a data set with many different groups. As we increase the complexity of these hypotheses, we will move through a series of statistical tests, starting with a one-sample <span class="math inline">\(t\)</span>-test, a paired <span class="math inline">\(t\)</span>-test, and then to the general analysis of variance (ANOVA) approaches. All of these methods evaluate the equality of mean values.</p>
-</section>
 <section id="one-sample-hypotheses" class="level2">
 <h2 class="anchored" data-anchor-id="one-sample-hypotheses">One Sample Hypotheses</h2>
 <p>At the most basic level, we can take a set of data and test to see if the mean of those values is equated to some particular value, <span class="math inline">\(H_O: \mu = x\)</span> (or <span class="math inline">\(H_O: \mu = 0\)</span> in some cases). The idea here is to determine, by specifying a value for the null hypothesis, what we expect the mean value to be equal to. Going back to our idea of hypothesis testing, the null hypothesis is the thing we are trying to disprove (with some level of statistical confidence) and in doing so we need to define <mark>a test statistic that we have an idea about its behavior</mark>. In this case, we will define Student’s <span class="math inline">\(t\)</span>-test statistic as:</p>

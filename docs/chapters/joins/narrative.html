@@ -291,8 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#keys" id="toc-keys" class="nav-link" data-scroll-target="#keys">Keys</a></li>
+  <li><a href="#keys" id="toc-keys" class="nav-link active" data-scroll-target="#keys">Keys</a></li>
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a></li>
   <li><a href="#filtering-joins" id="toc-filtering-joins" class="nav-link" data-scroll-target="#filtering-joins">Filtering Joins</a></li>
   </ul>
@@ -320,20 +319,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="A flooded forest."></p>
 <blockquote class="blockquote">
 <p>Effectively storing data often requires the use of several data frames to reduce redundancy. In this short chapter, we will cover how to join data from multiple sources.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Joins/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Joins/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Joins/in-class.html">in-class</a> activity.</li>
-<li>The data set used for this includes some shapefiles (for the slides) from RVA as well as the <code>nycflights13</code> package of <code>data.frames</code> for NYC airport data. This is used in both the slides and the in-class examples.</li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <p>Rarely do we work on only one <code>data.frame</code>, particularly when we start working with complex data and data contained within relational databases. In these cases, data are factored into several tables (akin to <code>data.frame</code> objects) with entries that connect the information from one table to another. Consider the following example tables</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -365,7 +356,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3   D 12</code></pre>
 </div>
 </div>
-</section>
 <section id="keys" class="level2">
 <h2 class="anchored" data-anchor-id="keys">Keys</h2>
 <p>An important component of relational data is the <em>keys</em>. These are unique identifiers for a particular datum from a table. In each of these examples the variable (obviously named) <code>Key</code> is what is called a <em>Primary Key</em> because it uniquely identifies each row. You can verify this by counting the number of entries and then filtering only for ones with 2 or more instances.</p>

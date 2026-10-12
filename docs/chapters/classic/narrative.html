@@ -320,8 +320,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The Data</a></li>
   <li><a href="#basic-plotting-in-r" id="toc-basic-plotting-in-r" class="nav-link" data-scroll-target="#basic-plotting-in-r">Basic Plotting in R</a></li>
   <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">Colors</a></li>
   <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations">Annotations</a></li>
@@ -350,31 +349,18 @@ window.Quarto = {
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="An orange newt on the forest floor."></p>
 <blockquote class="blockquote">
 <p>Data visualization is key to providing effective communication of your data.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Data_Visualization/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Data_Visualization/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Data_Visualization/in-class.html">in-class</a> activity.</li>
-<li>A recorded <a href="https://youtu.be/tDDzStY8WMU">video</a> covering classic graphics, from a previous offering of this course.</li>
-<li>External resources:
-<ul>
-<li><a href="https://www.data-to-viz.com">Data to Viz</a>.</li>
-</ul></li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="media/jonathan_swan.jpg" class="img-fluid figure-img"></p>
 <figcaption>Jonathan Swan</figcaption>
 </figure>
 </div>
-</section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <p>The <code>iris</code> flower data set (also known as <em>Fisher’s Iris data set</em>) is a multivariate data set introduced by the British statistician, eugenicist, and biologist <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> in his <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x">1936</a> paper entitled, <em>The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis</em>.</p>
@@ -701,8 +687,8 @@ iris$Species: virginica
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>randomColors <span class="ot">&lt;-</span> <span class="fu">sample</span>( <span class="fu">colors</span>(), <span class="at">size =</span> <span class="fu">nrow</span>(iris) )</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(randomColors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "salmon3"       "antiquewhite"  "darkslategray" "grey39"       
-[5] "gray59"        "springgreen3" </code></pre>
+<pre><code>[1] "seagreen"          "grey69"            "mediumspringgreen"
+[4] "mediumorchid1"     "skyblue4"          "firebrick4"       </code></pre>
 </div>
 </div>
 <p>To use these colors, you can specify them by name for either all the elements</p>

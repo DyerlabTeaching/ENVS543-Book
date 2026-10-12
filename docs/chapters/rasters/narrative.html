@@ -320,8 +320,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#making-rasters-de-novo" id="toc-making-rasters-de-novo" class="nav-link" data-scroll-target="#making-rasters-de-novo">Making Rasters <em>de novo</em></a></li>
+  <li><a href="#making-rasters-de-novo" id="toc-making-rasters-de-novo" class="nav-link active" data-scroll-target="#making-rasters-de-novo">Making Rasters <em>de novo</em></a></li>
   <li><a href="#loading-rasters-from-files-or-urls" id="toc-loading-rasters-from-files-or-urls" class="nav-link" data-scroll-target="#loading-rasters-from-files-or-urls">Loading Rasters from Files or URLs</a></li>
   <li><a href="#cropping" id="toc-cropping" class="nav-link" data-scroll-target="#cropping">Cropping</a></li>
   <li><a href="#masking" id="toc-masking" class="nav-link" data-scroll-target="#masking">Masking</a></li>
@@ -354,20 +353,12 @@ window.Quarto = {
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="The Sea of Cortez near Loreto, Baja California Sur."></p>
 <blockquote class="blockquote">
 <p>Raster data is good for representing continuous surfaces and performing fast analyses on large areas, such as calculating a surface temperature map or a land-cover classification.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/Raster-Data/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/Raster-Data/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/Raster-Data/in-class.html">in-class</a> activity.</li>
-<li>An external <a href="https://rpubs.com/etiennebr/visualraster">Visual Raster Cheat Sheet</a> that briefly covers several raster-based operations.</li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <p>All raster operations in this topic are accomplished using the <code>raster</code> library.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -379,7 +370,6 @@ window.Quarto = {
 </div>
 </div>
 <p>Rasters are representations of continuous, or semi-continuous, data. You can envision a raster just like an image. <mark>When me make a <code>leaflet()</code> map and how the tiles, each pixel is colored a particular value representing elevation, temperature, precipitation, habitat type, or whatever.</mark> This is exactly the same for rasters. The <em>key point</em> here is that each pixel represents some defined region on the earth and as such the raster itself is georeferenced. It has a coordinate reference system (CRS), boundaries, etc.</p>
-</section>
 <section id="making-rasters-de-novo" class="level2">
 <h2 class="anchored" data-anchor-id="making-rasters-de-novo">Making Rasters <em>de novo</em></h2>
 <p>A raster is simply a matrix with rows and columns and each element has a value associated with it. You can create a raster <em>de novo</em> by making a matrix of data and filling it with values, then turning it into a raster.</p>
@@ -390,20 +380,20 @@ window.Quarto = {
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-[1,]   12   11   11   20   17    9   18
-[2,]   10    5    6   13    8    8    9
-[3,]    7   10   11   18   14   12   12
-[4,]   13   12    8    8   11   13   10
-[5,]    5   18   13   10   14    7   14
-[6,]   13   12   17   13   11   15   17
-[7,]   11   18   14   13   14    4    7</code></pre>
+[1,]    5   14   12    9   11   11   10
+[2,]   11   10   14   12    8   18   14
+[3,]   21   22   12   10   12   14   11
+[4,]   10   19   12   11    6   16   11
+[5,]   13   11   14   13   19    7   11
+[6,]    8   12   10    4    7   11   13
+[7,]   12   12   13    7    5   10   11</code></pre>
 </div>
 </div>
 <p>While we haven’t used matrices much thus far, it is a lot like a <code>data.frame</code> with respect to getting and setting values using numerical indices. For example, the value of the 3rd row and 5th column is:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>,<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 14</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 </div>
 <p>To convert this set of data, as a matrix, into a geospatially referenced <code>raster()</code> object we do the following:</p>
@@ -418,7 +408,7 @@ extent     : 0, 1, 0, 1  (xmin, xmax, ymin, ymax)
 crs        : NA 
 source     : memory
 names      : layer 
-values     : 4, 20  (min, max)</code></pre>
+values     : 4, 22  (min, max)</code></pre>
 </div>
 </div>
 <p>Notice that when I plot it out, it does not show the data, but a summary of the data along with some key data about the contents, including:<br>

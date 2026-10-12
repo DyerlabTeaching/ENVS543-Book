@@ -291,8 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#basic-ggplot" id="toc-basic-ggplot" class="nav-link" data-scroll-target="#basic-ggplot">Basic ggplot</a></li>
+  <li><a href="#basic-ggplot" id="toc-basic-ggplot" class="nav-link active" data-scroll-target="#basic-ggplot">Basic ggplot</a></li>
   <li><a href="#aesthetics-and-scope" id="toc-aesthetics-and-scope" class="nav-link" data-scroll-target="#aesthetics-and-scope">Aesthetics and Scope</a></li>
   <li><a href="#labels-titles" id="toc-labels-titles" class="nav-link" data-scroll-target="#labels-titles">Labels &amp; Titles</a></li>
   <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots">Scatter Plots</a></li>
@@ -325,26 +324,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- BEGIN module:lecture-materials — generated from module.yml; edit that, not this -->
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 <p><img src="media/module_image.jpg" class="img-fluid" alt="Leaves of an ornamental plant turning color in the fall."></p>
 <blockquote class="blockquote">
 <p>The <code>ggplot2</code> library is a grammatical approach to data display.</p>
 </blockquote>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>These are the slides for this topic. Click on them and use the arrow keys to move through them, or open them in a <a href="https://dyerlabteaching.github.io/GGPlot2_Graphics/slides.html">separate window</a>.</p>
-<iframe src="https://dyerlabteaching.github.io/GGPlot2_Graphics/slides.html#/title-slide" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
-<ul>
-<li>An <a href="https://dyerlabteaching.github.io/GGPlot2_Graphics/in-class.html">in-class</a> activity.</li>
-<li>A recorded <a href="https://youtu.be/12yz45V7mY8">video</a> covering ggplot2 graphics, from a previous offering of this course.</li>
-<li>External resources:
-<ul>
-<li><a href="https://www.data-to-viz.com">Data to Viz</a>.</li>
-<li><a href="https://r-graph-gallery.com/ggplot2-package.html">R Graph Gallery</a></li>
-<li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">GGPlot2 Cheatsheet</a></li>
-</ul></li>
-</ul>
-<!-- END module:lecture-materials -->
+<!-- END module:header -->
 <p>In base <code>R</code>, the graphics are generally produced by adding a lot of optional arguments to a single function such as <code>plot()</code> or <code>barplot()</code> or <code>boxplot()</code>. We can get some kinds of overlays using <code>text()</code> or <code>points()</code> or <code>lines()</code> but there is not a cohesive framework for setting this up. For even moderately complex graphical display, these approaches become unwieldy when we have to cram all that information into extra optional arguments.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -399,7 +384,6 @@ Figure&nbsp;9.1: Corruption and Human Development among OECD countries from <i>T
 <p>A system for ‘declaratively’ creating graphics, based on “The Grammar of Graphics”. You provide the data, tell ‘ggplot2’ how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</p>
 </blockquote>
 <p>Throughout the majority of this course, we will be using this library and this approach for all but the most trivial of graphical displays.</p>
-</section>
 <section id="basic-ggplot" class="level2">
 <h2 class="anchored" data-anchor-id="basic-ggplot">Basic ggplot</h2>
 <p>As outlined above, the basis of this approach is an additive (and iterative) process of creating a graphic. This all starts with the data. For our purposes, we will use the same iris <code>data.frame</code> as in the previous section on base graphics.</p>
