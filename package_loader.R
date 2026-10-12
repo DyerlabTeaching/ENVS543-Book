@@ -6,12 +6,12 @@
 # Function to extract library calls from markdown files
 extract_libraries_from_markdown <- function() {
   
-  # Find all markdown files in the directory
+  # Find the synced chapter narratives (chapters/<slug>/narrative.qmd)
   md_files <- list.files(
-    path = ".",
-    pattern = "narrative_*",
+    path = "chapters",
+    pattern = "^narrative\\.qmd$",
     full.names = TRUE,
-    recursive = FALSE
+    recursive = TRUE
   )
   
   if (length(md_files) == 0) {

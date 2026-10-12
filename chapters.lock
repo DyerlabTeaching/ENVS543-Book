@@ -1,0 +1,15 @@
+aov	Analysis-of-Variance	a42971e+dirty
+classic	Data_Visualization	7c8854c+dirty
+containers	Data-Containers	7f68fd8+dirty
+correlation	Correlation	03dab96+dirty
+datatypes	Basic-Data-Types	7c34dfe+dirty
+factors	Factors	55d9cc3+dirty
+ggplot	GGPlot2_Graphics	f385f34+dirty
+joins	Joins	a4dc450+dirty
+markdown	Markdown	c4ea9dc+dirty
+ordination	Ordination	8a0f845+dirty
+points	Spatial-Points	01d4cd2+dirty
+rasters	Raster-Data	c7aeea5+dirty
+regression	Regression	ed63fc2+dirty
+tidyverse	Tidyverse	de3c826+dirty
+vector	Shapefiles	6bf7c1f+dirty

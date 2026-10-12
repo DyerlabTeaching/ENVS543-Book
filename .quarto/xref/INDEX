@@ -67,5 +67,50 @@
   },
   "syllabus.qmd": {
     "syllabus.html": "1f9498a6"
+  },
+  "chapters/markdown/narrative.qmd": {
+    "narrative.html": "6bbd9b20"
+  },
+  "chapters/datatypes/narrative.qmd": {
+    "narrative.html": "285123c8"
+  },
+  "chapters/tidyverse/narrative.qmd": {
+    "narrative.html": "08dea840"
+  },
+  "chapters/containers/narrative.qmd": {
+    "narrative.html": "b8ed3a4c"
+  },
+  "chapters/factors/narrative.qmd": {
+    "narrative.html": "edaea132"
+  },
+  "chapters/joins/narrative.qmd": {
+    "narrative.html": "37775ed1"
+  },
+  "chapters/classic/narrative.qmd": {
+    "narrative.html": "cd8b643f"
+  },
+  "chapters/ggplot/narrative.qmd": {
+    "narrative.html": "1d7c058d"
+  },
+  "chapters/points/narrative.qmd": {
+    "narrative.html": "f4a4ce08"
+  },
+  "chapters/vector/narrative.qmd": {
+    "narrative.html": "c3c0711d"
+  },
+  "chapters/rasters/narrative.qmd": {
+    "narrative.html": "78755c99"
+  },
+  "chapters/correlation/narrative.qmd": {
+    "narrative.html": "4ba0e17e"
+  },
+  "chapters/regression/narrative.qmd": {
+    "narrative.html": "e88af9ac"
+  },
+  "chapters/aov/narrative.qmd": {
+    "narrative.html": "a0ea6522"
+  },
+  "chapters/ordination/narrative.qmd": {
+    "narrative.html": "85f0fed2"
   }
 }

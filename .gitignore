@@ -65,3 +65,6 @@ CLAUDE.md
 # Node.js (for screenshot capture script)
 node_modules/
 package-lock.json
+
+# Synced module chapters (rebuilt by sync.sh)
+/chapters/

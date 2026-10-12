@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: docs
+  post-render: ./redirects.sh
 
 book:
   title: "Environmental Data Literacy"
@@ -15,31 +16,31 @@ book:
         city: Richmond
         state: VA
         postal-code: 23284
-  date: "December 4, 2025"
+  date: last-modified
   chapters:
     - index.qmd
     - syllabus.qmd
     - part: "part1.qmd"
       chapters:
-        - narrative_markdown.qmd
-        - narrative_datatypes.qmd
-        - narrative_containers.qmd
-        - narrative_tidyverse.qmd
-        - narrative_factors.qmd
-        - narrative_joins.qmd
-        - narrative_classic.qmd
-        - narrative_ggplot.qmd
+        - chapters/markdown/narrative.qmd
+        - chapters/datatypes/narrative.qmd
+        - chapters/containers/narrative.qmd
+        - chapters/tidyverse/narrative.qmd
+        - chapters/factors/narrative.qmd
+        - chapters/joins/narrative.qmd
+        - chapters/classic/narrative.qmd
+        - chapters/ggplot/narrative.qmd
     - part: "part2.qmd"
       chapters:
-        - narrative_points.qmd
-        - narrative_vector.qmd
-        - narrative_rasters.qmd
+        - chapters/points/narrative.qmd
+        - chapters/vector/narrative.qmd
+        - chapters/rasters/narrative.qmd
     - part: "part3.qmd"
       chapters:
-        - narrative_correlation.qmd
-        - narrative_regression.qmd
-        - narrative_aov.qmd
-        - narrative_ordination.qmd
+        - chapters/correlation/narrative.qmd
+        - chapters/regression/narrative.qmd
+        - chapters/aov/narrative.qmd
+        - chapters/ordination/narrative.qmd
 
 format:
   html:
@@ -50,26 +51,29 @@ format:
     number-depth: 1
     theme:
       - cosmo
-  pdf:
-    pdf-engine: xelatex
-    documentclass: book
-    fontsize: 11pt
-    toc: true
-    toc-depth: 2
-    
-    colorlinks: true
-    papersize: letter
-    geometry:
-      - margin=1in
-    fig-pos: 'H'
-    keep-tex: false
-    include-in-header:
-      text: |
-        \usepackage{fontspec}
-        \setmainfont{Helvetica Neue}
-        \setmonofont{Menlo}
-        \usepackage{pdfpages}
-        \renewcommand{\maketitle}{}
-    include-before-body:
-      text: |
-        \includepdf[pages=1]{media/cover.pdf}
+
+# PDF edition deferred (HTML only for now). When it returns, uncomment and
+# make sure every module has static fallbacks for its widgets.
+#  pdf:
+#    pdf-engine: xelatex
+#    documentclass: book
+#    fontsize: 11pt
+#    toc: true
+#    toc-depth: 2
+#    
+#    colorlinks: true
+#    papersize: letter
+#    geometry:
+#      - margin=1in
+#    fig-pos: 'H'
+#    keep-tex: false
+#    include-in-header:
+#      text: |
+#        \usepackage{fontspec}
+#        \setmainfont{Helvetica Neue}
+#        \setmonofont{Menlo}
+#        \usepackage{pdfpages}
+#        \renewcommand{\maketitle}{}
+#    include-before-body:
+#      text: |
+#        \includepdf[pages=1]{media/cover.pdf}
